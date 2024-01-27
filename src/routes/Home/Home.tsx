@@ -11,11 +11,11 @@ export default function Home() {
     document.documentElement.setAttribute('data-theme', darkTheme ? 'dark' : 'light')
   }, [darkTheme])
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.header}>
         <Navigation />
       </div>
-      <div className={styles.container}>
+      <div className={styles.content}>
         <div className={styles.card}>
           <h2>Welcome to the app</h2>
           <p className={styles.text__primary}>Primary texts</p>
@@ -26,6 +26,6 @@ export default function Home() {
         </button>
         <Outlet />
       </div>
-    </>
+    </div>
   )
 }
