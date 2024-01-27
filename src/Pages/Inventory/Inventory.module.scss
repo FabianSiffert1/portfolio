@@ -1,2 +1,5 @@
-.inventory{
+@import '../../util/globalScssConfig.module';
+
+.card {
+  @include card
 }
