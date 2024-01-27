@@ -2,9 +2,9 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.scss'
-import Home from './routes/Home/Home.tsx'
-import ErrorPage from './routes/404/404.tsx'
-import Contact from './routes/Inventory/Inventory.tsx'
+import Home from './routes/Home/Home'
+import ErrorPage from './routes/404/404'
+import Contact from './routes/Inventory/Inventory'
 import ThemeProvider from './theme/ThemeProvider'
 
 const router = createBrowserRouter([
