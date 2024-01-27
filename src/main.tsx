@@ -4,20 +4,21 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 import Home from "./routes/Home/Home.tsx";
 import ErrorPage from "./routes/404/404.tsx";
 import Contact from "./routes/Inventory/Inventory.tsx";
+import ThemeProvider from "./theme/ThemeProvider";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
-        errorElement: <ErrorPage />,
+        element: <Home/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "contacts/:contactId",
-                element: <Contact />,
+                element: <Contact/>,
             },
         ],
     },
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+            <RouterProvider router={router}/>
+        </ThemeProvider>
     </React.StrictMode>
-);1
+);

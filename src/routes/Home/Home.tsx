@@ -1,46 +1,34 @@
-import {Link, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
+import styles from './Home.module.scss';
+import {ThemeContext} from "../../theme/ThemeProvider";
+import {useContext, useEffect} from "react";
+import Navigation from "../../navigation/Navigation";
 
 export default function Home() {
+    const {darkTheme, toggleTheme} = useContext(ThemeContext);
+
+    useEffect(() => {
+        document.documentElement.setAttribute(
+            "data-theme",
+            darkTheme ? "dark" : "light"
+        );
+    }, [darkTheme]);
     return (
         <>
-            <div id="sidebar">
-                <h1>React Router Contacts</h1>
-                <div>
-                    <form id="search-form" role="search">
-                        <input
-                            id="q"
-                            aria-label="Search contacts"
-                            placeholder="Search"
-                            type="search"
-                            name="q"
-                        />
-                        <div
-                            id="search-spinner"
-                            aria-hidden
-                            hidden={true}
-                        />
-                        <div
-                            className="sr-only"
-                            aria-live="polite"
-                        ></div>
-                    </form>
-                    <form method="post">
-                        <button type="submit">New</button>
-                    </form>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to={`contacts/1`}>Your Name</Link>
-                        </li>
-                        <li>
-                            <Link to={`contacts/2`}>Your Friend</Link>
-                        </li>
-                    </ul>
-                </nav>
+            <div className={styles.header}>
+                <Navigation/>
             </div>
-            <div id="detail">
-                <Outlet />
+            <div className={styles.container}>
+                <div className={styles.card}>
+                    <h2>Welcome to the app</h2>
+                    <p className={styles.text__primary}>Primary texts</p>
+                    <p className={styles.text__secondary}>Secondary texts</p>
+                </div>
+                <button className={styles.button} onClick={toggleTheme}>
+                    Toggle Theme
+                </button>
+                <Outlet/>
+                HERE
             </div>
         </>
     );
