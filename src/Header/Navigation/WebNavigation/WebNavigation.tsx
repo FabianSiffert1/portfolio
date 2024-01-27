@@ -9,19 +9,17 @@ export default function WebNavigation(props: WebNavigationProps) {
     <div className={styles.webNavigation}>
       <nav>
         <ul>
-        <li>
-          <Link to={`contacts/1`}>Your Name</Link>
-        </li>
-        <li>
-          <Link to={`contacts/2`}>Your Friend</Link>
-        </li>
-        <li>
-          <Link to={`market`}>Market</Link>
-        </li>
           <li>
-            <ThemeToggle toggleTheme={props.toggleTheme}/>
+            <Link to={``}>Home</Link>
+          </li>
+          <li>
+            <Link to={`inventory`}>Inventory</Link>
+          </li>
+          <li>
+            <Link to={`market`}>Market</Link>
           </li>
         </ul>
       </nav>
+      <ThemeToggle toggleTheme={props.toggleTheme}/>
     </div>)
 }

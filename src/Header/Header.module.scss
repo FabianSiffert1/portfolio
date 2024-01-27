@@ -1,10 +1,12 @@
 @import '../util/globalScssConfig.module';
 
 .header {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 20% 40%;
+  align-content: space-between;
   justify-content: space-between;
 }
+
 .webNavigation {
   display: none;
   @media (min-width: $smallScreen) {

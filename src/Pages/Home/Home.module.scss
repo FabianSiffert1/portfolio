@@ -3,48 +3,21 @@
 .home {
   @include paddingLeftRight;
   @include paddingTopBottom;
-  /*
   display: grid;
-  grid-template-columns: auto;
-  grid-template-areas:
-      'highlight'
-      'most_popular'
-      'latest';
+  grid-template-rows: 23% auto;
+  grid-auto-flow: row dense;
+}
 
-  @media (min-width: $smallScreen) {
-    grid-template-columns: auto 90%;
-    grid-template-areas:
-      'latest highlight'
-      'latest most_popular';
-  }
-  */
+.row {
+  border: solid 1px;
 }
 
 
-
 .card {
-  width: 40vw;
-  height: 40vh;
-  background-color: var(--card-background-color);
-  border: 1px solid var(--card-border-color);
-  border-radius: 4px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
+ @include card
 }
 
 
 .button {
-  cursor: pointer;
-  width: 196px;
-  padding: 12px 16px;
-
-  font-size: 1.2rem;
-
-  border-radius: 4px;
-  border: 1px solid var(--primary-color);
-  outline: none;
-
-  color: var(--primary-color);
-  background-color: transparent;
+@include button
 }

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import styles from './Home.module.scss'
-import { ThemeContext } from '../../theme/ThemeProvider'
+import { ThemeContext } from '../../util/theme/ThemeProvider'
 import { useContext, useEffect } from 'react'
 import Header from '../../Header/Header'
 
@@ -12,8 +12,12 @@ export default function Home() {
   }, [darkTheme])
   return (
     <div className={styles.home}>
-      <Header toggleTheme={toggleTheme} />
-      <Outlet />
+      <div className={styles.row}>
+        <Header toggleTheme={toggleTheme} />
+      </div>
+      <div className={styles.row}>
+        <Outlet />
+      </div>
     </div>
   )
 }

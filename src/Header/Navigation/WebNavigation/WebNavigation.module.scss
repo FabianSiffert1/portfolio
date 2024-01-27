@@ -1,20 +1,23 @@
 .webNavigation {
   display: flex;
-  flex-direction: row;
-  font-size: 3rem;
   ul {
+    font-size: 2.5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
   li {
     float: left;
   }
   li a {
-    display: block;
+    display: inline-block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    color: inherit;
+  }
+
+  li a:hover {
+    text-decoration: underline;
   }
 }

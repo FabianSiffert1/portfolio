@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.scss'
 import Home from './Pages/Home/Home'
 import ErrorPage from './Pages/404/404'
-import Contact from './Pages/Inventory/Inventory'
-import ThemeProvider from './theme/ThemeProvider'
+import Inventory from './Pages/Inventory/Inventory'
+import ThemeProvider from './util/theme/ThemeProvider'
 import Market from './Pages/Market/Market'
 
 const router = createBrowserRouter([
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: 'contacts/:contactId',
-        element: <Contact />
+        path: 'inventory',
+        element: <Inventory />
       },
       {
         path: 'market',
