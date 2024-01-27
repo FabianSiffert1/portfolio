@@ -9,15 +9,17 @@
 
 .webNavigation {
   display: none;
+  justify-content: end;
   @media (min-width: $smallScreen) {
     display: flex;
-    justify-content: end;
   }
 }
+
 .mobileNavigation {
   display: none;
+  justify-content: end;
   @media (max-width: $smallScreen) {
     display: flex;
-    background-color: #846bda;
+
   }
 }
