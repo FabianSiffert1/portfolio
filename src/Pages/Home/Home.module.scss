@@ -4,8 +4,8 @@
   @include paddingLeftRight;
   @include paddingTopBottom;
   display: grid;
-  grid-template-rows: 23% auto;
-  grid-auto-flow: row dense;
+  grid-template-rows: 1fr auto;
+  grid-auto-flow: row;
 }
 
 .row {
