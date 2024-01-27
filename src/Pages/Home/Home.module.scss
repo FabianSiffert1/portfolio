@@ -1,12 +1,26 @@
-.content {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+@import '../../util/globalScssConfig.module';
+
+.home {
+  @include paddingLeftRight;
+  @include paddingTopBottom;
+  /*
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+      'highlight'
+      'most_popular'
+      'latest';
+
+  @media (min-width: $smallScreen) {
+    grid-template-columns: auto 90%;
+    grid-template-areas:
+      'latest highlight'
+      'latest most_popular';
+  }
+  */
 }
+
+
 
 .card {
   width: 40vw;
@@ -19,15 +33,6 @@
   flex-direction: column;
 }
 
-.text {
-  &__primary {
-    color: var(--primary-color);
-  }
-
-  &__secondary {
-    color: var(--secondary-color);
-  }
-}
 
 .button {
   cursor: pointer;

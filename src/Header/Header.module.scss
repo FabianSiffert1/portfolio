@@ -1,0 +1,20 @@
+@import '../util/globalScssConfig.module';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.webNavigation {
+  display: none;
+  @media (min-width: $smallScreen) {
+      display: flex;
+  }
+}
+.mobileNavigation {
+  display: none;
+  @media (max-width: $smallScreen) {
+    display: flex;
+    background-color: #846bda;
+  }
+}

@@ -1,0 +1,12 @@
+$smallScreen: 740px;
+
+
+@mixin paddingTopBottom {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@mixin paddingLeftRight {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
