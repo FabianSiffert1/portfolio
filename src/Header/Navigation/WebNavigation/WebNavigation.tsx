@@ -1,10 +1,8 @@
 import styles from './WebNavigation.module.scss'
 import { Link } from 'react-router-dom'
 import ThemeToggle from '../../ThemeToggle/ThemeToggle'
-interface WebNavigationProps {
-  toggleTheme: () => void
-}
-export default function WebNavigation(props: WebNavigationProps) {
+
+export default function WebNavigation() {
   return (
     <div className={styles.webNavigation}>
       <nav>
@@ -20,6 +18,6 @@ export default function WebNavigation(props: WebNavigationProps) {
           </li>
         </ul>
       </nav>
-      <ThemeToggle toggleTheme={props.toggleTheme}/>
-    </div>)
+    </div>
+  )
 }

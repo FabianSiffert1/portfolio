@@ -3,19 +3,15 @@ import Title from './Title/Title'
 import WebNavigation from './Navigation/WebNavigation/WebNavigation'
 import MobileNavigation from './Navigation/MobileNavigation/MobileNavigation'
 
-interface HeaderProps {
-  toggleTheme: () => void
-}
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
   return (
     <div className={styles.header}>
       <Title />
       <div className={styles.mobileNavigation}>
-        <MobileNavigation toggleTheme={props.toggleTheme} />
+        <MobileNavigation />
       </div>
       <div className={styles.webNavigation}>
-        <WebNavigation toggleTheme={props.toggleTheme} />
+        <WebNavigation />
       </div>
     </div>
   )

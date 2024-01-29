@@ -1,11 +1,9 @@
 import styles from './MobileNavigation.module.scss'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-interface MobileNavigationProps {
-  toggleTheme: () => void
-}
-export default function MobileNavigation(props: MobileNavigationProps) {
-  const [hamburgerOpen, setHamburgerOpen]= useState(false)
+
+export default function MobileNavigation() {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
@@ -13,10 +11,10 @@ export default function MobileNavigation(props: MobileNavigationProps) {
 
   return (
     <div className={styles.mobileNavigation} onClick={toggleHamburger}>
-        <div className={styles.burger}/>
-        <div className={styles.burger}/>
-        <div className={styles.burger}/>
-      <div className={styles.hamburgerMenu} style={{display : hamburgerOpen ? 'inline' : 'none'}}>
+      <div className={styles.burger} />
+      <div className={styles.burger} />
+      <div className={styles.burger} />
+      <div className={styles.hamburgerMenu} style={{ display: hamburgerOpen ? 'inline' : 'none' }}>
         <nav>
           <ul>
             <li>
@@ -31,5 +29,6 @@ export default function MobileNavigation(props: MobileNavigationProps) {
           </ul>
         </nav>
       </div>
-    </div>)
+    </div>
+  )
 }
