@@ -1,6 +1,6 @@
-import styles from './MobileNavigation.module.scss'
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import styles from './MobileNavigation.module.scss'
 
 export default function MobileNavigation() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)

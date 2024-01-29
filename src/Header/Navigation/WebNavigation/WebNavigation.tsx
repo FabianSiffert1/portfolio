@@ -1,5 +1,5 @@
-import styles from './WebNavigation.module.scss'
 import { Link } from 'react-router-dom'
+import styles from './WebNavigation.module.scss'
 
 export default function WebNavigation() {
   return (

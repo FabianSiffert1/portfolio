@@ -1,9 +1,9 @@
-import { Outlet } from 'react-router-dom'
-import styles from './Home.module.scss'
-import { ThemeContext } from '../../util/theme/ThemeProvider'
 import { useContext, useEffect } from 'react'
-import Header from '../../Header/Header'
+import { Outlet } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
+import Header from '../../Header/Header'
+import { ThemeContext } from '../../util/theme/ThemeProvider'
+import styles from './Home.module.scss'
 
 export default function Home() {
   const { darkTheme, toggleTheme } = useContext(ThemeContext)
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.header}>
-        <Header/>
+        <Header />
       </div>
       <div className={styles.page}>
         <Outlet />
