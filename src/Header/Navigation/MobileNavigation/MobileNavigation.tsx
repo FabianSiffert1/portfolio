@@ -18,9 +18,6 @@ export default function MobileNavigation() {
         <nav>
           <ul>
             <li>
-              <Link to={``}>Home</Link>
-            </li>
-            <li>
               <Link to={`inventory`}>Inventory</Link>
             </li>
             <li>

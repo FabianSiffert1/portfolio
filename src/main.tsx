@@ -15,8 +15,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        element: <Inventory/>,
+        index: true,
+      },
+      {
         path: 'inventory',
-        element: <Inventory />
+        element: <Inventory />,
       },
       {
         path: 'market',
@@ -26,7 +30,9 @@ const router = createBrowserRouter([
   }
 ])
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+let root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
   <React.StrictMode>
     <ThemeProvider>
       <RouterProvider router={router} />

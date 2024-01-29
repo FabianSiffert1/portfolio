@@ -1,6 +1,5 @@
 import styles from './WebNavigation.module.scss'
 import { Link } from 'react-router-dom'
-import ThemeToggle from '../../ThemeToggle/ThemeToggle'
 
 export default function WebNavigation() {
   return (
@@ -8,10 +7,7 @@ export default function WebNavigation() {
       <nav>
         <ul>
           <li>
-            <Link to={``}>Home</Link>
-          </li>
-          <li>
-            <Link to={`inventory`}>Inventory</Link>
+            <Link to={`/`}>Inventory</Link>
           </li>
           <li>
             <Link to={`market`}>Market</Link>
