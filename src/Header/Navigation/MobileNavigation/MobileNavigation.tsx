@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ThemeToggle from '../../ThemeToggle/ThemeToggle'
 import styles from './MobileNavigation.module.scss'
 
 export default function MobileNavigation() {
@@ -22,6 +23,9 @@ export default function MobileNavigation() {
             </li>
             <li>
               <Link to={`market`}>Market</Link>
+            </li>
+            <li>
+              <ThemeToggle />
             </li>
           </ul>
         </nav>

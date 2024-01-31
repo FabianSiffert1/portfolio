@@ -1,14 +1,17 @@
-import { useRouteError } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom'
+import styles from './404.module.scss'
 
 export default function ErrorPage() {
   const error = useRouteError()
   console.error(error)
 
   return (
-    <div id='error-page'>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
+    <div className={styles.errorPage}>
+      Well that didnt work! <br />
+      <br />
+      <Link to={'/'}>return to base</Link> <br />
       <p>
+        Error: &nbsp;
         <i>{error.statusText || error.message}</i>
       </p>
     </div>

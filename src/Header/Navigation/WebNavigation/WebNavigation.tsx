@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ThemeToggle from '../../ThemeToggle/ThemeToggle'
 import styles from './WebNavigation.module.scss'
 
 export default function WebNavigation() {
@@ -11,6 +12,9 @@ export default function WebNavigation() {
           </li>
           <li>
             <Link to={`market`}>Market</Link>
+          </li>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
       </nav>

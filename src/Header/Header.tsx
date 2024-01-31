@@ -1,7 +1,7 @@
 import styles from './Header.module.scss'
-import Title from './Title/Title'
-import WebNavigation from './Navigation/WebNavigation/WebNavigation'
 import MobileNavigation from './Navigation/MobileNavigation/MobileNavigation'
+import WebNavigation from './Navigation/WebNavigation/WebNavigation'
+import Title from './Title/Title'
 
 export default function Header() {
   return (

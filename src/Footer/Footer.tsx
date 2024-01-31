@@ -1,14 +1,12 @@
 import styles from './Footer.module.scss'
-import ThemeToggle from '../Header/ThemeToggle/ThemeToggle'
 
-interface FooterProps {
-  toggleTheme: () => void
-}
-
-export default function Footer(props: FooterProps) {
+export default function Footer() {
   return (
     <div className={styles.footer}>
-      <ThemeToggle toggleTheme={props.toggleTheme} />
+      ©️ &nbsp;
+      <a href={'https://siffert.io'}>Fabian Siffert</a>
+      &nbsp;
+      {new Date().getFullYear().toString()}
     </div>
   )
 }

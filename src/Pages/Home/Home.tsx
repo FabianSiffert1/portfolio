@@ -6,7 +6,7 @@ import { ThemeContext } from '../../util/theme/ThemeProvider'
 import styles from './Home.module.scss'
 
 export default function Home() {
-  const { darkTheme, toggleTheme } = useContext(ThemeContext)
+  const { darkTheme } = useContext(ThemeContext)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkTheme ? 'dark' : 'light')
@@ -20,7 +20,7 @@ export default function Home() {
         <Outlet />
       </div>
       <div className={styles.footer}>
-        <Footer toggleTheme={toggleTheme} />
+        <Footer />
       </div>
     </div>
   )

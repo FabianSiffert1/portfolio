@@ -1,10 +1,10 @@
 @import '../util/globalScssConfig.module';
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: baseline;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   border-top-left-radius: 0.3rem;
@@ -12,8 +12,7 @@
   background-color: var(--background-color);
 }
 
-.text {
-  display: flex;
- justify-content: end;
-  align-items: end;
+a {
+  text-decoration: inherit;
+  color: inherit;
 }
