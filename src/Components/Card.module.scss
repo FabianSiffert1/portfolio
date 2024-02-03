@@ -32,6 +32,7 @@
 
 
 .cardName {
+  text-align: center;
   font-size: 110%;
   font-weight: bold;
   grid-area: cardName;
@@ -61,6 +62,7 @@
 
   .setName {
     grid-area: setName;
+    text-align: center;
   }
 
   .setName img {
