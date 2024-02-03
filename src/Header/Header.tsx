@@ -6,14 +6,16 @@ import Title from './Title/Title'
 export default function Header() {
   return (
     <div className={styles.header}>
-      <div className={styles.Title}>
+      <div className={styles.title}>
         <Title />
       </div>
-      <div className={styles.mobileNavigation}>
-        <MobileNavigation />
-      </div>
-      <div className={styles.webNavigation}>
-        <WebNavigation />
+      <div className={styles.navigation}>
+        <div className={styles.mobileNavigation}>
+          <MobileNavigation />
+        </div>
+        <div className={styles.webNavigation}>
+          <WebNavigation />
+        </div>
       </div>
     </div>
   )

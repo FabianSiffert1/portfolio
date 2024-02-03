@@ -13,9 +13,13 @@ $standardBottomPadding: 2rem;
 
 @mixin itemListContainer {
   display: flex;
+  justify-content: center;
+}
+
+@mixin itemList {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: start;
-  align-items: center;
+  justify-content: flex-start;
   gap: 2rem;
 }
 
@@ -24,8 +28,8 @@ $standardBottomPadding: 2rem;
   border: 1px solid var(--card-border-color);
   border-radius: 1rem;
   aspect-ratio: 63 / 88;
-  min-width: 10rem;
-  max-width: 10rem;
+  min-width: 12rem;
+  max-width: 12rem;
   max-height: 15rem;
   display: flex;
   justify-content: center;

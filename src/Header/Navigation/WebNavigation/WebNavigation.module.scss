@@ -13,22 +13,26 @@
 
   li {
     float: left;
-  }
-
-  li a {
-    display: inline-block;
     padding: 0 1rem 0 0;
     min-width: 3rem;
     text-decoration: none;
     color: inherit;
-  }
-
-  li img {
-    flex-grow: 1;
-    width: 0;
+    display: flex;
+    align-items: center;
   }
 
   li a:hover {
     text-decoration: underline;
+  }
+
+  .themeToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      flex-grow: 1;
+      min-width: 2.3rem;
+    }
   }
 }

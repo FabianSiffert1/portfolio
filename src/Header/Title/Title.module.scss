@@ -1,6 +1,7 @@
 @import '../../util/globalDesignElements.module';
 
 .title {
+  text-align: start;
   font-size: 3rem;
   @media (min-width: $smallScreen) {
     font-size: 6rem;

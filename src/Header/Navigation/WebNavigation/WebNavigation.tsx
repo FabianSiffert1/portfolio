@@ -14,7 +14,9 @@ export default function WebNavigation() {
             <Link to={`market`}>Market</Link>
           </li>
           <li>
-            <ThemeToggle />
+            <div className={styles.themeToggle}>
+              <ThemeToggle />
+            </div>
           </li>
         </ul>
       </nav>
