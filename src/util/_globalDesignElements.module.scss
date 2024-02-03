@@ -25,28 +25,6 @@ $standardBottomPadding: 2rem;
   padding-right: 3rem;
 }
 
-
-@mixin itemList {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  column-gap: 3rem;
-  row-gap: 2rem;
-}
-
-@mixin card {
-  background-color: var(--card-background-color);
-  border: 1px solid var(--card-border-color);
-  border-radius: 1rem;
-  aspect-ratio: 63 / 88;
-  min-width: 15vw;
-  display: flex;
-  padding: 0.3rem;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 @mixin button {
   cursor: pointer;
   width: 196px;
