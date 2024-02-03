@@ -30,7 +30,8 @@ $standardBottomPadding: 2rem;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 3rem;
+  column-gap: 3rem;
+  row-gap: 2rem;
 }
 
 @mixin card {
