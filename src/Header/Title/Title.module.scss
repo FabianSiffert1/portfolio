@@ -1,6 +1,7 @@
-@import '../../util/globalScssConfig.module';
+@import '../../util/globalDesignElements.module';
+
 .title {
-font-size: 3rem;
+  font-size: 3rem;
   @media (min-width: $smallScreen) {
     font-size: 7rem;
   }

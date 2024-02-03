@@ -1,4 +1,8 @@
-@import '../../util/globalScssConfig.module';
+@import '../../util/globalDesignElements.module';
+
+.inventory {
+  @include itemListContainer;
+}
 
 .card {
   @include card

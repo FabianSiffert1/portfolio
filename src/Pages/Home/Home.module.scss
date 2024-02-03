@@ -1,11 +1,8 @@
-@import '../../util/globalScssConfig.module';
+@import '../../util/globalDesignElements.module';
 
 .home {
   @include paddingLeftRight;
   @include paddingTopBottom;
-  display: grid;
-  grid-template-rows: 1fr auto 0.25fr;
-  grid-auto-flow: row;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
@@ -19,12 +16,6 @@
   right: 0;
 }
 
-
-.card {
-  @include card
-}
-
-
-.button {
-  @include button
+.page {
+  padding-top: 3rem;
 }
