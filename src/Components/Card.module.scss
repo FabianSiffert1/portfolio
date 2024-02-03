@@ -30,17 +30,34 @@
   }
 }
 
+.cardBaseInformation {
+  display: grid;
+  height: auto;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: "spacer cardName setLogo";
+
+}
+
+.spacer {
+  grid-area: spacer;
+}
+
 .cardName {
   font-size: 110%;
   font-weight: bold;
+  grid-area: cardName;
 }
 
-.cardDescription {
+.setLogo {
+  grid-area: setLogo;
+  justify-content: end;
 }
+
 
 .identifiers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

@@ -17,7 +17,6 @@ export default function Inventory() {
   }, [])
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [areSetsLoading, setSetsLoading] = useState(true)
-
   const getBaseSet = () => {
     pokemonTCGAPI.set.all({ q: 'series:base' }).then((sets: PokemonSet[]) => {
       setSets(sets)
@@ -34,17 +33,17 @@ export default function Inventory() {
   const cardArray: ReactElement[] = []
   if (!areSetsLoading && !areCardsLoading) {
     cards.forEach((card) => {
-      const price = card?.cardmarket?.prices?.avg30
+      const averageSellPrice = card?.cardmarket?.prices?.averageSellPrice
 
       cardArray.push(
         <Card
-          id={card.id}
           name={card.name}
           image={card.images.large}
           setName={card.set.name}
           key={card.id}
-          price={price ? price : undefined}
+          averageSellPrice={averageSellPrice ? averageSellPrice : undefined}
           setLogo={card.set.images.logo}
+          setReleaseDate={card.set.releaseDate}
         />
       )
     })
