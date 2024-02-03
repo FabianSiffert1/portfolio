@@ -49,7 +49,7 @@ export default function Inventory() {
           key={card.id}
           averageSellPrice={averageSellPrice ? averageSellPrice : undefined}
           cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
-          setLogo={card.set.images.logo}
+          setSymbol={card.set.images.symbol}
           setReleaseDate={card.set.releaseDate}
         />
       )

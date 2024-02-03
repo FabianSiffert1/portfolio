@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 
-.cardInformationContainer {
+.cardInformationWrapper {
   display: flex;
   flex-direction: column;
   padding-top: 0.5rem;
@@ -30,18 +30,6 @@
   }
 }
 
-.cardBaseInformation {
-  display: grid;
-  height: auto;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-areas: "spacer cardName setLogo";
-
-}
-
-.spacer {
-  grid-area: spacer;
-}
 
 .cardName {
   font-size: 110%;
@@ -49,20 +37,46 @@
   grid-area: cardName;
 }
 
-.setLogo {
-  grid-area: setLogo;
-  justify-content: end;
-}
 
-
-.identifiers {
+.cardAdditionalInformation {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 0.3rem;
+
 }
 
-.setLogo img {
+.setNameAndSymbol {
+  display: grid;
+  height: auto;
+  width: 100%;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "releaseDate setName setSymbol";
 
-  width: 2rem;
+  .releaseDate {
+    grid-area: spacer;
+  }
+
+  .setName {
+    grid-area: setName;
+  }
+
+  .setName img {
+    padding-left: 0.3rem;
+    width: 1.3rem;
+  }
+
+  .setSymbol {
+    grid-area: setSymbol;
+    justify-content: end;
+  }
+
+
+  .setSymbol img {
+    width: 1.3rem;
+  }
 }
+
+

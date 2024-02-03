@@ -6,7 +6,7 @@ export interface CardProps {
   averageSellPrice?: number
   image?: string
   setReleaseDate?: string
-  setLogo?: string
+  setSymbol?: string
   setName?: string
   cardmarketLink?: string
 }
@@ -15,28 +15,34 @@ export default function Card(props: CardProps) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.card} style={props.image ? { backgroundImage: `url(${props.image})` } : undefined}></div>
-      <div className={styles.cardInformationContainer}>
-        {CardBaseInformationRow(props)}
-        {InformationColumn(props)}
+      <div className={styles.cardInformationWrapper}>
+        {CardNameAndSetLogo(props)}
+        {CardAdditionalInformation(props)}
       </div>
     </div>
   )
 }
 
-function CardBaseInformationRow(props: CardProps) {
+function CardNameAndSetLogo(props: CardProps) {
+  return <div className={styles.cardName}>{props.name ? props.name : null}</div>
+}
+
+function CardSetAndSymbol(props: CardProps) {
   return (
-    <div className={styles.cardBaseInformation}>
-      <span className={styles.spacer} />
-      <span className={styles.cardName}>{props.name ? props.name : null} </span>
-      <span className={styles.setLogo}>{props.setLogo ? <img src={props.setLogo} alt={'setLogo'} /> : null}</span>
+    <div className={styles.setNameAndSymbol}>
+      <span className={styles.setName}>
+        {props.setName ? props.setName : null}
+        {props.setSymbol ? <img src={props.setSymbol} alt={'setSymbol'} /> : null}
+      </span>
+      <span className={styles.setSymbol}></span>
     </div>
   )
 }
 
-function InformationColumn(props: CardProps) {
+function CardAdditionalInformation(props: CardProps) {
   return (
-    <div className={styles.identifiers}>
-      <span className={styles.setName}>{props.setName ? props.setName : null}</span>
+    <div className={styles.cardAdditionalInformation}>
+      {CardSetAndSymbol(props)}
       <span className={styles.setReleaseDate}>{props.setReleaseDate}</span>
       <span className={styles.cardPrice}>
         {props.cardmarketLink ? (
