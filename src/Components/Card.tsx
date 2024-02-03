@@ -7,7 +7,7 @@ export enum CardCategory {
 }
 
 export interface CardInterface {
-  id?: number
+  id?: string
   name?: string
   category?: CardCategory
   price?: number

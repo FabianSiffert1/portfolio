@@ -1,51 +1,68 @@
 import { useEffect, useState } from 'react'
 import Card, { CardCategory, CardInterface } from '../../Components/Card'
+import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
+import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import styles from './Inventory.module.scss'
 
 export default function Inventory() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
 
-  const [data, setData] = useState([])
+  const [cards, setCards] = useState<PokemonCard[]>([])
+  const [sets, setSets] = useState<PokemonSet[]>([])
+
   useEffect(() => {
     getAllCards()
+    getBaseSet()
   }, [])
-  const [isLoading, setLoading] = useState(true)
+  const [areCardsLoading, setCardsLoading] = useState(true)
+  const [areSetsLoading, setSetsLoading] = useState(true)
 
   const cardAmount = 2
   const cardArray = []
 
-  const getAllCards = () => {
-    pokemonTCGAPI.card.find('base1-4').then((fetchedData) => {
-      console.log(fetchedData.name)
-      setData(fetchedData)
-      setLoading(false)
+  const getBaseSet = () => {
+    pokemonTCGAPI.set.all({ q: 'series:base' }).then((sets: PokemonSet[]) => {
+      setSets(sets)
+      setSetsLoading(false)
     })
   }
 
-  if (isLoading) {
-    return <div className={styles.loadingState}>Fetching data...</div>
-  } else {
+  const getAllCards = () => {
+    pokemonTCGAPI.card.all({ q: 'name:charizard', orderBy: '-set.releaseDate' }).then((cards: PokemonCard[]) => {
+      setCards(cards.reverse())
+      setCardsLoading(false)
+    })
+  }
+
+  function createDummyCards() {
     const cardArrayResult = getCardArray(cardAmount)
-    cardArray.push(<Card id={data.id} name={data.name} />)
     for (let i = 0; i < cardArrayResult.length; i++) {
       cardArray.push(
         <Card id={i} category={cardArrayResult[i].category} name={cardArrayResult[i].name} price={cardArrayResult[i].price} key={i} />
       )
     }
   }
-  return (
-    <div className={styles.inventory}>
-      <div className={styles.cardList}>{cardArray}</div>
-    </div>
-  )
+
+  if (!areSetsLoading && !areCardsLoading) {
+    cards.forEach((card) => cardArray.push(<Card id={card.id} name={card.name} image={card.images.large} key={card.id} />))
+    createDummyCards()
+    return (
+      <div className={styles.inventory}>
+        {sets.length}
+        <div className={styles.cardList}>{cardArray}</div>
+      </div>
+    )
+  } else {
+    return <div className={styles.loadingState}>Fetching data...</div>
+  }
 }
 
 function getCardArray(amountOfCardsToGenerate: number): CardInterface[] {
   const cardHelperArray: CardInterface[] = []
   for (let i = 0; i < amountOfCardsToGenerate; i++) {
     cardHelperArray.push({
-      id: i,
+      id: i.toString(),
       category: randomEnum(CardCategory),
       name: `Name ${i}`,
       price: Math.floor(Math.random() * 100000) + 1
