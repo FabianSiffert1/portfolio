@@ -6,11 +6,16 @@ export enum CardCategory {
   EXPENSIVE = 'Expensive'
 }
 
-interface CardInterface {
+export interface CardInterface {
   id?: number
   name?: string
   category?: CardCategory
   price?: number
+}
+
+function getCurrencyAndConvertPrice() {
+  //TODO: implement correctly
+  return ' €'
 }
 
 export default function Card(props: CardInterface) {
@@ -20,7 +25,7 @@ export default function Card(props: CardInterface) {
       <div className={styles.cardInformationContainer}>
         <div className={styles.cardName}>{props.name ? props.name : null}</div>
         <div className={styles.cardDescription}>{props.category ? props.category : null}</div>
-        <div className={styles.cardPrice}>{props.price ? props.price : null}</div>
+        <div className={styles.cardPrice}>{props.price ? props.price.toString().concat(getCurrencyAndConvertPrice()) : null}</div>
       </div>
     </div>
   )
