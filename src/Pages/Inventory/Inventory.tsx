@@ -1,20 +1,38 @@
+import { useEffect, useState } from 'react'
 import Card, { CardCategory, CardInterface } from '../../Components/Card'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import styles from './Inventory.module.scss'
 
 export default function Inventory() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
-  pokemonTCGAPI.card.find('base1-4').then((card) => {
-    console.log(card.name)
-  })
-  const cardAmount = 200
-  const cardArray = []
-  const cardArrayResult = getCardArray(cardAmount)
 
-  for (let i = 0; i < cardArrayResult.length; i++) {
-    cardArray.push(
-      <Card id={i} category={cardArrayResult[i].category} name={cardArrayResult[i].name} price={cardArrayResult[i].price} key={i} />
-    )
+  const [data, setData] = useState([])
+  useEffect(() => {
+    getAllCards()
+  }, [])
+  const [isLoading, setLoading] = useState(true)
+
+  const cardAmount = 2
+  const cardArray = []
+
+  const getAllCards = () => {
+    pokemonTCGAPI.card.find('base1-4').then((fetchedData) => {
+      console.log(fetchedData.name)
+      setData(fetchedData)
+      setLoading(false)
+    })
+  }
+
+  if (isLoading) {
+    return <div className={styles.loadingState}>Fetching data...</div>
+  } else {
+    const cardArrayResult = getCardArray(cardAmount)
+    cardArray.push(<Card id={data.id} name={data.name} />)
+    for (let i = 0; i < cardArrayResult.length; i++) {
+      cardArray.push(
+        <Card id={i} category={cardArrayResult[i].category} name={cardArrayResult[i].name} price={cardArrayResult[i].price} key={i} />
+      )
+    }
   }
   return (
     <div className={styles.inventory}>
