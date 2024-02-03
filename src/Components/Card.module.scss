@@ -12,14 +12,16 @@
   display: flex;
   flex-direction: column;
   padding-top: 0.5rem;
+
+  * {
+    @include centeredFlexRow;
+  }
 }
 
 .cardName {
-  @include centeredFlexRow;
+  font-size: 110%;
   font-weight: bold;
 }
 
 .cardDescription {
-  @include centeredFlexRow;
-  font-size: 90%;
 }

@@ -6,7 +6,7 @@ export default function Inventory() {
   const cardArray = []
 
   for (let i = 0; i <= cardAmount; i++) {
-    cardArray.push(<Card id={i} category={CardCategory.MID} name={'Name'} />)
+    cardArray.push(<Card id={i} category={CardCategory.MID} name={'Name'} price={5000} />)
   }
 
   return (

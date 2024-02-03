@@ -10,6 +10,7 @@ interface CardInterface {
   id?: number
   name?: string
   category?: CardCategory
+  price?: number
 }
 
 export default function Card(props: CardInterface) {
@@ -19,6 +20,7 @@ export default function Card(props: CardInterface) {
       <div className={styles.cardInformationContainer}>
         <div className={styles.cardName}>{props.name ? props.name : null}</div>
         <div className={styles.cardDescription}>{props.category ? props.category : null}</div>
+        <div className={styles.cardPrice}>{props.price ? props.price : null}</div>
       </div>
     </div>
   )
