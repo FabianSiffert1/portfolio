@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Card.module.scss'
 
 export interface CardProps {
@@ -7,6 +8,7 @@ export interface CardProps {
   setReleaseDate?: string
   setLogo?: string
   setName?: string
+  cardmarketLink?: string
 }
 
 export default function Card(props: CardProps) {
@@ -36,7 +38,15 @@ function InformationColumn(props: CardProps) {
     <div className={styles.identifiers}>
       <span className={styles.setName}>{props.setName ? props.setName : null}</span>
       <span className={styles.setReleaseDate}>{props.setReleaseDate}</span>
-      <span className={styles.cardPrice}>{props.averageSellPrice}</span>
+      <span className={styles.cardPrice}>
+        {props.cardmarketLink ? (
+          <Link to={props.cardmarketLink} target='_blank' rel='noopener noreferrer'>
+            {props.averageSellPrice}
+          </Link>
+        ) : (
+          props.averageSellPrice
+        )}
+      </span>
     </div>
   )
 }

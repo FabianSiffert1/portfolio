@@ -25,15 +25,21 @@ export default function Inventory() {
   }
 
   const getAllCards = () => {
-    pokemonTCGAPI.card.all({ q: 'name:charizard', orderBy: '-set.releaseDate' }).then((cards: PokemonCard[]) => {
-      setCards(cards.reverse())
-      setCardsLoading(false)
-    })
+    pokemonTCGAPI.card
+      .all({
+        q: 'name:gengar',
+        orderBy: '-cardmarket.prices.trendPrice'
+      })
+      .then((cards: PokemonCard[]) => {
+        setCards(cards)
+        setCardsLoading(false)
+      })
   }
   const cardArray: ReactElement[] = []
   if (!areSetsLoading && !areCardsLoading) {
     cards.forEach((card) => {
-      const averageSellPrice = card?.cardmarket?.prices?.averageSellPrice
+      const averageSellPrice = card?.cardmarket?.prices?.trendPrice
+      const cardmarketLink = card?.cardmarket?.url
 
       cardArray.push(
         <Card
@@ -42,6 +48,7 @@ export default function Inventory() {
           setName={card.set.name}
           key={card.id}
           averageSellPrice={averageSellPrice ? averageSellPrice : undefined}
+          cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
           setLogo={card.set.images.logo}
           setReleaseDate={card.set.releaseDate}
         />
