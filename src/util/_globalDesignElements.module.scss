@@ -11,16 +11,12 @@ $standardBottomPadding: 2rem;
   padding-right: 3rem;
 }
 
-@mixin itemListContainer {
-  display: flex;
-  justify-content: center;
-}
 
 @mixin itemList {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 @mixin card {

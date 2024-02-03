@@ -1,13 +1,9 @@
 @import '../../util/globalDesignElements.module';
 
 .inventory {
-  @include itemListContainer;
+
 }
 
 .cardList {
   @include itemList;
-}
-
-.card {
-  @include card
 }
