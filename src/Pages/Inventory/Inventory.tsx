@@ -1,11 +1,12 @@
-import Card from '../../Components/Card'
+import Card, { CardCategory } from '../../Components/Card'
 import styles from './Inventory.module.scss'
 
 export default function Inventory() {
-  const cardAmount = 10
+  const cardAmount = 200
   const cardArray = []
+
   for (let i = 0; i <= cardAmount; i++) {
-    cardArray.push(<Card id={i} />)
+    cardArray.push(<Card id={i} category={CardCategory.MID} name={'Name'} />)
   }
 
   return (

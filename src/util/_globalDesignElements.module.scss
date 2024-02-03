@@ -1,6 +1,20 @@
 $smallScreen: 1180px;
 $standardBottomPadding: 2rem;
 
+@mixin centeredFlexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centeredFlexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin paddingTopBottom {
   padding-top: 2rem;
   padding-bottom: 2rem;

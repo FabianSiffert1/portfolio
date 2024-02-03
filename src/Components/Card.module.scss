@@ -1,5 +1,25 @@
 @import '../util/globalDesignElements.module';
 
+.cardContainer {
+
+}
+
 .card {
   @include card
+}
+
+.cardInformationContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+.cardName {
+  @include centeredFlexRow;
+  font-weight: bold;
+}
+
+.cardDescription {
+  @include centeredFlexRow;
+  font-size: 90%;
 }
