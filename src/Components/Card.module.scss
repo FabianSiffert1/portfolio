@@ -12,10 +12,9 @@
   background-size: contain;
   background-color: var(--card-background-color);
   border: 1px solid var(--card-border-color);
-  border-radius: 1rem;
+  border-radius: 1vw;
   aspect-ratio: 63 / 88;
   display: flex;
-  padding: 0.3rem;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -37,4 +36,16 @@
 }
 
 .cardDescription {
+}
+
+.identifiers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.setLogo img {
+
+  width: 2rem;
 }
