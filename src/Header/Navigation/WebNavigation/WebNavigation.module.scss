@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
   }
 
@@ -17,8 +17,7 @@
 
   li a {
     display: inline-block;
-    text-align: center;
-    padding: 1rem 1rem;
+    padding: 0 1rem 0 0;
     min-width: 3rem;
     text-decoration: none;
     color: inherit;

@@ -6,7 +6,9 @@ import Title from './Title/Title'
 export default function Header() {
   return (
     <div className={styles.header}>
-      <Title />
+      <div className={styles.Title}>
+        <Title />
+      </div>
       <div className={styles.mobileNavigation}>
         <MobileNavigation />
       </div>
