@@ -27,7 +27,7 @@ export default function Inventory() {
   const getAllCards = () => {
     pokemonTCGAPI.card
       .all({
-        q: 'name:gengar',
+        q: 'name:palkia',
         orderBy: '-cardmarket.prices.trendPrice'
       })
       .then((cards: PokemonCard[]) => {
@@ -38,7 +38,7 @@ export default function Inventory() {
   const cardArray: ReactElement[] = []
   if (!areSetsLoading && !areCardsLoading) {
     cards.forEach((card) => {
-      const averageSellPrice = card?.cardmarket?.prices?.trendPrice
+      const cardmarketPriceTrend = card?.cardmarket?.prices?.trendPrice
       const cardmarketLink = card?.cardmarket?.url
 
       cardArray.push(
@@ -47,7 +47,7 @@ export default function Inventory() {
           image={card.images.large}
           setName={card.set.name}
           key={card.id}
-          averageSellPrice={averageSellPrice ? averageSellPrice : undefined}
+          cardmarketPriceTrend={cardmarketPriceTrend ? cardmarketPriceTrend : undefined}
           cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
           setSymbol={card.set.images.symbol}
           setReleaseDate={card.set.releaseDate}

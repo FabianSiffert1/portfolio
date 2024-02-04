@@ -49,36 +49,25 @@
 }
 
 .setNameAndSymbol {
-  display: grid;
+  display: flex;
   height: auto;
   width: 100%;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: "releaseDate setName setSymbol";
-
-  .releaseDate {
-    grid-area: spacer;
-  }
 
   .setName {
-    grid-area: setName;
     text-align: center;
   }
 
   .setName img {
     padding-left: 0.3rem;
-    width: 1.3rem;
+    height: 1.3rem;
   }
 
-  .setSymbol {
-    grid-area: setSymbol;
-    justify-content: end;
-  }
-
-
-  .setSymbol img {
-    width: 1.3rem;
-  }
 }
 
+.releaseDate {
+  grid-area: spacer;
+}
+
+.cardPrices {
+}
 

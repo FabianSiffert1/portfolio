@@ -3,7 +3,7 @@ import styles from './Card.module.scss'
 
 export interface CardProps {
   name?: string
-  averageSellPrice?: number
+  cardmarketPriceTrend?: number
   image?: string
   setReleaseDate?: string
   setSymbol?: string
@@ -34,7 +34,6 @@ function CardSetAndSymbol(props: CardProps) {
         {props.setName ? props.setName : null}
         {props.setSymbol ? <img src={props.setSymbol} alt={'setSymbol'} /> : null}
       </span>
-      <span className={styles.setSymbol}></span>
     </div>
   )
 }
@@ -44,15 +43,17 @@ function CardAdditionalInformation(props: CardProps) {
     <div className={styles.cardAdditionalInformation}>
       {CardSetAndSymbol(props)}
       <span className={styles.setReleaseDate}>{props.setReleaseDate}</span>
-      <span className={styles.cardPrice}>
-        {props.cardmarketLink ? (
-          <Link to={props.cardmarketLink} target='_blank' rel='noopener noreferrer'>
-            {props.averageSellPrice}
-          </Link>
-        ) : (
-          props.averageSellPrice
-        )}
-      </span>
+      <div className={styles.cardPrices}>
+        <span className={styles.cardMarketPriceAndLink}>
+          {props.cardmarketLink ? (
+            <Link to={props.cardmarketLink} target='_blank' rel='noopener noreferrer'>
+              {props.cardmarketPriceTrend?.toString().concat(' €')}
+            </Link>
+          ) : (
+            props.cardmarketPriceTrend?.toString().concat(' €')
+          )}
+        </span>
+      </div>
     </div>
   )
 }
