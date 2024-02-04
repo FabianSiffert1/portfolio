@@ -4,18 +4,11 @@
 
 }
 
-.seriesList {
-  display: flex;
-  width: 100%;
-  height: 5rem;
+.header {
+  padding-bottom: 2rem;
 }
 
 .cardList {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 3rem;
-  row-gap: 2rem;
-  justify-content: center;
 }
 
 .loadingState {
