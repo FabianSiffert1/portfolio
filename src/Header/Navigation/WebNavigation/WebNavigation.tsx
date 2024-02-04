@@ -7,13 +7,13 @@ export default function WebNavigation() {
     <div className={styles.webNavigation}>
       <nav>
         <ul>
-          <li>
+          <li key={'inventory'}>
             <Link to={`/`}>Inventory</Link>
           </li>
-          <li>
+          <li key={'market'}>
             <Link to={`market`}>Market</Link>
           </li>
-          <li>
+          <li key={'themeToggle'}>
             <div className={styles.themeToggle}>
               <ThemeToggle />
             </div>
