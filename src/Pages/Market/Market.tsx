@@ -40,6 +40,8 @@ export default function Market() {
     cards.forEach((card) => {
       const cardmarketPriceTrend = card?.cardmarket?.prices?.trendPrice
       const cardmarketLink = card?.cardmarket?.url
+      const setReleaseDate = new Date(card?.set?.releaseDate)
+      const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
 
       cardArray.push(
         <Card
@@ -50,7 +52,7 @@ export default function Market() {
           cardmarketPriceTrend={cardmarketPriceTrend ? cardmarketPriceTrend : undefined}
           cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
           setSymbol={card.set.images.symbol}
-          setReleaseDate={card.set.releaseDate}
+          setReleaseDate={setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())}
         />
       )
     })
