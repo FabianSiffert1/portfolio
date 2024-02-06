@@ -18,8 +18,8 @@ export default function CardList(props: CardListProps) {
 
     cardArray.push(
       <Card
-        name={card.name}
-        image={card.images.large}
+        name={card.name.name}
+        image={card.images.small}
         setName={card.set.name}
         key={card.id}
         cardmarketPriceTrend={cardmarketPriceTrend ? cardmarketPriceTrend : undefined}

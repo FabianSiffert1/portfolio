@@ -30,10 +30,8 @@ function CardNameAndSetLogo(props: CardProps) {
 function CardSetAndSymbol(props: CardProps) {
   return (
     <div className={styles.setNameAndSymbol}>
-      <span className={styles.setName}>
-        {props.setName ? props.setName : null}
-        {props.setSymbol ? <img src={props.setSymbol} alt={'setSymbol'} /> : null}
-      </span>
+      {props.setName ? props.setName : null}
+      {props.setSymbol ? <img src={props.setSymbol} alt={'setSymbol'} /> : null}
     </div>
   )
 }

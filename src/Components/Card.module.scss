@@ -52,22 +52,21 @@
   display: flex;
   height: auto;
   width: 100%;
+  text-align: center;
+  padding-top: 1rem;
 
-  .setName {
-    text-align: center;
-  }
-
-  .setName img {
-    padding-left: 0.3rem;
-    height: 1.3rem;
+  img {
+    margin-left: 0.3rem;
+    max-height: 1rem;
   }
 
 }
 
-.releaseDate {
-  grid-area: spacer;
+.setReleaseDate {
+  padding-top: 0.3rem;
 }
 
 .cardPrices {
+  padding-top: 0.3rem;
 }
 
