@@ -15,10 +15,9 @@ export default function CardList(props: CardListProps) {
     const cardmarketLink = card?.cardmarket?.url
     const setReleaseDate = new Date(card?.set?.releaseDate)
     const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
-
     cardArray.push(
       <Card
-        name={card.name.name}
+        name={card.name}
         image={card.images.small}
         setName={card.set.name}
         key={card.id}

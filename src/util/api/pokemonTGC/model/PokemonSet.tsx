@@ -1,11 +1,7 @@
-export interface PokemonSetSeries {
-  series: string
-}
-
 export interface PokemonSet {
   id: string
   name: string
-  series: PokemonSetSeries
+  series: string
   printedTotal: number
   total: number
   legalities: {

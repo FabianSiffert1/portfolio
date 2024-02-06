@@ -1,10 +1,6 @@
-export interface PokemonName {
-  name: string
-}
-
 export interface PokemonCard {
   id: string
-  name: PokemonName
+  name: string
   supertype: string
   subtypes: string[]
   level: string

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { PokemonCard, PokemonName } from '../../util/api/pokemonTGC/model/PokemonCard'
+import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllSets, fetchCards } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
-import MarketHeader from './Header/MarketHeader'
 import styles from './Market.module.scss'
+import SetMenu from './SetMenu/SetMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
@@ -17,7 +17,7 @@ export default function Market() {
 
   useEffect(() => {
     //const pkmSetSeries: PokemonSetSeries = { series: 'Sun & Moon' }
-    const pkmName: PokemonName = { name: 'charizard' }
+    const pkmName = { name: 'charizard' }
     const getCardData = async () => {
       try {
         const result = await fetchCards(pkmName)
@@ -47,7 +47,7 @@ export default function Market() {
     return (
       <div className={styles.market}>
         <div className={styles.header}>
-          <MarketHeader pokemonSets={sets} />
+          <SetMenu pokemonSets={sets} />
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />
