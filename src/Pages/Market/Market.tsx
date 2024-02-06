@@ -30,7 +30,7 @@ export default function Market() {
     getCardData().then(() => {
       setCardsLoading(false)
     })
-    
+
     const getSetData = async () => {
       try {
         const result = await fetchAllSets()

@@ -1,11 +1,12 @@
 @import '../../util/globalDesignElements.module';
 
 .home {
-  @include paddingLeftRight;
   @include paddingTopBottom;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
+  @include paddingLeftRight;
+  @include paddingTopBottom
 }
 
 
@@ -16,6 +17,20 @@
   right: 0;
 }
 
-.page {
-  padding-top: 3rem;
+.header {
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}
+
+
+.pageContainer {
+  padding-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
 }

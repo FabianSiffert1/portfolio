@@ -16,7 +16,7 @@ export default function Home() {
       <div className={styles.header}>
         <Header />
       </div>
-      <div className={styles.page}>
+      <div className={styles.pageContainer}>
         <Outlet />
       </div>
       <div className={styles.footer}>

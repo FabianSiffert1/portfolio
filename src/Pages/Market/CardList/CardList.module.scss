@@ -1,6 +1,12 @@
+@import '../../../util/globalDesignElements.module';
+
 .cardList {
   display: flex;
   flex-wrap: wrap;
+  @media (min-width: $smallScreen) {
+    column-gap: 9rem;
+    row-gap: 7rem;
+  }
   column-gap: 3rem;
   row-gap: 2rem;
   justify-content: center;
