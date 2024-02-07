@@ -13,13 +13,16 @@ interface SetMenuProps {
 
 export default function SetMenu(props: SetMenuProps) {
   const [setMenuIsOpen, toggleSetMenu] = useState(false)
-  const [setsLoading, setSetsLoading] = useState(false)
+  const [cardsLoading, setCardsLoading] = useState(false)
   const [allSetsFromASeries, setAllSetsFromASeries] = useState<PokemonSet[]>([])
 
   function fetchAllCardsFromClickedPokemonSeries(pokemonSeries: string) {
+    setCardsLoading(true)
+    console.log('loading cards')
     fetchAllCardsFromASeries(pokemonSeries)
       .then((pokemonCards) => {
         props.setCardList(pokemonCards)
+        setCardsLoading(false)
       })
       .catch((error) => {
         console.error('Error fetching cards:', error)
@@ -28,37 +31,48 @@ export default function SetMenu(props: SetMenuProps) {
   }
 
   useEffect(() => {
-    setSetsLoading(true)
+    setCardsLoading(true)
     const getSetData = async () => {
       try {
         const result = await fetchAllSetsOfASeries(props.currentlySelectedPokemonSeries)
         setAllSetsFromASeries(result)
-        setSetsLoading(false)
+        setCardsLoading(false)
       } catch (error) {
         console.error('Error in Market - getSetData useEffect:', error)
       }
     }
 
-    getSetData().then(() => setSetsLoading(false))
+    getSetData().then(() => setCardsLoading(false))
   }, [props.currentlySelectedPokemonSeries])
 
   const setArray: ReactElement<PokemonSet>[] = []
   allSetsFromASeries.forEach((set) => {
-    setArray.push(<SetMenuItem setName={set.name} setCardList={props.setCardList} />)
+    setArray.push(
+      <SetMenuItem
+        key={set.name}
+        setName={set.name}
+        setCardList={props.setCardList}
+        setCardsLoading={setCardsLoading}
+        cardsLoading={cardsLoading}
+      />
+    )
   })
   return (
-    !setsLoading && (
-      <div className={styles.setMenu}>
-        <div
-          className={styles.currentSeries}
-          onClick={async () => {
-            fetchAllCardsFromClickedPokemonSeries(props.currentlySelectedPokemonSeries)
-          }}
-        >
-          Series: {props.currentlySelectedPokemonSeries}
-        </div>
-        <div className={styles.setList}>{setArray}</div>
+    <div className={styles.setMenu}>
+      {cardsLoading ? <div>Fetching Cards</div> : null}
+      <div
+        className={styles.currentSeries}
+        onClick={
+          !cardsLoading
+            ? async () => {
+                fetchAllCardsFromClickedPokemonSeries(props.currentlySelectedPokemonSeries)
+              }
+            : undefined
+        }
+      >
+        Series: {props.currentlySelectedPokemonSeries}
       </div>
-    )
+      <div className={styles.setList}>{setArray}</div>
+    </div>
   )
 }
