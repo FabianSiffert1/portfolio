@@ -14,7 +14,6 @@ interface SeriesMenuProps {
 
 export function SeriesMenuItem(props: SeriesMenuProps) {
   async function fetchSeries(pokemonSeries: string) {
-    console.log('Loading')
     props.setSeriesLoadingState(true)
     try {
       pokemonSeries = pokemonSeries.replace(/^(.*?)\s.*$/, '$1')

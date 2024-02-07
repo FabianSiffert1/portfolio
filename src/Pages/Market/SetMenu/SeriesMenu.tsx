@@ -15,15 +15,14 @@ export interface SeriesSet {
 }
 
 export default function SeriesMenu(props: SetMenuProps) {
-  const seriesArray: ReactElement<SeriesSet>[] = []
-  const pokemonSetSeriesSet = new Set<SeriesSet>()
-
   const [seriesLoading, setSeriesLoading] = useState(false)
   const setLoadingState = (isLoading: boolean) => {
     setSeriesLoading(isLoading)
   }
-  createSetMenuList(props.pokemonSets, pokemonSetSeriesSet, seriesArray, props.setCardList, setLoadingState, seriesLoading)
 
+  const seriesArray: ReactElement<SeriesSet>[] = []
+
+  createSetMenuList(props.pokemonSets, seriesArray, props.setCardList, setLoadingState, seriesLoading)
   return (
     <div className={styles.seriesMenuContainer}>
       <span className={styles.seriesMenu}>{seriesArray}</span>
@@ -34,12 +33,12 @@ export default function SeriesMenu(props: SetMenuProps) {
 
 function createSetMenuList(
   pokemonSets: PokemonSet[],
-  uniquePokemonSeriesMap: Record<string, string>,
   seriesArray: React.ReactElement<SeriesSet>[],
   setCardList: (newCardList: PokemonCard[]) => void,
   setSeriesLoadingState: (isLoading: boolean) => void,
   isSeriesLoading: boolean
 ) {
+  const uniquePokemonSeriesMap: Record<string, string> = {}
   pokemonSets.forEach((set) => {
     if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, set.series)) {
       uniquePokemonSeriesMap[set.series] = set.images.symbol
