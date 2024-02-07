@@ -12,7 +12,7 @@ export const fetchAllSets = async (): Promise<PokemonSet[]> => {
 }
 export const fetchAllSetsOfASeries = async (series: string): Promise<PokemonSet[]> => {
   try {
-    return await pokemonTCGAPI.set.all({ q: `series:${series}`, orderBy: 'releaseDate' })
+    return await pokemonTCGAPI.set.all({ q: `series:"${series}"`, orderBy: 'releaseDate' })
   } catch (error) {
     console.error('Error fetching sets:', error)
     return []
@@ -22,7 +22,7 @@ export const fetchAllSetsOfASeries = async (series: string): Promise<PokemonSet[
 export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({
-      q: `set.name:${setName}`,
+      q: `!set.name:"${setName}"`,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {
@@ -34,7 +34,7 @@ export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[
 export const fetchAllCardsOfASpecies = async (pokemonName: string): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({
-      q: `name:${pokemonName}`,
+      q: `name:"${pokemonName}"`,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {
@@ -44,10 +44,9 @@ export const fetchAllCardsOfASpecies = async (pokemonName: string): Promise<Poke
 }
 
 export const fetchAllCardsFromASeries = async (pokemonSeries: string): Promise<PokemonCard[]> => {
-  pokemonSeries = pokemonSeries.replace(/^(.*?)\s.*$/, '$1')
   try {
     return await pokemonTCGAPI.card.all({
-      q: `set.series:${pokemonSeries} `,
+      q: `!set.series:"${pokemonSeries}"`,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {
