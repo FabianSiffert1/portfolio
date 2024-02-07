@@ -1,8 +1,8 @@
 import React, { ReactElement, useState } from 'react'
 import { PokemonCard } from '../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../../util/api/pokemonTGC/model/PokemonSet'
-import { SeriesMenuItem } from './MenuItem/SeriesMenuItem'
 import styles from './SeriesMenu.module.scss'
+import { SeriesMenuItem } from './SeriesMenuItem/SeriesMenuItem'
 
 interface SetMenuProps {
   pokemonSets: PokemonSet[]

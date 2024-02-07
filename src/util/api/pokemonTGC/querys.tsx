@@ -2,7 +2,7 @@ import { PokemonCard } from './model/PokemonCard'
 import { PokemonSet } from './model/PokemonSet'
 import pokemonTCGAPI from './pokemonTCGAPI'
 
-export const fetchAllSets = async (series?: string): Promise<PokemonSet[]> => {
+export const fetchAllSetsFromASeries = async (series?: string): Promise<PokemonSet[]> => {
   try {
     return await pokemonTCGAPI.set.all({ q: series ? series : undefined, orderBy: 'releaseDate' })
   } catch (error) {
@@ -11,11 +11,24 @@ export const fetchAllSets = async (series?: string): Promise<PokemonSet[]> => {
   }
 }
 
-export async function fetchCards(pokemonName?: string): Promise<PokemonCard[]> {
+export const fetchAllCardsOfASpecies = async (pokemonName?: string): Promise<PokemonCard[]> => {
   const pokemonNameQuery = pokemonName ? `name:${pokemonName.name} ` : ' '
   try {
     return await pokemonTCGAPI.card.all({
       q: `${pokemonNameQuery} `,
+      orderBy: '-cardmarket.prices.trendPrice'
+    })
+  } catch (error) {
+    console.error('Error fetching cards:', error)
+    return []
+  }
+}
+
+export const fetchAllCardsFromASeries = async (pokemonSeries: string): Promise<PokemonCard[]> => {
+  pokemonSeries = pokemonSeries.replace(/^(.*?)\s.*$/, '$1')
+  try {
+    return await pokemonTCGAPI.card.all({
+      q: `set.series:${pokemonSeries} `,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {

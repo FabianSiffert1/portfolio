@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
-import { fetchAllSets, fetchCards } from '../../util/api/pokemonTGC/querys'
+import { fetchAllCardsOfASpecies, fetchAllSetsFromASeries } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
-import SeriesMenu from './SetMenu/SeriesMenu'
+import SeriesMenu from './SeriesMenu/SeriesMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
@@ -21,10 +21,10 @@ export default function Market() {
 
   useEffect(() => {
     //const pkmSetSeries: PokemonSetSeries = { series: 'Sun & Moon' }
-    const pkmName = { name: 'charizard' }
+    const pkmName = { name: 'pikachu' }
     const getCardData = async () => {
       try {
-        const result = await fetchCards(pkmName)
+        const result = await fetchAllCardsOfASpecies(pkmName)
         setCards(result)
       } catch (error) {
         console.error('Error in Market - getCardData useEffect:', error)
@@ -37,7 +37,7 @@ export default function Market() {
 
     const getSetData = async () => {
       try {
-        const result = await fetchAllSets()
+        const result = await fetchAllSetsFromASeries()
         setSets(result)
       } catch (error) {
         console.error('Error in Market - getSetData useEffect:', error)
