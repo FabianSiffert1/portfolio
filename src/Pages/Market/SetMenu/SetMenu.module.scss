@@ -1,5 +1,16 @@
 .setMenu {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 0.3rem;
+  
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+
+  img {
+    padding-left: 0.5rem;
+    max-height: 1rem;
+  }
 }

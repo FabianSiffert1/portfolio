@@ -16,7 +16,7 @@ export async function fetchCards(pokemonName?: PokemonName): Promise<PokemonCard
   const pokemonNameQuery = pokemonName ? `name:${pokemonName.name} ` : ' '
   try {
     return await pokemonTCGAPI.card.all({
-      q: `${pokemonNameQuery}`,
+      q: `${pokemonNameQuery} `,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {
