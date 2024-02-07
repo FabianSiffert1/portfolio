@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from 'react'
-import { PokemonCard } from '../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet } from '../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
+import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import styles from './SeriesMenu.module.scss'
 import { SeriesMenuItem } from './SeriesMenuItem/SeriesMenuItem'
 
@@ -72,8 +72,11 @@ export default function SeriesMenu(props: SetMenuProps) {
             <div className={styles.patty} />
           </span>
           {menuIsOpen && (
-            <div className={styles.seriesMenu} onClick={toggleOpen}>
-              {seriesArray}
+            <div className={styles.seriesMenuWrapper}>
+              <div className={styles.overlay} onClick={toggleOpen} />
+              <div className={styles.seriesMenu} onClick={toggleOpen}>
+                {seriesArray}
+              </div>
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
-import { fetchAllCardsFromASeries } from '../../../../util/api/pokemonTGC/querys'
+import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
+import { fetchAllCardsFromASeries } from '../../../../../util/api/pokemonTGC/querys'
 import styles from './SeriesMenuItem.module.scss'
 
 interface SeriesMenuProps {
