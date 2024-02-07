@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react'
+import { LoadingSpinner } from '../../../../Components/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllCardsFromASeries, fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
@@ -59,7 +60,11 @@ export default function SetMenu(props: SetMenuProps) {
   })
   return (
     <div className={styles.setMenu}>
-      {cardsLoading ? <div>Fetching Cards</div> : null}
+      {cardsLoading ? (
+        <div className={styles.loadingState}>
+          <LoadingSpinner />
+        </div>
+      ) : undefined}
       <div
         className={styles.currentSeries}
         onClick={

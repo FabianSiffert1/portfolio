@@ -8,8 +8,15 @@
   cursor: pointer;
 }
 
+.loadingState {
+  position: fixed;
+  top: 16%;
+  right: 5%;
+}
+
 .setList {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   padding-top: 1rem;
   gap: 1rem;
