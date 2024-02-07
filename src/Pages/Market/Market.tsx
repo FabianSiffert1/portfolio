@@ -5,7 +5,7 @@ import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllCardsOfASpecies, fetchAllSetsFromASeries } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
-import SeriesMenu from './SeriesMenu/SeriesMenu'
+import SeriesMenu from './SideBar/SeriesMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
@@ -20,11 +20,9 @@ export default function Market() {
   }
 
   useEffect(() => {
-    //const pkmSetSeries: PokemonSetSeries = { series: 'Sun & Moon' }
-    const pkmName = { name: 'pikachu' }
     const getCardData = async () => {
       try {
-        const result = await fetchAllCardsOfASpecies(pkmName)
+        const result = await fetchAllCardsOfASpecies('pikachu')
         setCards(result)
       } catch (error) {
         console.error('Error in Market - getCardData useEffect:', error)
@@ -55,7 +53,6 @@ export default function Market() {
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />
-          <pre>{JSON.stringify(cards, null, 2)}</pre>
         </div>
       </div>
     )

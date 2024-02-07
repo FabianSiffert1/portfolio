@@ -1,9 +1,8 @@
 .seriesMenuItem {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  padding: 0.5rem;
+  justify-content: start;
   border-radius: 1rem;
   flex: 1;
   cursor: pointer;
@@ -14,7 +13,7 @@
   align-items: center;
 
   img {
-    max-height: 0.8rem;
+    max-height: 2rem;
     max-width: 2rem;
   }
 }
@@ -22,7 +21,7 @@
 .seriesName {
   flex-shrink: inherit;
   text-align: center;
-  font-size: 120%;
+  font-size: 100%;
   overflow: hidden;
   text-decoration: underline;
 }

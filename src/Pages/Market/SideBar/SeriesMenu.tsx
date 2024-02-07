@@ -14,23 +14,6 @@ export interface SeriesSet {
   symbol: string
 }
 
-export default function SeriesMenu(props: SetMenuProps) {
-  const [seriesLoading, setSeriesLoading] = useState(false)
-  const setLoadingState = (isLoading: boolean) => {
-    setSeriesLoading(isLoading)
-  }
-
-  const seriesArray: ReactElement<SeriesSet>[] = []
-
-  createSetMenuList(props.pokemonSets, seriesArray, props.setCardList, setLoadingState, seriesLoading)
-  return (
-    <div className={styles.seriesMenuContainer}>
-      <span className={styles.seriesMenu}>{seriesArray}</span>
-      {seriesLoading && <span className={styles.seriesLoadingIndicator}>Fetching Cards...</span>}
-    </div>
-  )
-}
-
 function createSetMenuList(
   pokemonSets: PokemonSet[],
   seriesArray: React.ReactElement<SeriesSet>[],
@@ -62,4 +45,39 @@ function createSetMenuList(
     )
     id++
   })
+}
+
+export default function SeriesMenu(props: SetMenuProps) {
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [seriesLoading, setSeriesLoading] = useState(false)
+  const setLoadingState = (isLoading: boolean) => {
+    setSeriesLoading(isLoading)
+  }
+  const toggleOpen = () => {
+    setMenuIsOpen(!menuIsOpen)
+  }
+
+  const seriesArray: ReactElement<SeriesSet>[] = []
+
+  createSetMenuList(props.pokemonSets, seriesArray, props.setCardList, setLoadingState, seriesLoading)
+  return (
+    <>
+      {seriesLoading && <div className={styles.seriesLoadingIndicator}>Fetching Cards...</div>}
+
+      {!seriesLoading && (
+        <div className={styles.seriesMenuContainer}>
+          <span className={styles.burger} onClick={toggleOpen}>
+            <div className={styles.patty} />
+            <div className={styles.patty} />
+            <div className={styles.patty} />
+          </span>
+          {menuIsOpen && (
+            <div className={styles.seriesMenu} onClick={toggleOpen}>
+              {seriesArray}
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  )
 }

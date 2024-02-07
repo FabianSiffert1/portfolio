@@ -11,11 +11,10 @@ export const fetchAllSetsFromASeries = async (series?: string): Promise<PokemonS
   }
 }
 
-export const fetchAllCardsOfASpecies = async (pokemonName?: string): Promise<PokemonCard[]> => {
-  const pokemonNameQuery = pokemonName ? `name:${pokemonName.name} ` : ' '
+export const fetchAllCardsOfASpecies = async (pokemonName: string): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({
-      q: `${pokemonNameQuery} `,
+      q: `name:${pokemonName}`,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {

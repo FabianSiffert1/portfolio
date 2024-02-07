@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
-import Card from '../../../Components/Card'
 import { PokemonCard } from '../../../util/api/pokemonTGC/model/PokemonCard'
 import styles from './CardList.module.scss'
+import Card from './components/Card'
 
 export interface CardListProps {
   cards: PokemonCard[]
@@ -40,10 +40,5 @@ export default function CardList(props: CardListProps) {
     )
   })
 
-  return (
-    <div className={styles.cardList}>
-      {cardArray.length}
-      {cardArray}
-    </div>
-  )
+  return <div className={styles.cardList}>{cardArray}</div>
 }
