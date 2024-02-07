@@ -1,4 +1,11 @@
-.setMenu {
+.seriesMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seriesMenu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,4 +18,9 @@
   @media (min-width: 1536px) {
     max-width: 1536px;
   }
+}
+
+.seriesLoadingIndicator {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
