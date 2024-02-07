@@ -6,6 +6,7 @@ import { fetchAllCardsOfASpecies, fetchAllSetsFromASeries } from '../../util/api
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
 import SeriesMenu from './SideBar/SeriesMenu/SeriesMenu'
+import SetMenu from './SideBar/SetMenu/SetMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
@@ -14,9 +15,17 @@ export default function Market() {
   const [sets, setSets] = useState<PokemonSet[]>([])
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
+  const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
+  const [currentPokemonSeries, setCurrentPokemonSeries] = useState<string>('')
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
+  }
+  const toggleSetMenu = () => {
+    toggleSetMenuOpen(!setMenuIsOpen)
+  }
+  const currentlySelectedPokemonSeries = (newPokemonSetList: string) => {
+    setCurrentPokemonSeries(newPokemonSetList)
   }
 
   useEffect(() => {
@@ -49,7 +58,13 @@ export default function Market() {
     return (
       <div className={styles.market}>
         <div className={styles.header}>
-          <SeriesMenu pokemonSets={sets} setCardList={setCardList} />
+          <SeriesMenu
+            pokemonSets={sets}
+            setCardList={setCardList}
+            openSetMenu={toggleSetMenu}
+            setCurrentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+          />
+          <SetMenu currentlySelectedPokemonSeries={currentPokemonSeries} toggleSetMenu={toggleSetMenu} />
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />

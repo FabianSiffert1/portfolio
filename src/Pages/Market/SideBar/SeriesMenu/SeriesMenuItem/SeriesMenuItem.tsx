@@ -10,6 +10,7 @@ interface SeriesMenuProps {
   setCardList: (newCardList: PokemonCard[]) => void
   setSeriesLoadingState: (isSeriesLoading: boolean) => void
   isSeriesLoading: boolean
+  setCurrentlySelectedPokemonSeries: (setCurrentlySelectedPokemonSeries: string) => void
 }
 
 export function SeriesMenuItem(props: SeriesMenuProps) {
@@ -30,13 +31,10 @@ export function SeriesMenuItem(props: SeriesMenuProps) {
     <div
       key={props.seriesName}
       className={styles.seriesMenuItem}
-      onClick={
-        !props.isSeriesLoading
-          ? async () => {
-              fetchAllCardsFromClickedPokemonSeries(props.seriesName)
-            }
-          : undefined
-      }
+      onClick={() => {
+        console.log(props.seriesName)
+        props.setCurrentlySelectedPokemonSeries(props.seriesName)
+      }}
     >
       <span className={styles.seriesImage}>
         <img src={props.seriesSymbol} alt={props.seriesName} />
