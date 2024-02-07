@@ -20,20 +20,21 @@ export default function CardList(props: CardListProps) {
     card: PokemonCard
   }[] = Object.entries(uniquePokemonSeriesMap).map(([cardName, card]) => ({ cardName, card }))
 
-  uniqueCardArray.forEach((card) => {
-    const cardmarketPriceTrend = card?.card.cardmarket?.prices?.trendPrice
-    const cardmarketLink = card?.card.cardmarket?.url
-    const setReleaseDate = new Date(card.card?.set?.releaseDate)
+  uniqueCardArray.forEach((cardObject) => {
+    const card = cardObject.card
+    const cardmarketPriceTrend = card?.cardmarket?.prices?.trendPrice
+    const cardmarketLink = card?.cardmarket?.url
+    const setReleaseDate = new Date(card?.set?.releaseDate)
     const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
     cardArray.push(
       <Card
-        name={card.card.name}
-        image={card.card.images.small}
-        setName={card.card.set.name}
-        key={card.card.id}
+        name={card.name}
+        image={card.images.small}
+        setName={card.set.name}
+        key={card.id}
         cardmarketPriceTrend={cardmarketPriceTrend ? cardmarketPriceTrend : undefined}
         cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
-        setSymbol={card.card.set.images.symbol}
+        setSymbol={card.set.images.symbol}
         setReleaseDate={setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())}
       />
     )
