@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../../../util/api/pokemonTGC/pokemonTCGAPI'
@@ -17,21 +17,18 @@ export interface SeriesMenuProps {
 }
 
 function SeriesMenuItem(props: SeriesMenuProps) {
-  const handleClick = (cardList: PokemonCard[]) => {
-    props.setCardList(cardList)
-  }
+  const [seriesLoading, setSeriesLoading] = useState(false)
 
   async function fetchSeries(pokemonSeries: string) {
+    setSeriesLoading(true)
     try {
-      console.log('CLICK')
+      pokemonSeries = pokemonSeries.replace(/^(.*?)\s.*$/, '$1')
       const cardList: PokemonCard[] = await pokemonTCGAPI.card.all({
-        q: `!set.series:${pokemonSeries}`,
+        q: `set.series:${pokemonSeries}`,
         orderBy: '-cardmarket.prices.trendPrice'
       })
-      cardList.forEach((card) => {
-        console.log(card.name)
-      })
-      handleClick(cardList)
+      props.setCardList(cardList)
+      setSeriesLoading(false)
     } catch (error) {
       console.error('Error fetching cards:', error)
       return []
@@ -50,6 +47,7 @@ function SeriesMenuItem(props: SeriesMenuProps) {
         <img src={props.seriesSymbol} alt={props.seriesName} />
       </span>
       <span className={styles.seriesName}>{props.seriesName}</span>
+      {seriesLoading ? <span className={styles.seriesLoading}>Fetching Cards....</span> : undefined}
     </div>
   )
 }
