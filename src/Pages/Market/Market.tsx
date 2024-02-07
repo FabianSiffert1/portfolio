@@ -5,7 +5,7 @@ import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllSets, fetchCards } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
-import SetMenu from './SetMenu/SetMenu'
+import SeriesMenu from './SetMenu/SeriesMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
@@ -14,6 +14,10 @@ export default function Market() {
   const [sets, setSets] = useState<PokemonSet[]>([])
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
+
+  const setCardList = (newCardList: PokemonCard[]) => {
+    setCards(newCardList)
+  }
 
   useEffect(() => {
     //const pkmSetSeries: PokemonSetSeries = { series: 'Sun & Moon' }
@@ -47,7 +51,7 @@ export default function Market() {
     return (
       <div className={styles.market}>
         <div className={styles.header}>
-          <SetMenu pokemonSets={sets} />
+          <SeriesMenu pokemonSets={sets} setCardList={setCardList} />
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />

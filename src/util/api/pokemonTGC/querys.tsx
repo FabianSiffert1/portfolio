@@ -1,9 +1,8 @@
-import { PokemonCard, PokemonName } from './model/PokemonCard'
-import { PokemonSet, PokemonSetSeries } from './model/PokemonSet'
+import { PokemonCard } from './model/PokemonCard'
+import { PokemonSet } from './model/PokemonSet'
 import pokemonTCGAPI from './pokemonTCGAPI'
 
-//TODO: add order Parameter and Order interface
-export const fetchAllSets = async (series?: PokemonSetSeries): Promise<PokemonSet[]> => {
+export const fetchAllSets = async (series?: string): Promise<PokemonSet[]> => {
   try {
     return await pokemonTCGAPI.set.all({ q: series ? series : undefined, orderBy: 'releaseDate' })
   } catch (error) {
@@ -12,7 +11,7 @@ export const fetchAllSets = async (series?: PokemonSetSeries): Promise<PokemonSe
   }
 }
 
-export async function fetchCards(pokemonName?: PokemonName): Promise<PokemonCard[]> {
+export async function fetchCards(pokemonName?: string): Promise<PokemonCard[]> {
   const pokemonNameQuery = pokemonName ? `name:${pokemonName.name} ` : ' '
   try {
     return await pokemonTCGAPI.card.all({

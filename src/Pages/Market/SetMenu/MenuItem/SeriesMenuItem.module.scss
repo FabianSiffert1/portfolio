@@ -1,0 +1,28 @@
+.seriesMenuItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  flex: 1;
+  cursor: pointer;
+}
+
+.seriesImage {
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-height: 0.8rem;
+    max-width: 2rem;
+  }
+}
+
+.seriesName {
+  flex-shrink: inherit;
+  text-align: center;
+  font-size: 120%;
+  overflow: hidden;
+  text-decoration: underline;
+}

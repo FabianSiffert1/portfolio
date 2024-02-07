@@ -1,0 +1,14 @@
+.setMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3rem;
+  row-gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}
