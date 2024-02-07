@@ -1,4 +1,17 @@
 .setMenu {
-  width: 10rem;
-  height: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.currentSeries {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.setList {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+  gap: 1rem;
+  text-align: center;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
-import { fetchAllCardsOfASpecies, fetchAllSetsFromASeries } from '../../util/api/pokemonTGC/querys'
+import { fetchAllCardsOfASpecies, fetchAllSets } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
 import SeriesMenu from './SideBar/SeriesMenu/SeriesMenu'
@@ -16,7 +16,7 @@ export default function Market() {
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
-  const [currentPokemonSeries, setCurrentPokemonSeries] = useState<string>('')
+  const [currentPokemonSeries, setCurrentPokemonSeries] = useState<string>('Base')
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
@@ -44,7 +44,7 @@ export default function Market() {
 
     const getSetData = async () => {
       try {
-        const result = await fetchAllSetsFromASeries()
+        const result = await fetchAllSets()
         setSets(result)
       } catch (error) {
         console.error('Error in Market - getSetData useEffect:', error)
@@ -64,7 +64,7 @@ export default function Market() {
             openSetMenu={toggleSetMenu}
             setCurrentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
           />
-          <SetMenu currentlySelectedPokemonSeries={currentPokemonSeries} toggleSetMenu={toggleSetMenu} />
+          <SetMenu currentlySelectedPokemonSeries={currentPokemonSeries} toggleSetMenu={toggleSetMenu} setCardList={setCardList} />
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />

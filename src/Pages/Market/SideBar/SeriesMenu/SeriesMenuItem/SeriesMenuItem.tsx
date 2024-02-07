@@ -1,6 +1,5 @@
 import React from 'react'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
-import { fetchAllCardsFromASeries } from '../../../../../util/api/pokemonTGC/querys'
 import styles from './SeriesMenuItem.module.scss'
 
 interface SeriesMenuProps {
@@ -14,25 +13,11 @@ interface SeriesMenuProps {
 }
 
 export function SeriesMenuItem(props: SeriesMenuProps) {
-  function fetchAllCardsFromClickedPokemonSeries(pokemonSeries: string) {
-    props.setSeriesLoadingState(true)
-    fetchAllCardsFromASeries(pokemonSeries)
-      .then((pokemonCards) => {
-        props.setCardList(pokemonCards)
-        props.setSeriesLoadingState(false)
-      })
-      .catch((error) => {
-        console.error('Error fetching cards:', error)
-        return []
-      })
-  }
-
   return (
     <div
       key={props.seriesName}
       className={styles.seriesMenuItem}
       onClick={() => {
-        console.log(props.seriesName)
         props.setCurrentlySelectedPokemonSeries(props.seriesName)
       }}
     >
