@@ -13,8 +13,9 @@ const getOptions = () => {
   return options
 }
 
-const get = (type, args) => {
-  return axios.get(`${configuration.host}/${type}${args && '?' + qs.stringify(args)}`, getOptions()).then((response) => response.data)
+const get = async (type, args) => {
+  const response = await axios.get(`${configuration.host}/${type}${args && '?' + qs.stringify(args)}`, getOptions())
+  return response.data
 }
 
 export default (type: string) => ({

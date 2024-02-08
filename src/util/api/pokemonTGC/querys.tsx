@@ -32,17 +32,36 @@ export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[
 }
 
 export const fetchSpecies = async (speciesName: string, setName?: string): Promise<PokemonCard[]> => {
+  const argumentIsValidRegex = /[a-z0-9]/i
+  const speciesNameIsValid = argumentIsValidRegex.test(speciesName) && /\S/.test(speciesName)
   let args: object
-  if (setName == undefined) {
-    args = {
-      q: `name:"${speciesName}"`,
-      orderBy: '-cardmarket.prices.trendPrice'
-    }
-  } else {
-    args = {
-      q: `name:"${speciesName}" set.name:"${setName}"`,
-      orderBy: '-cardmarket.prices.trendPrice'
-    }
+  let setNameisValid = false
+  let queryParameter = ''
+
+  if (typeof setName === 'string') {
+    setNameisValid = argumentIsValidRegex.test(setName) && /\S/.test(setName)
+  }
+
+  switch (speciesNameIsValid) {
+    case true:
+      queryParameter = `name:"${speciesName}"`
+      break
+    case false:
+      queryParameter = `name:"charizard"`
+      break
+  }
+  switch (setNameisValid && typeof setName != 'undefined') {
+    case true:
+      queryParameter = queryParameter + ` set.name:"${setName}"`
+      break
+    case false:
+      break
+  }
+  args = {
+    q: `${queryParameter}`,
+    orderBy: '-cardmarket.prices.trendPrice',
+    pageSize: 250,
+    page: 0
   }
   try {
     return await pokemonTCGAPI.card.all(args)

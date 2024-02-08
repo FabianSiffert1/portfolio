@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react'
-import { LoadingSpinner } from '../../../../Components/LoadingSpinner'
+import { LoadingSpinner } from '../../../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllCardsFromASeries, fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'

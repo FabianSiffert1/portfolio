@@ -31,7 +31,7 @@ export default function Market() {
   useEffect(() => {
     const getCardData = async () => {
       try {
-        const result = await fetchSpecies('chari*', 'bas*')
+        const result = await fetchSpecies('Charizard', 'base')
         setCards(result)
       } catch (error) {
         console.error('Error in Market - getCardData useEffect:', error)
