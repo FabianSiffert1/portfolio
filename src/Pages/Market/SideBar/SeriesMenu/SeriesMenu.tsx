@@ -8,7 +8,7 @@ interface SetMenuProps {
   pokemonSets: PokemonSet[]
   setCardList: (newCardList: PokemonCard[]) => void
   setCurrentlySelectedPokemonSeries: (currentlySelectSeries: string) => void
-  openSetMenu: () => void
+  toggleSetMenu: (setOpen: boolean) => void
 }
 
 export interface SeriesSet {
@@ -49,6 +49,7 @@ export default function SeriesMenu(props: SetMenuProps) {
         setCardList={props.setCardList}
         setSeriesLoadingState={setLoadingState}
         isSeriesLoading={seriesLoading}
+        toggleSetMenu={props.toggleSetMenu}
         setCurrentlySelectedPokemonSeries={props.setCurrentlySelectedPokemonSeries}
       />
     )

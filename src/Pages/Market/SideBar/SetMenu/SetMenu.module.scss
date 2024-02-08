@@ -1,11 +1,8 @@
-.setMenu {
+@import '../../../../util/ui/globalDesignElements.module';
+
+.setMenuContainer {
   display: flex;
   flex-direction: column;
-}
-
-.currentSeries {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .loadingState {
@@ -14,11 +11,25 @@
   right: 1.5rem;
 }
 
-.setList {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding-top: 1rem;
-  gap: 1rem;
-  text-align: center;
+
+.popUpSetMenuWrapper {
+}
+
+
+.overlay {
+  background-color: #626264;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120vw;
+  height: 120vh;
+  opacity: 30%;
+}
+
+.currentSeries {
+  @include popUpMenuMixin
+}
+
+.setMenu {
+  @include popUpMenuMixin
 }

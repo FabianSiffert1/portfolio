@@ -10,6 +10,7 @@ interface SeriesMenuProps {
   setSeriesLoadingState: (isSeriesLoading: boolean) => void
   isSeriesLoading: boolean
   setCurrentlySelectedPokemonSeries: (setCurrentlySelectedPokemonSeries: string) => void
+  toggleSetMenu: (setOpen: boolean) => void
 }
 
 export function SeriesMenuItem(props: SeriesMenuProps) {
@@ -19,6 +20,7 @@ export function SeriesMenuItem(props: SeriesMenuProps) {
       className={styles.seriesMenuItem}
       onClick={() => {
         props.setCurrentlySelectedPokemonSeries(props.seriesName)
+        props.toggleSetMenu(true)
       }}
     >
       <span className={styles.seriesImage}>

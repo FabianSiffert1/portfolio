@@ -1,35 +1,21 @@
-import { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
-import { fetchAllCardsFromASeries, fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
+import { fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
 import styles from './SetMenu.module.scss'
 import SetMenuItem from './SetMenuItem/SetMenuItem'
 
 interface SetMenuProps {
   currentlySelectedPokemonSeries: string
-  toggleSetMenu: () => void
+  toggleSetMenu: (setOpen: boolean) => void
+  setMenuIsOpen: boolean
   setCardList: (newCardList: PokemonCard[]) => void
 }
 
 export default function SetMenu(props: SetMenuProps) {
-  const [setMenuIsOpen, toggleSetMenu] = useState(false)
   const [cardsLoading, setCardsLoading] = useState(false)
   const [allSetsFromASeries, setAllSetsFromASeries] = useState<PokemonSet[]>([])
-
-  function fetchAllCardsFromClickedPokemonSeries(pokemonSeries: string) {
-    setCardsLoading(true)
-    console.log('loading cards')
-    fetchAllCardsFromASeries(pokemonSeries)
-      .then((pokemonCards) => {
-        props.setCardList(pokemonCards)
-        setCardsLoading(false)
-      })
-      .catch((error) => {
-        console.error('Error fetching cards:', error)
-        return []
-      })
-  }
 
   useEffect(() => {
     setCardsLoading(true)
@@ -59,25 +45,21 @@ export default function SetMenu(props: SetMenuProps) {
     )
   })
   return (
-    <div className={styles.setMenu}>
+    <div className={styles.setMenuContainer}>
       {cardsLoading ? (
         <div className={styles.loadingState}>
           <LoadingSpinner />
         </div>
       ) : undefined}
-      <div
-        className={styles.currentSeries}
-        onClick={
-          !cardsLoading
-            ? async () => {
-                fetchAllCardsFromClickedPokemonSeries(props.currentlySelectedPokemonSeries)
-              }
-            : undefined
-        }
-      >
-        Series: {props.currentlySelectedPokemonSeries}
-      </div>
-      <div className={styles.setList}>{setArray}</div>
+      {props.setMenuIsOpen ? (
+        <div className={styles.popUpSetMenuWrapper}>
+          <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
+          <div className={styles.currentSeries}>{props.currentlySelectedPokemonSeries}</div>
+          <div className={styles.setMenu} onClick={() => props.toggleSetMenu(false)}>
+            {setArray}
+          </div>
+        </div>
+      ) : undefined}
     </div>
   )
 }

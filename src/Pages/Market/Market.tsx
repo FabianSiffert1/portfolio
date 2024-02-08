@@ -21,8 +21,8 @@ export default function Market() {
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
   }
-  const toggleSetMenu = () => {
-    toggleSetMenuOpen(!setMenuIsOpen)
+  const toggleSetMenu = (setOpen: boolean) => {
+    toggleSetMenuOpen(setOpen)
   }
   const currentlySelectedPokemonSeries = (newPokemonSetList: string) => {
     setCurrentPokemonSeries(newPokemonSetList)
@@ -61,10 +61,15 @@ export default function Market() {
           <SeriesMenu
             pokemonSets={sets}
             setCardList={setCardList}
-            openSetMenu={toggleSetMenu}
+            toggleSetMenu={toggleSetMenu}
             setCurrentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
           />
-          <SetMenu currentlySelectedPokemonSeries={currentPokemonSeries} toggleSetMenu={toggleSetMenu} setCardList={setCardList} />
+          <SetMenu
+            currentlySelectedPokemonSeries={currentPokemonSeries}
+            toggleSetMenu={toggleSetMenu}
+            setMenuIsOpen={setMenuIsOpen}
+            setCardList={setCardList}
+          />
         </div>
         <div className={styles.cardList}>
           <CardList cards={cards} />

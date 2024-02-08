@@ -22,19 +22,9 @@
   background-color: var(--color);
 }
 
-@mixin seriesMenuMixin {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  align-items: start;
-  row-gap: 0.5rem;
-  padding: 1rem;
-  top: 10.5rem;
-  right: 6rem;
-  background-color: var(--background-color);
-  border-radius: 1rem;
-  border: solid var(--color);
+.seriesMenuWrapper {
 }
+
 
 .overlay {
   background-color: #626264;
@@ -47,9 +37,9 @@
 }
 
 .seriesMenu {
-  @include seriesMenuMixin
+  @include popUpMenuMixin
 }
 
 .seriesLoadingIndicator {
-  @include seriesMenuMixin
+  @include popUpMenuMixin
 }
