@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from 'react'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSet, PokemonSetSeries } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import styles from './SeriesMenu.module.scss'
 import { SeriesMenuItem } from './SeriesMenuItem/SeriesMenuItem'
 
@@ -9,11 +9,6 @@ interface SetMenuProps {
   setCardList: (newCardList: PokemonCard[]) => void
   setCurrentlySelectedPokemonSeries: (currentlySelectSeries: string) => void
   toggleSetMenu: (setOpen: boolean) => void
-}
-
-export interface SeriesSet {
-  series: string
-  symbol: string
 }
 
 export default function SeriesMenu(props: SetMenuProps) {
@@ -26,25 +21,19 @@ export default function SeriesMenu(props: SetMenuProps) {
     toggleSeriesMenu(!seriesMenuIsOpen)
   }
 
-  const seriesArray: ReactElement<SeriesSet>[] = []
-  let id = 0
-  const uniquePokemonSeriesMap: Record<string, string> = {}
+  const seriesArray: ReactElement<PokemonSetSeries>[] = []
+  const uniqueSeries: Set<PokemonSetSeries> = new Set()
 
-  props.pokemonSets.forEach((set) => {
-    if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, set.series)) {
-      uniquePokemonSeriesMap[set.series] = set.images.symbol
-    }
+  props.pokemonSets.forEach((pokemonSet) => {
+    return uniqueSeries.add(pokemonSet.series)
   })
-  const uniqueSeriesArray: {
-    series: string
-    imageLink: string
-  }[] = Object.entries(uniquePokemonSeriesMap).map(([series, imageLink]) => ({ series, imageLink }))
 
-  uniqueSeriesArray.forEach((series) => {
+  let id = 0
+
+  uniqueSeries.forEach((series) => {
     seriesArray.push(
       <SeriesMenuItem
-        seriesName={series.series}
-        seriesSymbol={series.imageLink}
+        seriesName={series}
         key={id}
         setCardList={props.setCardList}
         setSeriesLoadingState={setLoadingState}
