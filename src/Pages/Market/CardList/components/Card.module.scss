@@ -1,4 +1,4 @@
-@import '../../../../util/globalDesignElements.module';
+@import '../../../../util/ui/globalDesignElements.module';
 
 .cardContainer {
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   background-size: contain;
   background-color: var(--card-background-color);
   border: 1px solid var(--card-border-color);
-  border-radius: 1vw;
+  border-radius: 0.3rem;
   aspect-ratio: 63 / 88;
   display: flex;
   justify-content: center;

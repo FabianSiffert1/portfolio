@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
-import { ThemeContext } from '../../util/theme/ThemeProvider'
+import { ThemeContext } from '../../util/ui/theme/ThemeProvider'
 import styles from './Home.module.scss'
 
 export default function Home() {

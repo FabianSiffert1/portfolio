@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
-import { fetchAllCardsOfASpecies, fetchAllSets } from '../../util/api/pokemonTGC/querys'
+import { fetchAllSets, fetchSpecies } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
 import SeriesMenu from './SideBar/SeriesMenu/SeriesMenu'
@@ -31,7 +31,7 @@ export default function Market() {
   useEffect(() => {
     const getCardData = async () => {
       try {
-        const result = await fetchAllCardsOfASpecies('pikachu')
+        const result = await fetchSpecies('chari*', 'bas*')
         setCards(result)
       } catch (error) {
         console.error('Error in Market - getCardData useEffect:', error)

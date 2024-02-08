@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { iconMoon, iconSun } from '../../util/_globalAssetImports'
-import { ThemeContext } from '../../util/theme/ThemeProvider'
+import { iconMoon, iconSun } from '../../util/ui/_globalAssetImports'
+import { ThemeContext } from '../../util/ui/theme/ThemeProvider'
 import styles from './ThemeToggle.module.scss'
 
 export default function ThemeToggle() {

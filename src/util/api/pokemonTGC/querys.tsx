@@ -31,12 +31,21 @@ export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[
   }
 }
 
-export const fetchAllCardsOfASpecies = async (pokemonName: string): Promise<PokemonCard[]> => {
-  try {
-    return await pokemonTCGAPI.card.all({
-      q: `name:"${pokemonName}"`,
+export const fetchSpecies = async (speciesName: string, setName?: string): Promise<PokemonCard[]> => {
+  let args: object
+  if (setName == undefined) {
+    args = {
+      q: `name:"${speciesName}"`,
       orderBy: '-cardmarket.prices.trendPrice'
-    })
+    }
+  } else {
+    args = {
+      q: `name:"${speciesName}" set.name:"${setName}"`,
+      orderBy: '-cardmarket.prices.trendPrice'
+    }
+  }
+  try {
+    return await pokemonTCGAPI.card.all(args)
   } catch (error) {
     console.error('Error fetching cards:', error)
     return []
