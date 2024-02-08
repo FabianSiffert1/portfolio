@@ -56,9 +56,7 @@ export default function SeriesMenu(props: SetMenuProps) {
     id++
   })
   return (
-    <>
-      {seriesLoading && <div className={styles.seriesLoadingIndicator}>Fetching Cards...</div>}
-
+    <div className={styles.seriesMenuTopLevel}>
       {!seriesLoading && (
         <div className={styles.seriesMenuContainer}>
           <span className={styles.burger} onClick={toggleOpen}>
@@ -76,6 +74,6 @@ export default function SeriesMenu(props: SetMenuProps) {
           )}
         </div>
       )}
-    </>
+    </div>
   )
 }

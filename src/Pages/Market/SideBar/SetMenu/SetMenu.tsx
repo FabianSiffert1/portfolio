@@ -19,6 +19,7 @@ export default function SetMenu(props: SetMenuProps) {
 
   useEffect(() => {
     setCardsLoading(true)
+    setAllSetsFromASeries([])
     const getSetData = async () => {
       try {
         const result = await fetchAllSetsOfASeries(props.currentlySelectedPokemonSeries)
@@ -54,7 +55,7 @@ export default function SetMenu(props: SetMenuProps) {
       {props.setMenuIsOpen ? (
         <div className={styles.popUpSetMenuWrapper}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
-          <div className={styles.currentSeries}>{props.currentlySelectedPokemonSeries}</div>
+          <div className={styles.currentSeries}>Series: {props.currentlySelectedPokemonSeries}</div>
           <div className={styles.setMenu} onClick={() => props.toggleSetMenu(false)}>
             {setArray}
           </div>

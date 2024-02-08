@@ -27,7 +27,8 @@
 }
 
 .currentSeries {
-  @include popUpMenuMixin
+  @include popUpMenuMixin;
+  top: 6.5rem;
 }
 
 .setMenu {
