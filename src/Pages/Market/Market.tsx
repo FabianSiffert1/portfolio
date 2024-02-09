@@ -16,7 +16,8 @@ export default function Market() {
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
-  const [currentPokemonSeries, setCurrentPokemonSeries] = useState<string>('Base')
+  const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<string>('Base')
+  const [cardToDisplayDetailsOf, setCardToDisplayDetailsOf] = useState<PokemonCard | undefined>(undefined)
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
@@ -24,8 +25,8 @@ export default function Market() {
   const toggleSetMenu = (setOpen: boolean) => {
     toggleSetMenuOpen(setOpen)
   }
-  const currentlySelectedPokemonSeries = (newPokemonSetList: string) => {
-    setCurrentPokemonSeries(newPokemonSetList)
+  const setCurrentlySelectedPokemonSeries = (newPokemonSetList: string) => {
+    _setCurrentlySelectedPokemonSeries(newPokemonSetList)
   }
 
   useEffect(() => {
@@ -62,16 +63,16 @@ export default function Market() {
             pokemonSets={sets}
             setCardList={setCardList}
             toggleSetMenu={toggleSetMenu}
-            setCurrentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+            setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
           />
           <SetMenu
-            currentlySelectedPokemonSeries={currentPokemonSeries}
+            currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
             toggleSetMenu={toggleSetMenu}
             setMenuIsOpen={setMenuIsOpen}
             setCardList={setCardList}
           />
         </div>
-        <div className={styles.cardList}>
+        <div className={styles.cardListWrapper}>
           <CardList cards={cards} />
         </div>
       </div>

@@ -1,13 +1,19 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { PokemonCard } from '../../../util/api/pokemonTGC/model/PokemonCard'
 import styles from './CardList.module.scss'
-import Card from './components/Card'
+import Card from './Components/Card/Card'
 
 export interface CardListProps {
   cards: PokemonCard[]
 }
 
 export default function CardList(props: CardListProps) {
+  const [cardDetailsVisible, _setCardDetailsVisible] = useState(false)
+
+  function setCardDetailsVisible(newState: boolean) {
+    _setCardDetailsVisible(newState)
+  }
+
   const cardArray: ReactElement<PokemonCard>[] = []
   const uniquePokemonSeriesMap: Record<string, PokemonCard> = {}
   props.cards.forEach((card) => {
@@ -21,24 +27,20 @@ export default function CardList(props: CardListProps) {
   }[] = Object.entries(uniquePokemonSeriesMap).map(([cardName, card]) => ({ cardName, card }))
 
   uniqueCardArray.forEach((cardObject) => {
-    const card = cardObject.card
-    const cardmarketPriceTrend = card?.cardmarket?.prices?.trendPrice
-    const cardmarketLink = card?.cardmarket?.url
-    const setReleaseDate = new Date(card?.set?.releaseDate)
-    const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
     cardArray.push(
       <Card
-        name={card.name}
-        image={card.images.small}
-        setName={card.set.name}
-        key={card.id}
-        cardmarketPriceTrend={cardmarketPriceTrend ? cardmarketPriceTrend : undefined}
-        cardmarketLink={cardmarketLink ? cardmarketLink : undefined}
-        setSymbol={card.set.images.symbol}
-        setReleaseDate={setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())}
+        key={cardObject.card.id}
+        card={cardObject.card}
+        cardDetailsVisible={cardDetailsVisible}
+        setCardDetailsVisible={setCardDetailsVisible}
       />
     )
   })
 
-  return <div className={styles.cardList}>{cardArray}</div>
+  return (
+    <div className={styles.cardList}>
+      {cardDetailsVisible && <div>CARDDETAIL</div>}
+      {cardArray}
+    </div>
+  )
 }
