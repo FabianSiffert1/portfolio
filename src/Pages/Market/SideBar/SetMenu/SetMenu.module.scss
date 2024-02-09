@@ -24,13 +24,32 @@
   width: 120vw;
   height: 120vh;
   opacity: 30%;
+  z-index: 0;
 }
 
 .currentSeries {
-  @include popUpMenuMixin;
-  top: 6.5rem;
+  position: fixed;
+  top: 8rem;
+  right: 6rem;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border-radius: 0.4rem;
 }
 
 .setMenu {
-  @include popUpMenuMixin
+  grid-template-rows: repeat(4, 1fr);
+  @media (min-width: 1536px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  row-gap: 1rem;
+  display: grid;
+
+  overflow: scroll;
+  max-height: 80vh;;
+  padding: 0.5rem;
+  position: fixed;
+  top: 10.5rem;
+  right: 6rem;
+  background-color: var(--background-color);
+  border-radius: 0.4rem;
 }

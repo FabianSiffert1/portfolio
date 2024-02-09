@@ -40,16 +40,4 @@ $standardBottomPadding: 2rem;
   background-color: transparent;
 }
 
-@mixin popUpMenuMixin {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  align-items: start;
-  row-gap: 1rem;
-  padding: 1rem;
-  top: 10.5rem;
-  right: 6rem;
-  background-color: var(--background-color);
-  border-radius: 1rem;
-  border: solid var(--color);
-}
+

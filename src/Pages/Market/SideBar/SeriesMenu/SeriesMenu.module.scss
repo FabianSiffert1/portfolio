@@ -1,5 +1,18 @@
 @import '../../../../util/ui/globalDesignElements.module';
 
+@mixin seriesPopUpMenu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: start;
+  row-gap: 1rem;
+  padding: 1rem;
+  top: 10.5rem;
+  right: 6rem;
+  background-color: var(--background-color);
+  border-radius: 1rem;
+}
+
 .seriesMenuContainer {
 }
 
@@ -34,12 +47,13 @@
   width: 120vw;
   height: 120vh;
   opacity: 30%;
+  z-index: 0;
 }
 
 .seriesMenu {
-  @include popUpMenuMixin
+  @include seriesPopUpMenu
 }
 
 .seriesLoadingIndicator {
-  @include popUpMenuMixin
+  @include seriesPopUpMenu
 }

@@ -39,9 +39,10 @@ export default function SetMenu(props: SetMenuProps) {
       <SetMenuItem
         key={set.name}
         setName={set.name}
-        setCardList={props.setCardList}
+        setSymbol={set.images.symbol}
+        setContentOfCardList={props.setCardList}
         setCardsLoading={setCardsLoading}
-        cardsLoading={cardsLoading}
+        areCardsLoading={cardsLoading}
       />
     )
   })
@@ -55,7 +56,7 @@ export default function SetMenu(props: SetMenuProps) {
       {props.setMenuIsOpen ? (
         <div className={styles.popUpSetMenuWrapper}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
-          <div className={styles.currentSeries}>Series: {props.currentlySelectedPokemonSeries}</div>
+          <div className={styles.currentSeries}>{props.currentlySelectedPokemonSeries}</div>
           <div className={styles.setMenu} onClick={() => props.toggleSetMenu(false)}>
             {setArray}
           </div>
