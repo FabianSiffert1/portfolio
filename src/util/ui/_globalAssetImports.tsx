@@ -1,4 +1,5 @@
+import cardMarket from '../../assets/icons/cardMarketBlack.png'
 import iconMoon from '../../assets/icons/moon.svg'
 import iconSun from '../../assets/icons/sun.svg'
 
-export { iconMoon, iconSun }
+export { cardMarket, iconMoon, iconSun }

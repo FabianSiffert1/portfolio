@@ -1,7 +1,6 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
 .cardDetailsWrapper {
-  position: relative;
 }
 
 .overlay {
@@ -71,9 +70,18 @@
   }
 }
 
-.cardPrices {
+.cardPricesContainer {
+}
+
+.cardMarket {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  img {
+    width: 5rem;
+    padding-bottom: 1rem;
+  }
 }
 

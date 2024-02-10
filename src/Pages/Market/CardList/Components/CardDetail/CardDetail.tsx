@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
+import { cardMarket } from '../../../../../util/ui/_globalAssetImports'
 import styles from './CardDetail.module.scss'
 
 interface CardDetailProps {
@@ -54,8 +55,10 @@ function SetInformation(props: PokemonCardProp) {
 
 function CardPrices(props: PokemonCardProp) {
   return (
-    <div className={styles.cardPrices}>
-      <div className={styles.cardMarketPriceAndLink}>
+    <div className={styles.cardPricesContainer}>
+      <div className={styles.cardMarket}>
+        <img src={cardMarket} alt={'cardMarket'} />
+        Trend price:{' '}
         {props.card.cardmarket.url ? (
           <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
             {props.card.cardmarket.prices.trendPrice?.toString().concat(' €')}
@@ -63,6 +66,11 @@ function CardPrices(props: PokemonCardProp) {
         ) : (
           props.card.cardmarket.prices.trendPrice?.toString().concat(' €')
         )}
+        <div className={styles.cardMarketSpecies}>
+          <Link to={`https://www.cardmarket.com/en/Pokemon/Species/${props.card.name}`} target='_blank' rel='noopener noreferrer'>
+            Species
+          </Link>
+        </div>
       </div>
     </div>
   )
