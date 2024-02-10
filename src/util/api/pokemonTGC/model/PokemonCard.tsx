@@ -7,6 +7,7 @@ export interface PokemonCard {
   hp: string
   types: string[]
   evolvesFrom: string
+  evolvesTo?: string
   abilities: {
     name: string
     text: string

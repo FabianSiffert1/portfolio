@@ -18,14 +18,7 @@ export function CardDetail(props: CardDetailProps) {
           {props.card.images.large && <img src={props.card.images.large} alt={props.card.name} />}
         </div>
         <div className={styles.cardDetailsInformation}>
-          <div className={styles.cardDetails}>
-            <div className={styles.cardName}>{props.card.name}</div>
-            <div className={styles.cardNumber}>
-              {props.card.number}/{props.card.set.printedTotal}
-            </div>
-            <div className={styles.evolvesFrom}>Evolves from: {props.card.evolvesFrom}</div>
-            <div className={styles.cardArtist}>Artist: {props.card.artist}</div>
-          </div>
+          <CardBaseDetails card={props.card} />
           <SetInformation card={props.card} />
           <CardPrices card={props.card} />
         </div>
@@ -38,17 +31,38 @@ interface PokemonCardProp {
   card: PokemonCard
 }
 
+function CardBaseDetails(props: PokemonCardProp) {
+  return (
+    <div className={styles.cardDetails}>
+      <div className={styles.cardName}>{props.card.name}</div>
+      <div className={styles.cardRarity}>{props.card.rarity}</div>
+      <div className={styles.cardNumber}>
+        {props.card.number}/{props.card.set.printedTotal}
+      </div>
+      {props.card.evolvesTo}
+      {props.card.evolvesFrom && <div className={styles.evolvesFrom}>Evolves from: {props.card.evolvesFrom}</div>}
+      <div className={styles.cardArtist}>Artist: {props.card.artist}</div>
+    </div>
+  )
+}
+
 function SetInformation(props: PokemonCardProp) {
   const setReleaseDate = new Date(props.card?.set?.releaseDate)
   const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
   const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
   return (
     <div className={styles.setInformation}>
-      <span className={styles.setSymbol}>
-        {props.card?.set?.images?.symbol ? <img src={props.card.set.images.symbol} alt={'setSymbol'} /> : null}
+      <span className={styles.setHeader}>
+        {props.card?.set?.images?.logo ? <img src={props.card.set.images.logo} alt={'setLogo'} /> : null}
       </span>
       <span className={styles.setName}> {props.card?.set?.name ? props.card.set.name : null}</span>
       <span className={styles.setReleaseDate}>{setReleaseString}</span>
+      <span>Total Cards: {props.card.set.total}</span>
+      <span>Series: {props.card.set.series}</span>
+      <span>{props.card.set.legalities.unlimited}</span>
+      <span className={styles.setSymbol}>
+        {props.card?.set?.images?.symbol ? <img src={props.card.set.images.symbol} alt={'setSymbol'} /> : null}
+      </span>
     </div>
   )
 }
@@ -56,6 +70,7 @@ function SetInformation(props: PokemonCardProp) {
 function CardPrices(props: PokemonCardProp) {
   return (
     <div className={styles.cardPricesContainer}>
+      <div className={styles.cardPricesHeader}>Prices:</div>
       <div className={styles.cardMarket}>
         <img src={cardMarket} alt={'cardMarket'} />
         Trend price:{' '}
@@ -66,11 +81,6 @@ function CardPrices(props: PokemonCardProp) {
         ) : (
           props.card.cardmarket.prices.trendPrice?.toString().concat(' €')
         )}
-        <div className={styles.cardMarketSpecies}>
-          <Link to={`https://www.cardmarket.com/en/Pokemon/Species/${props.card.name}`} target='_blank' rel='noopener noreferrer'>
-            Species
-          </Link>
-        </div>
       </div>
     </div>
   )

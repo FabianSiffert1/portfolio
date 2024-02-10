@@ -17,7 +17,6 @@ export default function Market() {
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
   const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<string>('Base')
-  const [cardToDisplayDetailsOf, setCardToDisplayDetailsOf] = useState<PokemonCard | undefined>(undefined)
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)

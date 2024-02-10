@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet } from '../../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSet, PokemonSetName } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
 import styles from './SetMenu.module.scss'
 import SetMenuItem from './SetMenuItem/SetMenuItem'
@@ -16,6 +16,11 @@ interface SetMenuProps {
 export default function SetMenu(props: SetMenuProps) {
   const [cardsLoading, setCardsLoading] = useState(false)
   const [allSetsFromASeries, setAllSetsFromASeries] = useState<PokemonSet[]>([])
+  const [currentlySelectedPokemonSet, _setCurrentlySelectedPokemonSet] = useState<PokemonSetName | undefined>(undefined)
+
+  function setCurrentlySelectedPokemonSet(set: PokemonSetName) {
+    _setCurrentlySelectedPokemonSet(set)
+  }
 
   useEffect(() => {
     setCardsLoading(true)
@@ -43,6 +48,9 @@ export default function SetMenu(props: SetMenuProps) {
         setContentOfCardList={props.setCardList}
         setCardsLoading={setCardsLoading}
         areCardsLoading={cardsLoading}
+        toggleSetMenu={props.toggleSetMenu}
+        currentlySelectedPokemonSet={currentlySelectedPokemonSet}
+        setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
       />
     )
   })
@@ -57,9 +65,7 @@ export default function SetMenu(props: SetMenuProps) {
         <div className={styles.popUpSetMenuWrapper}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
           <div className={styles.currentSeries}>{props.currentlySelectedPokemonSeries}</div>
-          <div className={styles.setMenu} onClick={() => props.toggleSetMenu(false)}>
-            {setArray}
-          </div>
+          <div className={styles.setMenu}>{setArray}</div>
         </div>
       ) : undefined}
     </div>

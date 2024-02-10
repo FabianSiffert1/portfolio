@@ -1,5 +1,5 @@
 import { PokemonCard } from './model/PokemonCard'
-import { PokemonSet } from './model/PokemonSet'
+import { PokemonSet, PokemonSetName } from './model/PokemonSet'
 import pokemonTCGAPI from './pokemonTCGAPI'
 
 export const fetchAllSets = async (): Promise<PokemonSet[]> => {
@@ -19,7 +19,7 @@ export const fetchAllSetsOfASeries = async (series: string): Promise<PokemonSet[
   }
 }
 
-export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[]> => {
+export const fetchAllCardsOfASet = async (setName: PokemonSetName): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({
       q: `!set.name:"${setName}"`,
@@ -34,7 +34,6 @@ export const fetchAllCardsOfASet = async (setName: string): Promise<PokemonCard[
 export const fetchSpecies = async (speciesName: string, setName?: string): Promise<PokemonCard[]> => {
   const argumentIsValidRegex = /[a-z0-9]/i
   const speciesNameIsValid = argumentIsValidRegex.test(speciesName) && /\S/.test(speciesName)
-  let args: object
   let setNameisValid = false
   let queryParameter = ''
 
@@ -57,7 +56,7 @@ export const fetchSpecies = async (speciesName: string, setName?: string): Promi
     case false:
       break
   }
-  args = {
+  const args = {
     q: `${queryParameter}`,
     orderBy: '-cardmarket.prices.trendPrice',
     pageSize: 250,
