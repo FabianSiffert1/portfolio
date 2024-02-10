@@ -38,7 +38,7 @@
 
 .setMenu {
   grid-template-rows: repeat(4, 1fr);
-  @media (min-width: 1536px) {
+  @media (min-width: $bigScreen) {
     grid-template-columns: repeat(3, 1fr);
   }
   row-gap: 1rem;

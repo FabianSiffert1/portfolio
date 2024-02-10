@@ -1,3 +1,79 @@
-.cardDetailContainer {
+@import '../../../../../util/ui/globalDesignElements.module';
 
+.cardDetailsWrapper {
+  position: relative;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.cardDetailsContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  z-index: 100;
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 2rem;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 10rem;
+}
+
+.cardLargeImage {
+  overflow: clip;
+
+  img {
+    max-width: 25rem;
+    @include cardImageStyle;
+  }
+}
+
+.cardDetailsInformation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  height: 100%;
+  margin-left: 5rem;
+}
+
+.cardDetails {
+}
+
+.cardName {
+  @include cardNameStyle;
+  padding-bottom: 1rem;
+}
+
+
+.setInformation {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding-top: 1rem;
+
+  img {
+    margin-left: 0.3rem;
+    max-height: 4rem;
+  }
+}
+
+.cardPrices {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+

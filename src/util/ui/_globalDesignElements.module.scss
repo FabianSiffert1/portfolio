@@ -1,4 +1,5 @@
 $smallScreen: 1180px;
+$bigScreen: 1536px;
 $standardBottomPadding: 2rem;
 
 @mixin centeredFlexRow {
@@ -40,4 +41,13 @@ $standardBottomPadding: 2rem;
   background-color: transparent;
 }
 
+@mixin cardNameStyle {
+  text-align: center;
+  font-size: 110%;
+  font-weight: bold;
+}
 
+@mixin cardImageStyle {
+  border-radius: 0.3rem;
+  aspect-ratio: 63 / 88;
+}

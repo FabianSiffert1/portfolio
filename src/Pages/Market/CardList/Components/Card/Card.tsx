@@ -1,21 +1,28 @@
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
+import { CardDetail } from '../CardDetail/CardDetail'
 import styles from './Card.module.scss'
 
 interface CardProps {
   card: PokemonCard
-  cardDetailsVisible: boolean
-  setCardDetailsVisible: (cardDetailsVisible: boolean) => void
 }
 
 export default function Card(props: CardProps) {
+  const [cardDetailsVisible, _setCardDetailsVisible] = useState(false)
+
+  function setCardDetailsVisible(newState: boolean) {
+    _setCardDetailsVisible(newState)
+  }
+
   return (
     <div className={styles.cardContainer} key={props.card.id}>
+      {cardDetailsVisible && <CardDetail card={props.card} toggleCardDetailsPopUp={setCardDetailsVisible} />}
       <div
         key={props.card.set.id}
         className={styles.card}
         style={props.card.images.small ? { backgroundImage: `url(${props.card.images.small})` } : undefined}
-        onClick={() => props.setCardDetailsVisible(true)}
+        onClick={() => setCardDetailsVisible(true)}
       />
       <div className={styles.cardInformationWrapper}>
         <div className={styles.cardName}>{props.card.name ? props.card.name : null}</div>

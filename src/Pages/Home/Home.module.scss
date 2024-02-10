@@ -20,8 +20,8 @@
 .header {
   margin-left: auto;
   margin-right: auto;
-  @media (min-width: 1536px) {
-    max-width: 1536px;
+  @media (min-width: $bigScreen) {
+    max-width: $bigScreen;
   }
 }
 
@@ -30,7 +30,7 @@
   padding-top: 5rem;
   margin-left: auto;
   margin-right: auto;
-  @media (min-width: 1536px) {
-    max-width: 1536px;
+  @media (min-width: $bigScreen) {
+    max-width: $bigScreen;
   }
 }
