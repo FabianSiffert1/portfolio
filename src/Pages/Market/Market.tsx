@@ -63,6 +63,7 @@ export default function Market() {
             pokemonSets={sets}
             setCardList={setCardList}
             toggleSetMenu={toggleSetMenu}
+            currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
             setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
           />
           <SetMenu

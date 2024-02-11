@@ -41,7 +41,7 @@
   border: solid 0.28125rem #3f3f3f;
   border-radius: 50%;
   background: white;
-  z-index: 1;
+  z-index: $zThirdLevel;
   box-shadow: 0 0 5.625px -0.75px #c62828 inset;
   animation: button 2.25s ease infinite;
 }

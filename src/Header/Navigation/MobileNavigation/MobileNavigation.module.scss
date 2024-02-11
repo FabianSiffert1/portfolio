@@ -10,7 +10,7 @@
 }
 
 .burger {
-  z-index: 100;
+  z-index: $zTopLevel;
   width: 2rem;
   height: 0.25rem;
   background-color: var(--color);

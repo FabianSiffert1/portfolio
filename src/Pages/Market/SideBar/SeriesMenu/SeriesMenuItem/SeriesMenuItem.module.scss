@@ -1,27 +1,16 @@
+@import '../../../../../util/ui/globalDesignElements.module';
+
 .seriesMenuItem {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: start;
-  border-radius: 1rem;
-  flex: 1;
   cursor: pointer;
+  z-index: $zTopLevel;
 }
 
-.seriesImage {
-  justify-content: center;
-  align-items: center;
 
-  img {
-    max-height: 2rem;
-    max-width: 2rem;
-  }
-}
-
-.seriesName {
-  flex-shrink: inherit;
+.seriesNameContainer {
   text-align: center;
   font-size: 120%;
   font-weight: bold;
-  overflow: hidden;
 }

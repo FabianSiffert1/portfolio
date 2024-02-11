@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
 import { cardMarket } from '../../../../../util/ui/_globalAssetImports'
-import styles from './CardDetail.module.scss'
+import styles from './CardDetails.module.scss'
 
 interface CardDetailProps {
   card: PokemonCard

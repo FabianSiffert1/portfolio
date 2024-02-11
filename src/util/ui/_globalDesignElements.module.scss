@@ -1,6 +1,10 @@
 $smallScreen: 1180px;
 $bigScreen: 1536px;
 $standardBottomPadding: 2rem;
+$zBaseLayer: 0;
+$zSecondLevel: 1;
+$zThirdLevel: 2;
+$zTopLevel: 3;
 
 @mixin centeredFlexRow {
   display: flex;
@@ -14,6 +18,11 @@ $standardBottomPadding: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@mixin HorizontalMargins {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 @mixin paddingTopBottom {
@@ -50,4 +59,13 @@ $standardBottomPadding: 2rem;
 @mixin cardImageStyle {
   border-radius: 0.3rem;
   aspect-ratio: 63 / 88;
+}
+
+@mixin invisibleOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: $zSecondLevel;
 }

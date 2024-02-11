@@ -12,7 +12,7 @@
 
 .footer {
   position: fixed;
-  z-index: 100;
+  z-index: $zTopLevel;
   bottom: 0;
   right: 0;
 }

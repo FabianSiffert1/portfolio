@@ -5,6 +5,14 @@
 }
 
 .header {
+  @include HorizontalMargins;
+  position: fixed;
+  z-index: $zSecondLevel;
+  height: 5rem;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
 }
 
 .cardListWrapper {

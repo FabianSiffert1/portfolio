@@ -8,6 +8,7 @@ interface SetMenuProps {
   pokemonSets: PokemonSet[]
   setCardList: (newCardList: PokemonCard[]) => void
   setCurrentlySelectedPokemonSeries: (currentlySelectSeries: PokemonTCGSeries) => void
+  currentlySelectedPokemonSeries: PokemonTCGSeries
   toggleSetMenu: (setOpen: boolean) => void
 }
 
@@ -29,6 +30,7 @@ export default function SeriesMenu(props: SetMenuProps) {
   })
 
   let id = 0
+  const currentlySelectedPokemonSeries = props.currentlySelectedPokemonSeries as unknown as ReactElement
 
   uniqueSeries.forEach((series) => {
     seriesArray.push(
@@ -48,11 +50,9 @@ export default function SeriesMenu(props: SetMenuProps) {
     <div className={styles.seriesMenuTopLevel}>
       {!seriesLoading && (
         <div className={styles.seriesMenuContainer}>
-          <span className={styles.burger} onClick={toggleOpen}>
-            <div className={styles.patty} />
-            <div className={styles.patty} />
-            <div className={styles.patty} />
-          </span>
+          <div className={styles.seriesNameContainer} onClick={toggleOpen}>
+            <div className={styles.seriesName}>{currentlySelectedPokemonSeries}</div>
+          </div>
           {seriesMenuIsOpen && (
             <div className={styles.seriesMenuWrapper}>
               <div className={styles.overlay} onClick={toggleOpen} />
