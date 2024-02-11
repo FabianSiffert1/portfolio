@@ -1,12 +1,11 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .home {
-  @include paddingTopBottom;
+  @include horizontalMargins;
+  @include verticalMargins;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
-  @include paddingLeftRight;
-  @include paddingTopBottom
 }
 
 

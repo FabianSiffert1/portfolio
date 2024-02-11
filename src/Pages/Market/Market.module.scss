@@ -1,18 +1,18 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .market {
-
+  @include horizontalMargins;
 }
 
 .header {
-  @include HorizontalMargins;
+  @include horizontalMargins;
+  background-color: var(--background-color);
   position: fixed;
   z-index: $zBaseLayer;
-  height: 10rem;
   top: 7rem;
   left: 0;
   right: 0;
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
 .cardListWrapper {

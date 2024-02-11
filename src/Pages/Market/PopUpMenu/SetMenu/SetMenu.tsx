@@ -69,7 +69,7 @@ export default function SetMenu(props: SetMenuProps) {
           <LoadingSpinner />
         </div>
       ) : undefined}
-      {currentlySelectedPokemonSet && !cardsLoading ? (
+      {currentlySelectedPokemonSet ? (
         <div className={styles.setImage}>
           <img
             onClick={() => props.toggleSetMenu(true)}

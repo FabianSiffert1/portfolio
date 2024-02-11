@@ -1,15 +1,5 @@
 @import '../../../../util/ui/globalDesignElements.module';
 
-@mixin seriesSlideOutMenu {
-  display: grid;
-  @media (max-width: $smallScreen) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  grid-template-columns: repeat(8, 1fr);
-  column-gap: 1rem;
-  row-gap: 1rem;
-  background-color: var(--background-color);
-}
 
 .seriesMenuTopLevel {
 
@@ -23,6 +13,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .seriesName {
@@ -40,5 +31,5 @@
 }
 
 .seriesMenu {
-  @include seriesSlideOutMenu;
+  @include PopUpMenu;
 }

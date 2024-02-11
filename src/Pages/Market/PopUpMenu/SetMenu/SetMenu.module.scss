@@ -30,7 +30,7 @@
 }
 
 .setMenu {
-  @include seriesSlideOutMenu;
+  @include PopUpMenu;
   background-color: var(--background-color);
 }
 
