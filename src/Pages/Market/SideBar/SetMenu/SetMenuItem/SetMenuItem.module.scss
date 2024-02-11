@@ -1,26 +1,18 @@
+@import '../../../../../util/ui/globalDesignElements.module';
+
+
 .setMenuItemContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  cursor: pointer;
-  border: solid transparent;
-  border-radius: 0.3rem;
-  padding-left: 1rem;
+  @include popUpMenuItem;
 }
 
-.setMenuItemContainer:hover {
-  border: solid black;
-}
 
 .setSymbol {
   img {
-    height: 1rem;
+    height: 1.5rem;
   }
 }
 
 .setName {
-  padding-left: .5rem;
   font-size: 120%;
   font-weight: bold;
 }

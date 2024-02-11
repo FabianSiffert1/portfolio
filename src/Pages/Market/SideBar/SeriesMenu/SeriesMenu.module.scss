@@ -32,6 +32,7 @@
 .seriesName {
   @include cardNameStyle;
   cursor: pointer;
+  font-size: 125%;
 }
 
 .seriesMenuWrapper {
@@ -39,9 +40,9 @@
 
 
 .overlay {
-  @include invisibleOverlay
+  @include invisibleOverlay;
 }
 
 .seriesMenu {
-  @include seriesSlideOutMenu
+  @include seriesSlideOutMenu;
 }

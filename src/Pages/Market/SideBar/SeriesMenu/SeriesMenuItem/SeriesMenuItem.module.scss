@@ -1,16 +1,14 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
 .seriesMenuItem {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  cursor: pointer;
-  z-index: $zTopLevel;
+  @include popUpMenuItem;
 }
 
 
 .seriesNameContainer {
-  text-align: center;
+}
+
+.seriesName {
   font-size: 120%;
   font-weight: bold;
 }

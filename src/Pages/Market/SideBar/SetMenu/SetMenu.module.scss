@@ -1,8 +1,7 @@
 @import '../../../../util/ui/globalDesignElements.module';
+@import '../SeriesMenu/SeriesMenu.module';
 
-.setMenuContainer {
-  display: flex;
-  flex-direction: column;
+.seriesMenuWrapper {
 }
 
 .loadingState {
@@ -12,45 +11,15 @@
 
 }
 
+.setMenuContainer {
+}
 
-.popUpSetMenuWrapper {
+.setMenu {
+  @include seriesSlideOutMenu;
+  background-color: var(--background-color);
 }
 
 
 .overlay {
-  background-color: #626264;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 120vw;
-  height: 120vh;
-  opacity: 30%;
-  z-index: $zBaseLayer;
 }
 
-.currentSeries {
-  position: fixed;
-  top: 8rem;
-  right: 6rem;
-  padding: 0.5rem;
-  background-color: var(--background-color);
-  border-radius: 0.4rem;
-}
-
-.setMenu {
-  grid-template-rows: repeat(4, 1fr);
-  @media (min-width: $bigScreen) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  row-gap: 1rem;
-  display: grid;
-
-  overflow: scroll;
-  max-height: 80vh;;
-  padding: 0.5rem;
-  position: fixed;
-  top: 10.5rem;
-  right: 6rem;
-  background-color: var(--background-color);
-  border-radius: 0.4rem;
-}

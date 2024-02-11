@@ -69,3 +69,14 @@ $zTopLevel: 3;
   right: 0;
   z-index: $zSecondLevel;
 }
+
+@mixin popUpMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  z-index: $zTopLevel;
+  padding: 0.5rem;
+  width: 100%;
+}

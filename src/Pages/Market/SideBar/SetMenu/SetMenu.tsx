@@ -56,18 +56,15 @@ export default function SetMenu(props: SetMenuProps) {
   })
 
   return (
-    <div className={styles.setMenuContainer}>
+    <div className={styles.setMenuWrapper}>
       {cardsLoading ? (
         <div className={styles.loadingState}>
           <LoadingSpinner />
         </div>
       ) : undefined}
       {props.setMenuIsOpen ? (
-        <div className={styles.popUpSetMenuWrapper}>
+        <div className={styles.setMenuContainer}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
-          <div className={styles.currentSeries}>
-            <>{props.currentlySelectedPokemonSeries}</>
-          </div>
           <div className={styles.setMenu}>{setArray}</div>
         </div>
       ) : undefined}
