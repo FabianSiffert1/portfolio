@@ -46,11 +46,13 @@ export default function Market() {
 
   useEffect(() => {
     const getCardData = async () => {
-      try {
-        const result = await fetchSpecies('Charizard', 'base')
-        setCards(result)
-      } catch (error) {
-        console.error('Error in Market - getCardData useEffect:', error)
+      if (cards.length == 0) {
+        try {
+          const result = await fetchSpecies('Charizard', 'base')
+          setCards(result)
+        } catch (error) {
+          console.error('Error in Market - getCardData useEffect:', error)
+        }
       }
     }
 
@@ -59,11 +61,13 @@ export default function Market() {
     })
 
     const getSetData = async () => {
-      try {
-        const result = await fetchAllSets()
-        setSets(result)
-      } catch (error) {
-        console.error('Error in Market - getSetData useEffect:', error)
+      if (sets.length == 0) {
+        try {
+          const result = await fetchAllSets()
+          setSets(result)
+        } catch (error) {
+          console.error('Error in Market - getSetData useEffect:', error)
+        }
       }
     }
 
@@ -73,7 +77,7 @@ export default function Market() {
   if (!setsLoading) {
     return (
       <div className={styles.market}>
-        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem', paddingTop: scrollY > 12 ? '2.5rem' : 0 }}>
+        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem', paddingTop: scrollY > 12 ? '1rem' : 0 }}>
           <SeriesMenu
             pokemonSets={sets}
             setCardList={setCardList}

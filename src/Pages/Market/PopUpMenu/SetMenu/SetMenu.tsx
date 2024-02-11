@@ -65,7 +65,7 @@ export default function SetMenu(props: SetMenuProps) {
   return (
     <div className={styles.setMenuWrapper}>
       {currentlySelectedPokemonSet ? (
-        <div className={styles.setImage}>
+        <div className={styles.setLogo}>
           <img
             onClick={() => props.toggleSetMenu(true)}
             src={currentlySelectedPokemonSetLogoUrl as unknown as string}
