@@ -12,7 +12,6 @@
 }
 
 .setImage {
-
   display: flex;
   justify-content: center;
   background-color: var(--background-color);
@@ -21,8 +20,11 @@
 
   img {
     cursor: pointer;
-    max-width: 8rem;
-    max-height: 5rem;
+    max-height: 3rem;
+    @media (min-width: $smallScreen) {
+      max-height: 5rem;
+    }
+
   }
 }
 

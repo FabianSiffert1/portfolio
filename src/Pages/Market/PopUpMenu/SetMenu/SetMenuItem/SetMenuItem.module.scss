@@ -8,11 +8,15 @@
 
 .setSymbol {
   img {
-    height: 1.5rem;
+    height: 1rem;
+    @media (min-width: $smallScreen) {
+      width: 1.5rem;
+    }
   }
 }
 
 .setName {
   font-size: 120%;
   font-weight: bold;
+  text-align: center;
 }

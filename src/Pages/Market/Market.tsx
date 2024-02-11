@@ -73,24 +73,14 @@ export default function Market() {
   if (!setsLoading) {
     return (
       <div className={styles.market}>
-        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem' }}>
-          <div className={styles.seriesMenuAndLoadingSpinner}>
-            <div className={styles.spacer} />
-            <div className={styles.seriesMenu}>
-              <SeriesMenu
-                pokemonSets={sets}
-                setCardList={setCardList}
-                toggleSetMenu={toggleSetMenu}
-                currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
-                setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
-              />
-            </div>
-            {areCardsLoading ? (
-              <div className={styles.loadingState}>
-                <LoadingSpinner />
-              </div>
-            ) : undefined}
-          </div>
+        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem', paddingTop: scrollY > 12 ? '2.5rem' : 0 }}>
+          <SeriesMenu
+            pokemonSets={sets}
+            setCardList={setCardList}
+            toggleSetMenu={toggleSetMenu}
+            currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+            setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
+          />
           <SetMenu
             areCardsLoading={areCardsLoading}
             setCardsLoading={setCardsLoading}
@@ -99,6 +89,11 @@ export default function Market() {
             setMenuIsOpen={setMenuIsOpen}
             setCardList={setCardList}
           />
+          {areCardsLoading ? (
+            <div className={styles.loadingState}>
+              <LoadingSpinner />
+            </div>
+          ) : undefined}
         </div>
         <div className={styles.cardListWrapper}>
           <CardList cards={cards} />

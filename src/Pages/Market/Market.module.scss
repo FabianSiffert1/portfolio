@@ -15,32 +15,16 @@
   transition: 0.15s;
 }
 
-.seriesMenuAndLoadingSpinner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    ". seriesMenu loadingState "
-}
-
-.spacer {
-  grid-area: spacer;
-}
-
-.seriesMenu {
-  grid-area: seriesMenu;
-}
 
 .cardListWrapper {
   padding-top: 8rem;
 }
 
 .loadingState {
-  grid-area: loadingState;
-  padding-top: 0.5rem;
-  height: 0;
-  overflow: visible;
-  scale: 2;
-  @media (min-width: $smallScreen) {
-    scale: 0.5;
+  display: flex;
+  justify-content: center;
+  scale: 0.4;
+  @media (min-width: $bigScreen) {
+    scale: 1;
   }
 }

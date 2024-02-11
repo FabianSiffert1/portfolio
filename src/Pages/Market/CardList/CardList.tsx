@@ -11,8 +11,10 @@ export default function CardList(props: CardListProps) {
   const cardArray: ReactElement<PokemonCard>[] = []
   const uniquePokemonSeriesMap: Record<string, PokemonCard> = {}
   props.cards.forEach((card) => {
-    if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.name)) {
-      uniquePokemonSeriesMap[card.name] = card
+    if (card.name != undefined) {
+      if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.name)) {
+        uniquePokemonSeriesMap[card.name] = card
+      }
     }
   })
   const uniqueCardArray: {
