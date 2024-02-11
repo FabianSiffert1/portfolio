@@ -5,8 +5,8 @@ import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllSets, fetchSpecies } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
 import styles from './Market.module.scss'
-import SeriesMenu from './SideBar/SeriesMenu/SeriesMenu'
-import SetMenu from './SideBar/SetMenu/SetMenu'
+import SeriesMenu from './PopUpMenu/SeriesMenu/SeriesMenu'
+import SetMenu from './PopUpMenu/SetMenu/SetMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
