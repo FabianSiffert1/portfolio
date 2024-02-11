@@ -50,8 +50,10 @@ export default function SeriesMenu(props: SetMenuProps) {
     <div className={styles.seriesMenuTopLevel}>
       {!seriesLoading && (
         <div className={styles.seriesMenuContainer}>
-          <div className={styles.seriesNameContainer} onClick={toggleOpen}>
-            <div className={styles.seriesName}>{currentlySelectedPokemonSeries}</div>
+          <div className={styles.seriesNameContainer}>
+            <div className={styles.seriesName} onClick={toggleOpen}>
+              {currentlySelectedPokemonSeries}
+            </div>
           </div>
           {seriesMenuIsOpen && (
             <div className={styles.seriesMenuWrapper}>
