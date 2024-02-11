@@ -12,7 +12,7 @@ interface CardProps {
 export const Card = ({ card }: { card: PokemonCard }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5
+    threshold: 0.2
   })
 
   return (

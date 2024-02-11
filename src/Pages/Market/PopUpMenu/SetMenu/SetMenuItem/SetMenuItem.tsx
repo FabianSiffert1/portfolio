@@ -25,6 +25,7 @@ export default function SetMenuItem(props: SetMenuItemProps) {
       props.setCardsLoading(true)
       fetchAllCardsOfASet(setName)
         .then((pokemonCards) => {
+          scroll(0, 0)
           props.setCurrentlySelectedPokemonSet(setName)
           props.setContentOfCardList(pokemonCards)
           props.setCardsLoading(false)
