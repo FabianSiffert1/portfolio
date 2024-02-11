@@ -52,9 +52,6 @@ function SetInformation(props: PokemonCardProp) {
   const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
   return (
     <div className={styles.setInformation}>
-      <span className={styles.setHeader}>
-        {props.card?.set?.images?.logo ? <img src={props.card.set.images.logo} alt={'setLogo'} /> : null}
-      </span>
       <span className={styles.setName}> {props.card?.set?.name ? props.card.set.name : null}</span>
       <span className={styles.setReleaseDate}>{setReleaseString}</span>
       <span>Total Cards: {props.card.set.total}</span>
