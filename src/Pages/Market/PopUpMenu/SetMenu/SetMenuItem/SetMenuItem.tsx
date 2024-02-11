@@ -1,17 +1,19 @@
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSetName } from '../../../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSetLogo, PokemonSetName, PokemonSetSymbol } from '../../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllCardsOfASet } from '../../../../../util/api/pokemonTGC/querys'
 import styles from './SetMenuItem.module.scss'
 
 interface SetMenuItemProps {
   setName: PokemonSetName
-  setSymbol: string
+  setSymbol: PokemonSetSymbol
+  setLogo: PokemonSetLogo
   areCardsLoading: boolean
   currentlySelectedPokemonSet?: PokemonSetName
   setContentOfCardList: (newCardList: PokemonCard[]) => void
   setCardsLoading: (newState: boolean) => void
   toggleSetMenu: (setMenuOpen: boolean) => void
   setCurrentlySelectedPokemonSet: (set: PokemonSetName) => void
+  setCurrentlySelectedPokemonSetLogoUrl: (logoUrl: PokemonSetLogo) => void
 }
 
 export default function SetMenuItem(props: SetMenuItemProps) {
@@ -38,6 +40,7 @@ export default function SetMenuItem(props: SetMenuItemProps) {
         !props.areCardsLoading
           ? async () => {
               fetchAllCardsFromASet(props.setName)
+              props.setCurrentlySelectedPokemonSetLogoUrl(props.setLogo)
               props.toggleSetMenu(false)
             }
           : undefined
@@ -49,7 +52,7 @@ export default function SetMenuItem(props: SetMenuItemProps) {
           props.toggleSetMenu(false)
         }}
       >
-        <img src={props.setSymbol} alt={props.setName.toString()} />
+        <img src={props.setSymbol as unknown as string} alt={props.setName.toString()} />
       </div>
       <div className={styles.setName}>
         <>{props.setName}</>

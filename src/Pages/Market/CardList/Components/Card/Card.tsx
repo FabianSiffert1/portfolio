@@ -33,13 +33,8 @@ export default function Card(props: CardProps) {
 }
 
 function CardSubLines(props: CardProps) {
-  const setReleaseDate = new Date(props.card?.set?.releaseDate)
-  const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
-  const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
   return (
     <div className={styles.cardAdditionalInformation}>
-      {CardSetAndSymbol(props)}
-      <span className={styles.setReleaseDate}>{setReleaseString}</span>
       <div className={styles.cardPrices}>
         <span className={styles.cardMarketPriceAndLink}>
           {props?.card?.cardMarket?.url ? (
@@ -51,15 +46,6 @@ function CardSubLines(props: CardProps) {
           )}
         </span>
       </div>
-    </div>
-  )
-}
-
-function CardSetAndSymbol(props: CardProps) {
-  return (
-    <div className={styles.setNameAndSymbol}>
-      {props.card?.set?.name ? props.card.set.name : null}
-      {props.card?.set?.images?.symbol ? <img src={props.card.set.images.symbol} alt={'setSymbol'} /> : null}
     </div>
   )
 }

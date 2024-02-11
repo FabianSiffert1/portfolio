@@ -6,7 +6,15 @@ export interface PokemonSetName {
   name: string
 }
 
-export interface PokemonSet extends PokemonTCGSeries, PokemonSetName {
+export interface PokemonSetLogo {
+  logo: string
+}
+
+export interface PokemonSetSymbol {
+  symbol: string
+}
+
+export interface PokemonSet extends PokemonTCGSeries, PokemonSetName, PokemonSetSymbol, PokemonSetLogo {
   id: string
   name: PokemonSetName & string
   series: PokemonTCGSeries & string
@@ -19,7 +27,7 @@ export interface PokemonSet extends PokemonTCGSeries, PokemonSetName {
   releaseDate: string
   updatedAt: string
   images: {
-    symbol: string
-    logo: string
+    symbol: PokemonSetSymbol & string
+    logo: PokemonSetLogo & string
   }
 }
