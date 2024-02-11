@@ -41,7 +41,7 @@ function CardBaseDetails(props: PokemonCardProp) {
       </div>
       {props.card.evolvesTo}
       {props.card.evolvesFrom && <div className={styles.evolvesFrom}>Evolves from: {props.card.evolvesFrom}</div>}
-      <div className={styles.cardArtist}>Artist: {props.card.artist}</div>
+      <div className={styles.cardArtist}>Illus: {props.card.artist}</div>
     </div>
   )
 }

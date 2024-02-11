@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useState } from 'react'
-import { LoadingSpinner } from '../../../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet, PokemonSetLogo, PokemonSetName, PokemonTCGSeries } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
@@ -8,13 +7,14 @@ import SetMenuItem from './SetMenuItem/SetMenuItem'
 
 interface SetMenuProps {
   currentlySelectedPokemonSeries: PokemonTCGSeries
+  areCardsLoading: boolean
+  setCardsLoading: (areCardsLoading: boolean) => void
   toggleSetMenu: (setOpen: boolean) => void
   setMenuIsOpen: boolean
   setCardList: (newCardList: PokemonCard[]) => void
 }
 
 export default function SetMenu(props: SetMenuProps) {
-  const [cardsLoading, setCardsLoading] = useState(false)
   const [allSetsFromASeries, setAllSetsFromASeries] = useState<PokemonSet[]>([])
   const [currentlySelectedPokemonSet, _setCurrentlySelectedPokemonSet] = useState<PokemonSetName | undefined>(undefined)
   const [currentlySelectedPokemonSetLogoUrl, _setCurrentlySelectedPokemonSetLogoUrl] = useState<PokemonSetLogo | undefined>(undefined)
@@ -28,19 +28,19 @@ export default function SetMenu(props: SetMenuProps) {
   }
 
   useEffect(() => {
-    setCardsLoading(true)
+    props.setCardsLoading(true)
     setAllSetsFromASeries([])
     const getSetData = async () => {
       try {
         const result = await fetchAllSetsOfASeries(props.currentlySelectedPokemonSeries)
         setAllSetsFromASeries(result)
-        setCardsLoading(false)
+        props.setCardsLoading(false)
       } catch (error) {
         console.error('Error in Market - getSetData useEffect:', error)
       }
     }
 
-    getSetData().then(() => setCardsLoading(false))
+    getSetData().then(() => props.setCardsLoading(false))
   }, [props.currentlySelectedPokemonSeries])
 
   const setArray: ReactElement<PokemonSet>[] = []
@@ -52,8 +52,8 @@ export default function SetMenu(props: SetMenuProps) {
         setSymbol={set.images.symbol}
         setLogo={set.images.logo}
         setContentOfCardList={props.setCardList}
-        setCardsLoading={setCardsLoading}
-        areCardsLoading={cardsLoading}
+        setCardsLoading={props.setCardsLoading}
+        areCardsLoading={props.areCardsLoading}
         toggleSetMenu={props.toggleSetMenu}
         currentlySelectedPokemonSet={currentlySelectedPokemonSet}
         setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
@@ -64,11 +64,6 @@ export default function SetMenu(props: SetMenuProps) {
 
   return (
     <div className={styles.setMenuWrapper}>
-      {cardsLoading ? (
-        <div className={styles.loadingState}>
-          <LoadingSpinner />
-        </div>
-      ) : undefined}
       {currentlySelectedPokemonSet ? (
         <div className={styles.setImage}>
           <img
