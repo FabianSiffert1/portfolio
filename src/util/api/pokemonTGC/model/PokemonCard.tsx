@@ -59,7 +59,7 @@ export interface PokemonCard {
     small: string
     large: string
   }
-  tcgPlayer?: {
+  tcgplayer?: {
     url?: string
     updatedAt?: string
     prices?: {
@@ -86,7 +86,7 @@ export interface PokemonCard {
       }
     }
   }
-  cardMarket?: {
+  cardmarket?: {
     url?: string
     updatedAt?: string
     prices?: {
