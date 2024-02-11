@@ -42,12 +42,12 @@ function CardSubLines(props: CardProps) {
       <span className={styles.setReleaseDate}>{setReleaseString}</span>
       <div className={styles.cardPrices}>
         <span className={styles.cardMarketPriceAndLink}>
-          {props.card.cardmarket.url ? (
-            <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
-              {props.card.cardmarket.prices.trendPrice?.toString().concat(' €')}
+          {props?.card?.cardMarket?.url ? (
+            <Link to={props.card.cardMarket.url} target='_blank' rel='noopener noreferrer'>
+              {props?.card?.cardMarket?.prices?.trendPrice?.toString().concat(' €')}
             </Link>
           ) : (
-            props.card.cardmarket.prices.trendPrice?.toString().concat(' €')
+            props?.card?.cardMarket?.prices?.trendPrice?.toString().concat(' €')
           )}
         </span>
       </div>

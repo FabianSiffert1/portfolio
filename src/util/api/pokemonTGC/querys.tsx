@@ -1,5 +1,5 @@
 import { PokemonCard } from './model/PokemonCard'
-import { PokemonSet, PokemonSetName } from './model/PokemonSet'
+import { PokemonSet, PokemonSetName, PokemonTCGSeries } from './model/PokemonSet'
 import pokemonTCGAPI from './pokemonTCGAPI'
 
 export const fetchAllSets = async (): Promise<PokemonSet[]> => {
@@ -10,7 +10,7 @@ export const fetchAllSets = async (): Promise<PokemonSet[]> => {
     return []
   }
 }
-export const fetchAllSetsOfASeries = async (series: string): Promise<PokemonSet[]> => {
+export const fetchAllSetsOfASeries = async (series: PokemonTCGSeries): Promise<PokemonSet[]> => {
   try {
     return await pokemonTCGAPI.set.all({ q: `series:"${series}"`, orderBy: 'releaseDate' })
   } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet } from '../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSet, PokemonTCGSeries } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllSets, fetchSpecies } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
@@ -16,7 +16,8 @@ export default function Market() {
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
-  const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<string>('Base')
+  const baseSeries: PokemonTCGSeries = 'Base' as unknown as PokemonTCGSeries
+  const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<PokemonTCGSeries>(baseSeries)
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
@@ -24,8 +25,8 @@ export default function Market() {
   const toggleSetMenu = (setOpen: boolean) => {
     toggleSetMenuOpen(setOpen)
   }
-  const setCurrentlySelectedPokemonSeries = (newPokemonSetList: string) => {
-    _setCurrentlySelectedPokemonSeries(newPokemonSetList)
+  const setCurrentlySelectedPokemonSeries = (pokemonSeries: PokemonTCGSeries) => {
+    _setCurrentlySelectedPokemonSeries(pokemonSeries)
   }
 
   useEffect(() => {

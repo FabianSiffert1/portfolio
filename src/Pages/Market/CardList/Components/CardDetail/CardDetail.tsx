@@ -74,12 +74,12 @@ function CardPrices(props: PokemonCardProp) {
       <div className={styles.cardMarket}>
         <img src={cardMarket} alt={'cardMarket'} />
         Trend price:{' '}
-        {props.card.cardmarket.url ? (
-          <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
-            {props.card.cardmarket.prices.trendPrice?.toString().concat(' €')}
+        {props?.card?.cardMarket?.url ? (
+          <Link to={props.card.cardMarket.url} target='_blank' rel='noopener noreferrer'>
+            {props?.card?.cardMarket?.prices?.trendPrice?.toString().concat(' €')}
           </Link>
         ) : (
-          props.card.cardmarket.prices.trendPrice?.toString().concat(' €')
+          props?.card?.cardMarket?.prices?.trendPrice?.toString().concat(' €')
         )}
       </div>
     </div>

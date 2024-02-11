@@ -1,13 +1,13 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet, PokemonSetName } from '../../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSet, PokemonSetName, PokemonTCGSeries } from '../../../../util/api/pokemonTGC/model/PokemonSet'
 import { fetchAllSetsOfASeries } from '../../../../util/api/pokemonTGC/querys'
 import styles from './SetMenu.module.scss'
 import SetMenuItem from './SetMenuItem/SetMenuItem'
 
 interface SetMenuProps {
-  currentlySelectedPokemonSeries: string
+  currentlySelectedPokemonSeries: PokemonTCGSeries
   toggleSetMenu: (setOpen: boolean) => void
   setMenuIsOpen: boolean
   setCardList: (newCardList: PokemonCard[]) => void
@@ -54,6 +54,7 @@ export default function SetMenu(props: SetMenuProps) {
       />
     )
   })
+
   return (
     <div className={styles.setMenuContainer}>
       {cardsLoading ? (
@@ -64,7 +65,9 @@ export default function SetMenu(props: SetMenuProps) {
       {props.setMenuIsOpen ? (
         <div className={styles.popUpSetMenuWrapper}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
-          <div className={styles.currentSeries}>{props.currentlySelectedPokemonSeries}</div>
+          <div className={styles.currentSeries}>
+            <>{props.currentlySelectedPokemonSeries}</>
+          </div>
           <div className={styles.setMenu}>{setArray}</div>
         </div>
       ) : undefined}

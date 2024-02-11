@@ -1,15 +1,15 @@
 import React, { ReactElement } from 'react'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSetSeries } from '../../../../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonTCGSeries } from '../../../../../util/api/pokemonTGC/model/PokemonSet'
 import styles from './SeriesMenuItem.module.scss'
 
 interface SeriesMenuProps {
-  seriesName: PokemonSetSeries
+  seriesName: PokemonTCGSeries
   key: number
   setCardList: (newCardList: PokemonCard[]) => void
   setSeriesLoadingState: (isSeriesLoading: boolean) => void
   isSeriesLoading: boolean
-  setCurrentlySelectedPokemonSeries: (setCurrentlySelectedPokemonSeries: PokemonSetSeries) => void
+  setCurrentlySelectedPokemonSeries: (setCurrentlySelectedPokemonSeries: PokemonTCGSeries) => void
   toggleSetMenu: (setOpen: boolean) => void
 }
 
