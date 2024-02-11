@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
-import { PokemonSet, PokemonTCGSeries } from '../../util/api/pokemonTGC/model/PokemonSet'
+import { PokemonSet, PokemonSetLogo, PokemonSetName, PokemonTCGSeries } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
 import { fetchAllSets, fetchSpecies } from '../../util/api/pokemonTGC/querys'
 import CardList from './CardList/CardList'
@@ -12,14 +12,35 @@ import SetMenu from './PopUpMenu/SetMenu/SetMenu'
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
 
-  const [cards, setCards] = useState<PokemonCard[]>([])
-  const [sets, setSets] = useState<PokemonSet[]>([])
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
+  const [scrollY, setScrollY] = useState(0)
+
+  const [cards, setCards] = useState<PokemonCard[]>([])
+  const [sets, setSets] = useState<PokemonSet[]>([])
   const baseSeries: PokemonTCGSeries = 'Base' as unknown as PokemonTCGSeries
   const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<PokemonTCGSeries>(baseSeries)
-  const [scrollY, setScrollY] = useState(0)
+  const [currentlySelectedPokemonSet, _setCurrentlySelectedPokemonSet] = useState<PokemonSetName | undefined>(undefined)
+  const [currentlySelectedPokemonSetLogoUrl, _setCurrentlySelectedPokemonSetLogoUrl] = useState<PokemonSetLogo | undefined>(undefined)
+
+  const setCardList = (newCardList: PokemonCard[]) => {
+    setCards(newCardList)
+  }
+  const toggleSetMenu = (setOpen: boolean) => {
+    toggleSetMenuOpen(setOpen)
+  }
+  const setCurrentlySelectedPokemonSeries = (pokemonSeries: PokemonTCGSeries) => {
+    _setCurrentlySelectedPokemonSeries(pokemonSeries)
+  }
+
+  function setCurrentlySelectedPokemonSet(set: PokemonSetName) {
+    _setCurrentlySelectedPokemonSet(set)
+  }
+
+  function setCurrentlySelectedPokemonSetLogoUrl(url: PokemonSetLogo) {
+    _setCurrentlySelectedPokemonSetLogoUrl(url)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,22 +54,14 @@ export default function Market() {
     }
   }, [])
 
-  const setCardList = (newCardList: PokemonCard[]) => {
-    setCards(newCardList)
-  }
-  const toggleSetMenu = (setOpen: boolean) => {
-    toggleSetMenuOpen(setOpen)
-  }
-  const setCurrentlySelectedPokemonSeries = (pokemonSeries: PokemonTCGSeries) => {
-    _setCurrentlySelectedPokemonSeries(pokemonSeries)
-  }
-
   useEffect(() => {
     const getCardData = async () => {
       if (cards.length == 0) {
         try {
           const result = await fetchSpecies('Charizard', 'base')
           setCards(result)
+          setCurrentlySelectedPokemonSet(result[0]?.set?.name as unknown as PokemonSetName)
+          setCurrentlySelectedPokemonSetLogoUrl(result[0].set.images.logo)
         } catch (error) {
           console.error('Error in Market - getCardData useEffect:', error)
         }
@@ -88,6 +101,10 @@ export default function Market() {
             areCardsLoading={areCardsLoading}
             setCardsLoading={setCardsLoading}
             currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+            currentlySelectedPokemonSet={currentlySelectedPokemonSet}
+            setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
+            currentlySelectedPokemonSetLogoUrl={currentlySelectedPokemonSetLogoUrl}
+            setCurrentlySelectedPokemonSetImageUrl={setCurrentlySelectedPokemonSetLogoUrl}
             toggleSetMenu={toggleSetMenu}
             setMenuIsOpen={setMenuIsOpen}
             setCardList={setCardList}

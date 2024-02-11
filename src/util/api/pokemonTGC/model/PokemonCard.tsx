@@ -1,4 +1,6 @@
-export interface PokemonCard {
+import { PokemonSetLogo } from './PokemonSet'
+
+export interface PokemonCard extends PokemonSetLogo {
   id?: string
   name?: string
   supertype?: string
@@ -44,7 +46,7 @@ export interface PokemonCard {
     updatedAt: string
     images: {
       symbol: string
-      logo: string
+      logo: PokemonSetLogo & string
     }
   }
   number: string

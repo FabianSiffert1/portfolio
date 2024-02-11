@@ -12,20 +12,14 @@ interface SetMenuProps {
   toggleSetMenu: (setOpen: boolean) => void
   setMenuIsOpen: boolean
   setCardList: (newCardList: PokemonCard[]) => void
+  currentlySelectedPokemonSet?: PokemonSetName
+  setCurrentlySelectedPokemonSet: (set: PokemonSetName) => void
+  currentlySelectedPokemonSetLogoUrl?: PokemonSetLogo
+  setCurrentlySelectedPokemonSetImageUrl: (logoUrl: PokemonSetLogo) => void
 }
 
 export default function SetMenu(props: SetMenuProps) {
   const [allSetsFromASeries, setAllSetsFromASeries] = useState<PokemonSet[]>([])
-  const [currentlySelectedPokemonSet, _setCurrentlySelectedPokemonSet] = useState<PokemonSetName | undefined>(undefined)
-  const [currentlySelectedPokemonSetLogoUrl, _setCurrentlySelectedPokemonSetLogoUrl] = useState<PokemonSetLogo | undefined>(undefined)
-
-  function setCurrentlySelectedPokemonSet(set: PokemonSetName) {
-    _setCurrentlySelectedPokemonSet(set)
-  }
-
-  function setCurrentlySelectedPokemonSetImageUrl(url: PokemonSetLogo) {
-    _setCurrentlySelectedPokemonSetLogoUrl(url)
-  }
 
   useEffect(() => {
     props.setCardsLoading(true)
@@ -55,21 +49,21 @@ export default function SetMenu(props: SetMenuProps) {
         setCardsLoading={props.setCardsLoading}
         areCardsLoading={props.areCardsLoading}
         toggleSetMenu={props.toggleSetMenu}
-        currentlySelectedPokemonSet={currentlySelectedPokemonSet}
-        setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
-        setCurrentlySelectedPokemonSetLogoUrl={setCurrentlySelectedPokemonSetImageUrl}
+        currentlySelectedPokemonSet={props.currentlySelectedPokemonSet}
+        setCurrentlySelectedPokemonSet={props.setCurrentlySelectedPokemonSet}
+        setCurrentlySelectedPokemonSetLogoUrl={props.setCurrentlySelectedPokemonSetImageUrl}
       />
     )
   })
 
   return (
     <div className={styles.setMenuWrapper}>
-      {currentlySelectedPokemonSet ? (
+      {props.currentlySelectedPokemonSet ? (
         <div className={styles.setLogo}>
           <img
             onClick={() => props.toggleSetMenu(true)}
-            src={currentlySelectedPokemonSetLogoUrl as unknown as string}
-            alt={currentlySelectedPokemonSet as unknown as string}
+            src={props.currentlySelectedPokemonSetLogoUrl as unknown as string}
+            alt={props.currentlySelectedPokemonSet as unknown as string}
           />
         </div>
       ) : undefined}

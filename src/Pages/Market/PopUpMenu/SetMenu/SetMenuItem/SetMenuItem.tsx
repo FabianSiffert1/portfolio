@@ -18,12 +18,15 @@ interface SetMenuItemProps {
 
 export default function SetMenuItem(props: SetMenuItemProps) {
   function fetchAllCardsFromASet(setName: PokemonSetName) {
-    if (setName != props.currentlySelectedPokemonSet || props.currentlySelectedPokemonSet == undefined) {
+    if (
+      (setName != props.currentlySelectedPokemonSet && setName != undefined) ||
+      (props.currentlySelectedPokemonSet == undefined && setName != undefined)
+    ) {
       props.setCardsLoading(true)
       fetchAllCardsOfASet(setName)
         .then((pokemonCards) => {
-          props.setContentOfCardList(pokemonCards)
           props.setCurrentlySelectedPokemonSet(setName)
+          props.setContentOfCardList(pokemonCards)
           props.setCardsLoading(false)
         })
         .catch((error) => {
