@@ -3,7 +3,6 @@ import styles from './404.module.scss'
 
 export default function ErrorPage() {
   const error = useRouteError()
-  console.error(error)
 
   return (
     <div className={styles.errorPage}>

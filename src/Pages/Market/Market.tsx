@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LoadingSpinner } from '../../Components/LoadingSpinner/LoadingSpinner'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet, PokemonTCGSeries } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
@@ -18,6 +19,20 @@ export default function Market() {
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
   const baseSeries: PokemonTCGSeries = 'Base' as unknown as PokemonTCGSeries
   const [currentlySelectedPokemonSeries, _setCurrentlySelectedPokemonSeries] = useState<PokemonTCGSeries>(baseSeries)
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+      console.log(window.scrollY)
+    }
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const setCardList = (newCardList: PokemonCard[]) => {
     setCards(newCardList)
@@ -58,7 +73,7 @@ export default function Market() {
   if (!setsLoading && !areCardsLoading) {
     return (
       <div className={styles.market}>
-        <div className={styles.header}>
+        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem' }}>
           <SeriesMenu
             pokemonSets={sets}
             setCardList={setCardList}
@@ -79,6 +94,10 @@ export default function Market() {
       </div>
     )
   } else {
-    return <div className={styles.loadingState}>Fetching data...</div>
+    return (
+      <div className={styles.loadingState}>
+        <LoadingSpinner />
+      </div>
+    )
   }
 }

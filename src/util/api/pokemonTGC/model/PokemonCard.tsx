@@ -1,8 +1,8 @@
 export interface PokemonCard {
-  id: string
-  name: string
-  supertype: string
-  subtypes: string[]
+  id?: string
+  name?: string
+  supertype?: string
+  subtypes?: string[]
   level: string
   hp: string
   types: string[]
@@ -75,7 +75,7 @@ export interface PokemonCard {
         mid?: number
         high?: number
         market?: number
-        directLow: number
+        directLow?: number
       }
       reverseHolofoil?: {
         low?: number

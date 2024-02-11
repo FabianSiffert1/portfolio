@@ -16,10 +16,13 @@
   display: flex;
   justify-content: center;
   background-color: var(--background-color);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 
   img {
     cursor: pointer;
     max-width: 8rem;
+    max-height: 5rem;
   }
 }
 
