@@ -1,11 +1,14 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
-.cardContainer {
+.cardWrapper {
   box-sizing: border-box;
   width: 25%;
   @media (min-width: $smallScreen) {
     width: 15%;
   }
+}
+
+.cardContainer {
 }
 
 .card {

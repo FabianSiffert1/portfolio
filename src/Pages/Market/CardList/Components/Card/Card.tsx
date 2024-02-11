@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
 import { CardDetail } from '../CardDetail/CardDetail'
@@ -8,7 +9,20 @@ interface CardProps {
   card: PokemonCard
 }
 
-export default function Card(props: CardProps) {
+export const Card = ({ card }: { card: PokemonCard }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5
+  })
+
+  return (
+    <div ref={ref} key={card.id + 'lazy'} className={styles.cardWrapper}>
+      {inView && <CardContent card={card} />}
+    </div>
+  )
+}
+
+function CardContent(props: CardProps) {
   const [cardDetailsVisible, _setCardDetailsVisible] = useState(false)
 
   function setCardDetailsVisible(newState: boolean) {

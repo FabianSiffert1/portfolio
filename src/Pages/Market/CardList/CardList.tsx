@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { PokemonCard } from '../../../util/api/pokemonTGC/model/PokemonCard'
 import styles from './CardList.module.scss'
-import Card from './Components/Card/Card'
+import { Card } from './Components/Card/Card'
 
 export interface CardListProps {
   cards: PokemonCard[]
@@ -10,6 +10,7 @@ export interface CardListProps {
 export default function CardList(props: CardListProps) {
   const cardArray: ReactElement<PokemonCard>[] = []
   const uniquePokemonSeriesMap: Record<string, PokemonCard> = {}
+
   props.cards.forEach((card) => {
     if (card.name != undefined) {
       if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.name)) {

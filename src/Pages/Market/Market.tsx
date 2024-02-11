@@ -24,7 +24,6 @@ export default function Market() {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
-      console.log(window.scrollY)
     }
     handleScroll()
 
