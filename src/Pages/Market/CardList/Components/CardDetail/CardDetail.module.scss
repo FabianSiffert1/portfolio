@@ -35,7 +35,8 @@
   overflow: clip;
 
   img {
-    max-width: 25rem;
+    width: 100%;
+    height: 100%;
     @include cardImageStyle;
   }
 }
