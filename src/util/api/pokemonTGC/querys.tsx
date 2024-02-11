@@ -69,7 +69,6 @@ export const fetchSpecies = async (speciesName: string, setName?: string): Promi
     return []
   }
 }
-
 export const fetchAllCardsFromASeries = async (pokemonSeries: string): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({

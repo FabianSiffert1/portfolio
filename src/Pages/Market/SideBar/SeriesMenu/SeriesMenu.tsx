@@ -7,7 +7,7 @@ import { SeriesMenuItem } from './SeriesMenuItem/SeriesMenuItem'
 interface SetMenuProps {
   pokemonSets: PokemonSet[]
   setCardList: (newCardList: PokemonCard[]) => void
-  setCurrentlySelectedPokemonSeries: (currentlySelectSeries: string) => void
+  setCurrentlySelectedPokemonSeries: (currentlySelectSeries: PokemonSetSeries) => void
   toggleSetMenu: (setOpen: boolean) => void
 }
 

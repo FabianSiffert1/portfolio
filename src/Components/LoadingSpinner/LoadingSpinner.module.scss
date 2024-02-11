@@ -1,7 +1,12 @@
+@import '../../util/ui/globalDesignElements.module';
 
 .ball {
   width: 5rem;
   height: 5rem;
+  scale: 0.3;
+  @media (min-width: $bigScreen) {
+    scale: 1;
+  }
   border-radius: 50%;
   background: white;
   position: relative;
