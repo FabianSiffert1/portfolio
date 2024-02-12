@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
-import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
-import { cardMarket } from '../../../../../util/ui/_globalAssetImports'
+import { PokemonCard, TcgPlayer, TcgPlayerPriceSet } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
 import styles from './CardDetails.module.scss'
 
 interface CardDetailProps {
@@ -34,7 +33,7 @@ interface PokemonCardProp {
 function CardBaseDetails(props: PokemonCardProp) {
   return (
     <div className={styles.cardDetails}>
-      <div className={styles.cardName}>{props.card.name}</div>
+      <div className={styles.cardDetailColumnTitle}>{props.card.name}</div>
       <div className={styles.cardRarity}>{props.card.rarity}</div>
       <div className={styles.cardNumber}>
         {props.card.number}/{props.card.set.printedTotal}
@@ -52,7 +51,7 @@ function SetInformation(props: PokemonCardProp) {
   const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
   return (
     <div className={styles.setInformation}>
-      <span className={styles.setName}> {props.card?.set?.name ? props.card.set.name : null}</span>
+      <span className={styles.cardDetailColumnTitle}> {props.card?.set?.name ? props.card.set.name : null}</span>
       <span className={styles.setReleaseDate}>{setReleaseString}</span>
       <span>Total Cards: {props.card.set.total}</span>
       <span>Series: {props.card.set.series}</span>
@@ -65,12 +64,12 @@ function SetInformation(props: PokemonCardProp) {
 }
 
 function CardPrices(props: PokemonCardProp) {
+  const tcgPlayerComponent = TgcPlayerComponent(props.card.tcgplayer)
   return (
     <div className={styles.cardPricesContainer}>
-      <div className={styles.cardPricesHeader}>Prices:</div>
+      <div className={styles.cardDetailColumnTitle}>Cardmarket:</div>
       <div className={styles.cardMarket}>
-        <img src={cardMarket} alt={'cardMarket'} />
-        Trend price:{' '}
+        Trend price:
         {props?.card?.cardmarket?.url ? (
           <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
             {props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')}
@@ -79,6 +78,45 @@ function CardPrices(props: PokemonCardProp) {
           props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')
         )}
       </div>
+      <div className={styles.tcgPlayer}>
+        <div className={styles.cardDetailColumnTitle}>TCGPlayer:</div>
+        {tcgPlayerComponent}
+      </div>
+    </div>
+  )
+}
+
+function TgcPlayerComponent(tcgPlayer?: TcgPlayer): ReactElement {
+  let normal
+  if (tcgPlayer?.prices?.normal != undefined) {
+    normal = tgcPlayerPriceC(tcgPlayer.prices.normal)
+  }
+  let holo
+  if (tcgPlayer?.prices?.holofoil != undefined) {
+    holo = tgcPlayerPriceC(tcgPlayer.prices.holofoil)
+  }
+  let reverseHolo
+  if (tcgPlayer?.prices?.reverseHolofoil != undefined) {
+    reverseHolo = tgcPlayerPriceC(tcgPlayer.prices.reverseHolofoil)
+  }
+
+  return (
+    <div>
+      {normal && normal} {holo && holo} {reverseHolo && reverseHolo}
+    </div>
+  )
+}
+
+function tgcPlayerPriceC(priceSet: TcgPlayerPriceSet): ReactElement {
+  return (
+    <div>
+      <ul>
+        {Object.keys(priceSet).map((key) => (
+          <li key={key}>
+            <strong>{key}</strong>: {priceSet[key as keyof TcgPlayerPriceSet]}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

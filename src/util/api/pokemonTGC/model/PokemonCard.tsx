@@ -1,6 +1,24 @@
 import { PokemonSetLogo } from './PokemonSet'
 
-export interface PokemonCard extends PokemonSetLogo {
+export interface TcgPlayerPriceSet {
+  low?: number
+  mid?: number
+  high?: number
+  market?: number
+  directLow?: number
+}
+
+export interface TcgPlayer extends TcgPlayerPriceSet {
+  url?: string
+  updatedAt?: string
+  prices?: {
+    normal?: TcgPlayerPriceSet
+    holofoil?: TcgPlayerPriceSet
+    reverseHolofoil?: TcgPlayerPriceSet
+  }
+}
+
+export interface PokemonCard extends PokemonSetLogo, TcgPlayer {
   id?: string
   name?: string
   supertype?: string
@@ -61,33 +79,7 @@ export interface PokemonCard extends PokemonSetLogo {
     small: string
     large: string
   }
-  tcgplayer?: {
-    url?: string
-    updatedAt?: string
-    prices?: {
-      normal?: {
-        low?: number
-        mid?: number
-        high?: number
-        market?: number
-        directLow?: number
-      }
-      holofoil?: {
-        low?: number
-        mid?: number
-        high?: number
-        market?: number
-        directLow?: number
-      }
-      reverseHolofoil?: {
-        low?: number
-        mid?: number
-        high?: number
-        market?: number
-        directLow?: number
-      }
-    }
-  }
+  tcgplayer?: TcgPlayer
   cardmarket?: {
     url?: string
     updatedAt?: string

@@ -17,11 +17,13 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   justify-content: center;
+  align-items: center;
   z-index: $zTopLevel;
   background-color: var(--background-color);
   border-radius: 0.5rem;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
+  height: fit-content;
 
   position: fixed;
   left: 0;
@@ -32,12 +34,24 @@
 }
 
 .cardLargeImage {
+  display: flex;
+  flex-basis: fit-content;
+  height: inherit;
+
   img {
     width: 100%;
-    height: auto;
+    max-height: 100%;
     @include cardImageStyle;
   }
 }
+
+
+.cardDetailColumnTitle {
+  @include cardNameStyle;
+  padding-bottom: 1.5rem;
+
+}
+
 
 .cardDetailsInformation {
   display: grid;
@@ -51,12 +65,6 @@
   * {
     padding-bottom: 0.5rem;
   }
-}
-
-.cardName {
-  @include cardNameStyle;
-  padding-bottom: 3rem;
-
 }
 
 
@@ -77,10 +85,6 @@
 }
 
 
-.setName {
-  @include cardNameStyle
-}
-
 .setSymbol {
 
   img {
@@ -95,19 +99,14 @@
 .cardPricesContainer {
 }
 
-.cardPricesHeader {
-  padding-bottom: 3rem;
-}
 
 .cardMarket {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-
-  img {
-    width: 5rem;
-    padding-bottom: 1rem;
-  }
 }
 
+.tcgPlayer {
+
+}
