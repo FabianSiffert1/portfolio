@@ -64,7 +64,10 @@ function SetInformation(props: PokemonCardProp) {
 }
 
 function CardPrices(props: PokemonCardProp) {
-  const tcgPlayerComponent = TgcPlayerComponent(props.card.tcgplayer)
+  let tcgPlayerPriceList
+  if (props.card.tcgplayer != undefined) {
+    tcgPlayerPriceList = TcgPlayerComponent(props.card.tcgplayer)
+  }
   return (
     <div className={styles.cardPricesContainer}>
       <div className={styles.cardDetailColumnTitle}>Cardmarket:</div>
@@ -80,43 +83,47 @@ function CardPrices(props: PokemonCardProp) {
       </div>
       <div className={styles.tcgPlayer}>
         <div className={styles.cardDetailColumnTitle}>TCGPlayer:</div>
-        {tcgPlayerComponent}
+        {tcgPlayerPriceList}
       </div>
     </div>
   )
 }
 
-function TgcPlayerComponent(tcgPlayer?: TcgPlayer): ReactElement {
-  let normal
-  if (tcgPlayer?.prices?.normal != undefined) {
-    normal = tgcPlayerPriceC(tcgPlayer.prices.normal)
-  }
-  let holo
-  if (tcgPlayer?.prices?.holofoil != undefined) {
-    holo = tgcPlayerPriceC(tcgPlayer.prices.holofoil)
-  }
-  let reverseHolo
-  if (tcgPlayer?.prices?.reverseHolofoil != undefined) {
-    reverseHolo = tgcPlayerPriceC(tcgPlayer.prices.reverseHolofoil)
-  }
-
+function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
   return (
     <div>
-      {normal && normal} {holo && holo} {reverseHolo && reverseHolo}
+      <h2>TcgPlayer</h2>
+      {tcgPlayer.prices && (
+        <div>
+          <PriceSet name='Normal' priceSet={tcgPlayer.prices.normal} />
+          <PriceSet name='Holofoil' priceSet={tcgPlayer.prices.holofoil} />
+          <PriceSet name='Reverse Holofoil' priceSet={tcgPlayer.prices.reverseHolofoil} />
+        </div>
+      )}
     </div>
   )
 }
 
-function tgcPlayerPriceC(priceSet: TcgPlayerPriceSet): ReactElement {
-  return (
-    <div>
-      <ul>
-        {Object.keys(priceSet).map((key) => (
-          <li key={key}>
-            <strong>{key}</strong>: {priceSet[key as keyof TcgPlayerPriceSet]}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+interface PriceSetProps {
+  name: string
+  priceSet?: TcgPlayerPriceSet
+}
+
+function PriceSet({ name, priceSet }: PriceSetProps): ReactElement {
+  if (priceSet != undefined) {
+    return (
+      <div>
+        <h3>{name}</h3>
+        <ul>
+          {Object.entries(priceSet).map(([key, value]) => (
+            <li key={key}>
+              <strong>{key}</strong>: {value} €
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  } else {
+    return <></>
+  }
 }
