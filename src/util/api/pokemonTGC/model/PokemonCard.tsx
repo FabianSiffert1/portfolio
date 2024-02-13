@@ -15,7 +15,9 @@ export interface TcgPlayer extends TcgPlayerPriceSet {
     normal?: TcgPlayerPriceSet
     holofoil?: TcgPlayerPriceSet
     reverseHolofoil?: TcgPlayerPriceSet
+    '1stEdition'?: TcgPlayerPriceSet
     '1stEditionHolofoil'?: TcgPlayerPriceSet
+    unlimited?: TcgPlayerPriceSet
     unlimitedHolofoil?: TcgPlayerPriceSet
   }
 }
