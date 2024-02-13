@@ -8,6 +8,15 @@ interface CardDetailProps {
   toggleCardDetailsPopUp: (newState: boolean) => void
 }
 
+interface PriceSetProps {
+  cardType: string
+  priceSet?: TcgPlayerPriceSet
+}
+
+interface PokemonCardProp {
+  card: PokemonCard
+}
+
 export function CardDetail(props: CardDetailProps) {
   return (
     <div className={styles.cardDetailsWrapper} key={props.card.id}>
@@ -16,18 +25,17 @@ export function CardDetail(props: CardDetailProps) {
         <div className={styles.cardLargeImage}>
           {props.card.images.large && <img src={props.card.images.large} alt={props.card.name} />}
         </div>
-        <div className={styles.cardDetailsInformation}>
-          <CardBaseDetails card={props.card} />
-          <SetInformation card={props.card} />
-          <CardPrices card={props.card} />
+        <div className={styles.cardPrices}>
+          <div className={styles.cardDetailsInformation}>
+            <CardBaseDetails card={props.card} />
+            <SetInformation card={props.card} />
+            <CardMarketPrices card={props.card} />
+          </div>
+          <TcgPlayerPrices card={props.card} />
         </div>
       </div>
     </div>
   )
-}
-
-interface PokemonCardProp {
-  card: PokemonCard
 }
 
 function CardBaseDetails(props: PokemonCardProp) {
@@ -63,15 +71,11 @@ function SetInformation(props: PokemonCardProp) {
   )
 }
 
-function CardPrices(props: PokemonCardProp) {
-  let tcgPlayerPriceList
-  if (props.card.tcgplayer != undefined) {
-    tcgPlayerPriceList = TcgPlayerComponent(props.card.tcgplayer)
-  }
+function CardMarketPrices(props: PokemonCardProp) {
   return (
-    <div className={styles.cardPricesContainer}>
-      <div className={styles.cardDetailColumnTitle}>Cardmarket:</div>
-      <div className={styles.cardMarket}>
+    <div className={styles.cardMarketPricesContainer}>
+      <div className={styles.cardDetailColumnTitle}>Cardmarket</div>
+      <div className={styles.trendPrice}>
         Trend price:
         {props?.card?.cardmarket?.url ? (
           <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
@@ -81,10 +85,27 @@ function CardPrices(props: PokemonCardProp) {
           props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')
         )}
       </div>
+    </div>
+  )
+}
+
+function TcgPlayerPrices(props: PokemonCardProp) {
+  let tcgPlayerPriceList
+  if (props.card.tcgplayer != undefined) {
+    tcgPlayerPriceList = TcgPlayerComponent(props.card.tcgplayer)
+  }
+  return (
+    <div className={styles.tcgPlayerPricesContainer}>
       <div className={styles.tcgPlayer}>
-        <div className={styles.cardDetailColumnTitle}>TCGPlayer:</div>
-        {tcgPlayerPriceList}
+        {props.card.tcgplayer?.url ? (
+          <Link to={props.card.tcgplayer.url} target='_blank' rel='noopener noreferrer'>
+            TCGPlayer
+          </Link>
+        ) : (
+          <> TCGPlayer </>
+        )}
       </div>
+      <div className={styles.tcgPlayerPriceListContainer}>{tcgPlayerPriceList}</div>
     </div>
   )
 }
@@ -92,28 +113,22 @@ function CardPrices(props: PokemonCardProp) {
 function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
   return (
     <div>
-      <h2>TcgPlayer</h2>
       {tcgPlayer.prices && (
-        <div>
-          <PriceSet name='Normal' priceSet={tcgPlayer.prices.normal} />
-          <PriceSet name='Holofoil' priceSet={tcgPlayer.prices.holofoil} />
-          <PriceSet name='Reverse Holofoil' priceSet={tcgPlayer.prices.reverseHolofoil} />
+        <div className={styles.tcgPlayerPriceList}>
+          <PriceSet cardType='Normal' priceSet={tcgPlayer.prices.normal} />
+          <PriceSet cardType='Holofoil' priceSet={tcgPlayer.prices.holofoil} />
+          <PriceSet cardType='Reverse Holofoil' priceSet={tcgPlayer.prices.reverseHolofoil} />
         </div>
       )}
     </div>
   )
 }
 
-interface PriceSetProps {
-  name: string
-  priceSet?: TcgPlayerPriceSet
-}
-
-function PriceSet({ name, priceSet }: PriceSetProps): ReactElement {
+function PriceSet({ cardType, priceSet }: PriceSetProps): ReactElement {
   if (priceSet != undefined) {
     return (
-      <div>
-        <h3>{name}</h3>
+      <div className={styles.tcgPlayerPriceSet}>
+        <div className={styles.cardDetailColumnTitle}>{cardType}</div>
         <ul>
           {Object.entries(priceSet).map(([key, value]) => (
             <li key={key}>
