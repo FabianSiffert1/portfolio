@@ -74,17 +74,17 @@ function SetInformation(props: PokemonCardProp) {
 function CardMarketPrices(props: PokemonCardProp) {
   return (
     <div className={styles.cardMarketPricesContainer}>
-      <div className={styles.cardDetailColumnTitle}>Cardmarket</div>
-      <div className={styles.trendPrice}>
-        Trend price:
-        {props?.card?.cardmarket?.url ? (
+      <div className={styles.cardDetailColumnTitle}>
+        {' '}
+        {props.card.cardmarket?.url ? (
           <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
-            {props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')}
+            Cardmarket
           </Link>
         ) : (
-          props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')
+          <> Cardmarket </>
         )}
       </div>
+      <div className={styles.trendPrice}>Trend price: {props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')}</div>
     </div>
   )
 }
