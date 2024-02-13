@@ -116,6 +116,8 @@ function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
       {tcgPlayer.prices && (
         <div className={styles.tcgPlayerPriceList}>
           <PriceSet cardType='Normal' priceSet={tcgPlayer.prices.normal} />
+          <PriceSet cardType='1st Edition Holofoil' priceSet={tcgPlayer.prices['1stEditionHolofoil']} />
+          <PriceSet cardType='Unlimited Holofoil' priceSet={tcgPlayer.prices.unlimitedHolofoil} />
           <PriceSet cardType='Holofoil' priceSet={tcgPlayer.prices.holofoil} />
           <PriceSet cardType='Reverse Holofoil' priceSet={tcgPlayer.prices.reverseHolofoil} />
         </div>

@@ -118,6 +118,9 @@ export default function Market() {
         <div className={styles.cardListWrapper}>
           <CardList cards={cards} />
         </div>
+        <div>
+          <pre>{JSON.stringify(cards, null, 2)}</pre>
+        </div>
       </div>
     )
   } else {
