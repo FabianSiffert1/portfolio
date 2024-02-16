@@ -33,7 +33,13 @@
 
 .setMenu {
   @include PopUpMenu;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: var(--background-color);
+  @media (min-width: $smallScreen) {
+    @include PopUpMenu;
+  }
+
 }
 
 

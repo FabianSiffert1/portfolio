@@ -2,7 +2,16 @@
 
 
 .setMenuItemContainer {
-  @include popUpMenuItem;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @media (min-width: $smallScreen) {
+    @include popUpMenuItem;
+    text-align: center;
+    font-size: 120%;
+  }
 }
 
 
@@ -16,7 +25,5 @@
 }
 
 .setName {
-  font-size: 120%;
-  font-weight: bold;
-  text-align: center;
+  padding-left: 0.5rem;
 }
