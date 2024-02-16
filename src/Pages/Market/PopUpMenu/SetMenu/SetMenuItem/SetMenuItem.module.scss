@@ -7,6 +7,8 @@
   font-weight: bold;
   align-items: flex-start;
   justify-content: flex-start;
+  cursor: pointer;
+  z-index: $zTopLevel;
   @media (min-width: $smallScreen) {
     @include popUpMenuItem;
     text-align: center;
@@ -16,6 +18,8 @@
 
 
 .setSymbol {
+  padding-left: 0.5rem;
+
   img {
     height: 1rem;
     @media (min-width: $smallScreen) {
