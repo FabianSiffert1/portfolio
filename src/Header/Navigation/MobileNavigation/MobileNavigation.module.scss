@@ -16,38 +16,33 @@
   background-color: var(--color);
 }
 
-.hamburgerMenu {
+.navigationMenu {
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
   z-index: $zTopLevel;
-  display: flex;
+  position: fixed;
   height: 100%;
   width: 100%;
-  position: absolute;
-  top: 0;
   left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background-color: var(--background-color);
 
-  ul {
-    font-size: 2.5rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 10rem;
+  .link {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 2.5rem;
   }
 
-  li {
-    padding-bottom: 3rem;
-    text-align: center;
-  }
-
-  li img {
-    flex-grow: 1;
-    width: 0;
+  .linkImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-height: 2.5rem;
-  }
-
-  li a {
-    text-decoration: none;
-    color: inherit;
   }
 }
