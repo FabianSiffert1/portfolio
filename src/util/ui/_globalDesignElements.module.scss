@@ -82,8 +82,8 @@ $zTopLevel: 3;
   grid-template-columns: repeat(8, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
-  border-bottom: solid var(--color) 1px;
-  border-top: solid var(--color) 1px;
+  border: solid var(--color) 1px;
+  border-radius: 0.3rem;
 }
 
 @mixin popUpMenuItem {
