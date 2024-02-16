@@ -60,8 +60,6 @@ export default function Market() {
         try {
           const result = await fetchSpecies('Charizard', 'base')
           setCards(result)
-          setCurrentlySelectedPokemonSet(result[0]?.set?.name as unknown as PokemonSetName)
-          setCurrentlySelectedPokemonSetLogoUrl(result[0].set.images.logo)
         } catch (error) {
           console.error('Error in Market - getCardData useEffect:', error)
         }
