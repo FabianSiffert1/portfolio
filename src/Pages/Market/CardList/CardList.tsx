@@ -9,22 +9,11 @@ export interface CardListProps {
 
 export default function CardList(props: CardListProps) {
   const cardArray: ReactElement<PokemonCard>[] = []
-  const uniquePokemonSeriesMap: Record<string, PokemonCard> = {}
 
   props.cards.forEach((card) => {
     if (card.id != undefined) {
-      if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.id)) {
-        uniquePokemonSeriesMap[card.id] = card
-      }
+      cardArray.push(<Card key={card.id} card={card} />)
     }
-  })
-  const uniqueCardArray: {
-    cardName: string
-    card: PokemonCard
-  }[] = Object.entries(uniquePokemonSeriesMap).map(([cardName, card]) => ({ cardName, card }))
-
-  uniqueCardArray.forEach((cardObject) => {
-    cardArray.push(<Card key={cardObject.card.id} card={cardObject.card} />)
   })
 
   return <div className={styles.cardList}>{cardArray}</div>
