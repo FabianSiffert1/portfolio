@@ -12,9 +12,9 @@ export default function CardList(props: CardListProps) {
   const uniquePokemonSeriesMap: Record<string, PokemonCard> = {}
 
   props.cards.forEach((card) => {
-    if (card.name != undefined) {
-      if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.name)) {
-        uniquePokemonSeriesMap[card.name] = card
+    if (card.id != undefined) {
+      if (!Object.prototype.hasOwnProperty.call(uniquePokemonSeriesMap, card.id)) {
+        uniquePokemonSeriesMap[card.id] = card
       }
     }
   })
