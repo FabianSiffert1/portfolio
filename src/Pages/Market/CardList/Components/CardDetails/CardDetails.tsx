@@ -39,7 +39,7 @@ export function CardBaseDetails(card: PokemonCardProp) {
     <div className={styles.cardBaseInformationContainer}>
       <div className={styles.cardDetailsColumnTitle}>{card.card.name}</div>
       <div className={styles.cardBaseInformation}>
-        <div className={styles.cardBaseInformationRarity}>{card.card.rarity}</div>
+        <span className={styles.cardBaseInformationRarity}>{card.card.rarity}</span>
         <div className={styles.cardBaseInformationNumber}>
           {card.card.number}/{card.card.set.printedTotal}
         </div>

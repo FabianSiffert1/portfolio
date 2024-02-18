@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
 import { CardBaseDetails, TcgPlayerComponent } from '../CardDetails/CardDetails'
-import styles from './CardDetailsMobile.module.scss'
+import styles from './MobileCardDetails.module.scss'
 
-interface CardDetailsMobileProps {
+interface MobileCardDetails {
   card: PokemonCard
   toggleCardDetailsPopUp: (newState: boolean) => void
 }
 
-export function CardDetailsMobile(props: CardDetailsMobileProps) {
+export function MobileCardDetails(props: MobileCardDetails) {
   const setReleaseDate = new Date(props.card?.set?.releaseDate)
   const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
   const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
@@ -18,10 +18,10 @@ export function CardDetailsMobile(props: CardDetailsMobileProps) {
     tcgPlayerPriceList = TcgPlayerComponent(props.card.tcgplayer)
   }
   return (
-    <div className={styles.cardDetailsMobileContainer} key={props.card.id}>
+    <div className={styles.mobileCardDetailsContainer} key={props.card.id}>
       <div className={styles.overlay} onClick={() => props.toggleCardDetailsPopUp(false)} />
       <div className={styles.cardDetailsContainer}>
-        <div className={styles.cardDetailsMobileHeader}>
+        <div className={styles.mobileCardDetailsHeader}>
           <div className={styles.closeOverlayButton} onClick={() => props.toggleCardDetailsPopUp(false)}>
             X
           </div>

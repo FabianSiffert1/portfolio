@@ -1,6 +1,6 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
-.cardDetailsMobileContainer {
+.mobileCardDetailsContainer {
   display: none;
   @media (max-width: $bigScreen) {
     display: flex;
@@ -20,7 +20,7 @@
   z-index: $zSecondLevel;
 }
 
-.cardDetailsMobileHeader {
+.mobileCardDetailsHeader {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -28,7 +28,6 @@
 
 .closeOverlayButton {
   cursor: pointer;
-  border: solid var(--color) 0.1rem;
   border-radius: 1rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -104,8 +103,8 @@
   border-bottom: solid var(--color) 0.1rem;
 }
 
-.tcgPlayerPriceListContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 1rem
+.tcgPlayerPriceList {
+  * {
+    padding-bottom: 0.1rem !important;
+  }
 }
