@@ -18,7 +18,6 @@ export default function Market() {
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
 
   const [cards, setCards] = useState<PokemonCard[]>([])
   const [sets, setSets] = useState<PokemonSet[]>([])
@@ -75,7 +74,6 @@ export default function Market() {
       </div>
     )
   }, [
-    scrollY,
     sets,
     setCardList,
     toggleSetMenu,
@@ -87,18 +85,6 @@ export default function Market() {
     currentlySelectedPokemonSetLogoUrl,
     setMenuIsOpen
   ])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
 
   useEffect(() => {
     const getCardData = async () => {
