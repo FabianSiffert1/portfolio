@@ -1,5 +1,9 @@
 import { PokemonSetLogo } from './PokemonSet'
 
+export interface PokemonCardProp {
+  card: PokemonCard
+}
+
 export interface TcgPlayerPriceSet {
   low?: number
   mid?: number

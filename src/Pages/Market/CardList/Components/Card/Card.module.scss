@@ -33,7 +33,8 @@
 
 
 .cardName {
-  @include cardNameStyle
+  @include cardNameStyle;
+  text-align: center;
 }
 
 
@@ -43,6 +44,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 0.3rem;
+  text-align: center;
 
 }
 
@@ -66,5 +68,6 @@
 
 .tcgPlayerPricesContainer {
   padding-top: 0.3rem;
+  text-align: center;
 }
 

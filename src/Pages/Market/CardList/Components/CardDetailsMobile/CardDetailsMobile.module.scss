@@ -1,0 +1,111 @@
+@import '../../../../../util/ui/globalDesignElements.module';
+
+.cardDetailsMobileContainer {
+  display: none;
+  @media (max-width: $bigScreen) {
+    display: flex;
+  }
+
+  overflow: clip;
+
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $zSecondLevel;
+}
+
+.cardDetailsMobileHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.closeOverlayButton {
+  cursor: pointer;
+  border: solid var(--color) 0.1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.cardDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 0.3rem;
+  z-index: $zTopLevel;
+  padding: 1rem;
+}
+
+.cardImageAndBaseInfo {
+  display: flex;
+  height: 40%;
+  padding-bottom: 0.5rem;
+
+  img {
+    @include cardImageStyle;
+    padding-right: 1rem;
+  }
+}
+
+.setHeader {
+  margin-bottom: 0.5rem;
+  border-bottom: solid var(--color) 0.1rem;
+  font-weight: bold;
+}
+
+.cardSetInformationContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  padding-bottom: 1rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.cardPrices {
+
+  img {
+    width: 15%;
+  }
+}
+
+.cardMarketLink {
+  margin-bottom: 0.5rem;
+  border-bottom: solid var(--color) 0.1rem;
+}
+
+.cardMarketPricesContainer {
+  padding-bottom: 2rem;
+
+  * {
+    padding-bottom: 0.3rem;
+  }
+
+}
+
+.tcgPlayerLink {
+  margin-bottom: 0.5rem;
+  border-bottom: solid var(--color) 0.1rem;
+}
+
+.tcgPlayerPriceListContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem
+}

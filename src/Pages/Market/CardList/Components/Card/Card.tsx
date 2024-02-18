@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import { PokemonCard } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
-import { CardDetail } from '../CardDetail/CardDetail'
+import { CardDetails } from '../CardDetails/CardDetails'
+import { CardDetailsMobile } from '../CardDetailsMobile/CardDetailsMobile'
 import styles from './Card.module.scss'
 
 interface CardProps {
@@ -31,7 +32,8 @@ function CardContent(props: CardProps) {
 
   return (
     <div className={styles.cardContainer} key={props.card.id}>
-      {cardDetailsVisible && <CardDetail card={props.card} toggleCardDetailsPopUp={setCardDetailsVisible} />}
+      {cardDetailsVisible && <CardDetailsMobile card={props.card} toggleCardDetailsPopUp={setCardDetailsVisible} />}
+      {cardDetailsVisible && <CardDetails card={props.card} toggleCardDetailsPopUp={setCardDetailsVisible} />}
       <div
         key={props.card.set.id}
         className={styles.card}

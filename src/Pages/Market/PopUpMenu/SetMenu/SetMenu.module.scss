@@ -21,6 +21,7 @@
   img {
     cursor: pointer;
     max-height: 2rem;
+    max-width: 15rem;
     @media (min-width: $smallScreen) {
       max-height: 3rem;
     }

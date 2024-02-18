@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
-import { PokemonCard, TcgPlayer, TcgPlayerPriceSet } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
+import { PokemonCard, PokemonCardProp, TcgPlayer, TcgPlayerPriceSet } from '../../../../../util/api/pokemonTGC/model/PokemonCard'
 import styles from './CardDetails.module.scss'
 
-interface CardDetailProps {
+interface CardDetailsProps {
   card: PokemonCard
   toggleCardDetailsPopUp: (newState: boolean) => void
 }
@@ -13,11 +13,7 @@ interface PriceSetProps {
   priceSet?: TcgPlayerPriceSet
 }
 
-interface PokemonCardProp {
-  card: PokemonCard
-}
-
-export function CardDetail(props: CardDetailProps) {
+export function CardDetails(props: CardDetailsProps) {
   return (
     <div className={styles.cardDetailsWrapper} key={props.card.id}>
       <div className={styles.overlay} onClick={() => props.toggleCardDetailsPopUp(false)} />
@@ -38,58 +34,59 @@ export function CardDetail(props: CardDetailProps) {
   )
 }
 
-function CardBaseDetails(props: PokemonCardProp) {
+export function CardBaseDetails(card: PokemonCardProp) {
   return (
-    <div className={styles.cardDetails}>
-      <div className={styles.cardDetailColumnTitle}>{props.card.name}</div>
-      <div className={styles.cardRarity}>{props.card.rarity}</div>
-      <div className={styles.cardNumber}>
-        {props.card.number}/{props.card.set.printedTotal}
+    <div className={styles.cardBaseInformationContainer}>
+      <div className={styles.cardDetailsColumnTitle}>{card.card.name}</div>
+      <div className={styles.cardBaseInformation}>
+        <div className={styles.cardBaseInformationRarity}>{card.card.rarity}</div>
+        <div className={styles.cardBaseInformationNumber}>
+          {card.card.number}/{card.card.set.printedTotal}
+        </div>
+        {card.card.evolvesTo}
+        {card.card.evolvesFrom && <div className={styles.cardBaseInformationEvolvesFrom}>Evolves from: {card.card.evolvesFrom}</div>}
+        <div className={styles.cardBaseInformationIllustrator}>Illus: {card.card.artist}</div>
       </div>
-      {props.card.evolvesTo}
-      {props.card.evolvesFrom && <div className={styles.evolvesFrom}>Evolves from: {props.card.evolvesFrom}</div>}
-      <div className={styles.cardArtist}>Illus: {props.card.artist}</div>
     </div>
   )
 }
 
-function SetInformation(props: PokemonCardProp) {
-  const setReleaseDate = new Date(props.card?.set?.releaseDate)
+export function SetInformation(card: PokemonCardProp) {
+  const setReleaseDate = new Date(card.card?.set?.releaseDate)
   const setReleaseMonth = setReleaseDate.toLocaleString('default', { month: 'long' })
   const setReleaseString = setReleaseMonth.concat(' ').concat(setReleaseDate.getFullYear().toString())
   return (
     <div className={styles.setInformation}>
-      <span className={styles.cardDetailColumnTitle}> {props.card?.set?.name ? props.card.set.name : null}</span>
+      <span className={styles.cardDetailsColumnTitle}> {card.card?.set?.name ? card.card.set.name : null}</span>
       <span className={styles.setReleaseDate}>{setReleaseString}</span>
-      <span>Total Cards: {props.card.set.total}</span>
-      <span>Series: {props.card.set.series}</span>
-      <span>{props.card.set.legalities.unlimited}</span>
+      <span>Total Cards: {card.card.set.total}</span>
+      <span>Series: {card.card.set.series}</span>
+      <span>{card.card.set.legalities.unlimited}</span>
       <span className={styles.setSymbol}>
-        {props.card?.set?.images?.symbol ? <img src={props.card.set.images.symbol} alt={'setSymbol'} /> : null}
+        {card.card?.set?.images?.symbol ? <img src={card.card.set.images.symbol} alt={'setSymbol'} /> : null}
       </span>
     </div>
   )
 }
 
-function CardMarketPrices(props: PokemonCardProp) {
+export function CardMarketPrices(card: PokemonCardProp) {
   return (
     <div className={styles.cardMarketPricesContainer}>
-      <div className={styles.cardDetailColumnTitle}>
-        {' '}
-        {props.card.cardmarket?.url ? (
-          <Link to={props.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
+      <div className={styles.cardMarketHeader}>
+        {card.card.cardmarket?.url ? (
+          <Link to={card.card.cardmarket.url} target='_blank' rel='noopener noreferrer'>
             Cardmarket
           </Link>
         ) : (
           <> Cardmarket </>
         )}
       </div>
-      <div className={styles.trendPrice}>Trend price: {props?.card?.cardmarket?.prices?.trendPrice?.toString().concat(' €')}</div>
+      <div className={styles.trendPrice}>Trend price: {card?.card?.cardmarket?.prices?.trendPrice?.toString().concat('€')}</div>
     </div>
   )
 }
 
-function TcgPlayerPrices(props: PokemonCardProp) {
+export function TcgPlayerPrices(props: PokemonCardProp) {
   let tcgPlayerPriceList
   if (props.card.tcgplayer != undefined) {
     tcgPlayerPriceList = TcgPlayerComponent(props.card.tcgplayer)
@@ -110,7 +107,7 @@ function TcgPlayerPrices(props: PokemonCardProp) {
   )
 }
 
-function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
+export function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
   return (
     <div>
       {tcgPlayer.prices && (
@@ -128,17 +125,22 @@ function TcgPlayerComponent(tcgPlayer: TcgPlayer) {
   )
 }
 
-function PriceSet({ cardType, priceSet }: PriceSetProps): ReactElement {
+export function PriceSet({ cardType, priceSet }: PriceSetProps): ReactElement {
   if (priceSet != undefined) {
     return (
       <div className={styles.tcgPlayerPriceSet}>
-        <div className={styles.cardDetailColumnTitle}>{cardType}</div>
+        <div className={styles.cardType}>
+          <strong>{cardType}</strong>
+        </div>
         <ul>
-          {Object.entries(priceSet).map(([key, value]) => (
-            <li key={key}>
-              <strong>{key}</strong>: {value} €
-            </li>
-          ))}
+          {Object.entries(priceSet).map(
+            ([key, value]) =>
+              value && (
+                <li key={key}>
+                  {key}: {value}€
+                </li>
+              )
+          )}
         </ul>
       </div>
     )
