@@ -1,7 +1,9 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .market {
-  @include horizontalMargins;
+  @media (min-width: $smallScreen) {
+    @include horizontalMargins;
+  }
 }
 
 .header {
@@ -17,7 +19,10 @@
 
 
 .cardListWrapper {
-  padding-top: 8rem;
+  padding-top: 4rem;
+  @media (min-width: $smallScreen) {
+    padding-top: 8rem;
+  }
 }
 
 .loadingState {
