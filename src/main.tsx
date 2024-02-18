@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.scss'
+import HeaderProvider from './Header/HeaderProvider'
 import ErrorPage from './Pages/404/404'
 import Home from './Pages/Home/Home'
 import Inventory from './Pages/Inventory/Inventory'
@@ -39,7 +40,9 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <HeaderProvider>
+          <RouterProvider router={router} />
+        </HeaderProvider>
       </ThemeProvider>
     </React.StrictMode>
   </QueryClientProvider>

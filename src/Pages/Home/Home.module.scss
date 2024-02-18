@@ -1,10 +1,18 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .home {
-  @include horizontalMargins;
-  @include verticalMargins;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  @media (min-width: $bigScreen) {
+    max-width: $bigScreen;
+  }
+  margin: auto;
+  padding: 2rem;
+  background-color: pink;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overflow-y: scroll;
 }
 
@@ -17,8 +25,6 @@
 }
 
 .header {
-  margin-left: auto;
-  margin-right: auto;
   @media (min-width: $bigScreen) {
     max-width: $bigScreen;
   }
@@ -26,9 +32,8 @@
 
 
 .pageContainer {
-  padding-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
+  left: 0;
+  right: 0;
   @media (min-width: $bigScreen) {
     max-width: $bigScreen;
   }

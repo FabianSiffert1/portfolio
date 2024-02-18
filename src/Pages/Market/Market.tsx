@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { LoadingSpinner } from '../../Components/LoadingSpinner/LoadingSpinner'
+import { HeaderContext } from '../../Header/HeaderProvider'
 import { PokemonCard } from '../../util/api/pokemonTGC/model/PokemonCard'
 import { PokemonSet, PokemonSetLogo, PokemonSetName, PokemonTCGSeries } from '../../util/api/pokemonTGC/model/PokemonSet'
 import pokemonTCGAPI from '../../util/api/pokemonTGC/pokemonTCGAPI'
@@ -11,6 +12,8 @@ import SetMenu from './PopUpMenu/SetMenu/SetMenu'
 
 export default function Market() {
   pokemonTCGAPI.configure(import.meta.env.VITE_POKEMON_TCG_API_KEY)
+
+  const headerContext = useContext(HeaderContext)
 
   const [areCardsLoading, setCardsLoading] = useState(true)
   const [setsLoading, setSetLoading] = useState(true)
@@ -41,6 +44,10 @@ export default function Market() {
   function setCurrentlySelectedPokemonSetLogoUrl(url: PokemonSetLogo) {
     _setCurrentlySelectedPokemonSetLogoUrl(url)
   }
+
+  useEffect(() => {
+    headerContext.setHeaderItem(<div>Hallo</div>)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {

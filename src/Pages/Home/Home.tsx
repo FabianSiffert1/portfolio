@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
+import HeaderProvider from '../../Header/HeaderProvider'
 import { ThemeContext } from '../../util/ui/theme/ThemeProvider'
 import styles from './Home.module.scss'
 
@@ -13,15 +14,17 @@ export default function Home() {
   }, [darkTheme])
   return (
     <div className={styles.home}>
-      <div className={styles.header}>
-        <Header />
-      </div>
-      <div className={styles.pageContainer}>
-        <Outlet />
-      </div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+      <HeaderProvider>
+        <div className={styles.header}>
+          <Header />
+        </div>
+        <div className={styles.pageContainer}>
+          <Outlet />
+        </div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
+      </HeaderProvider>
     </div>
   )
 }

@@ -1,10 +1,12 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useContext, useLayoutEffect, useRef } from 'react'
 import styles from './Header.module.scss'
+import { HeaderContext } from './HeaderProvider'
 import MobileNavigation from './Navigation/MobileNavigation/MobileNavigation'
 import WebNavigation from './Navigation/WebNavigation/WebNavigation'
 import Title from './Title/Title'
 
 export default function Header() {
+  const headerContext = useContext(HeaderContext)
   const componentRef = useRef<HTMLDivElement>(null)
   const handleDisplayStyleChange = () => {
     const widthThreshold = 1536
@@ -29,6 +31,7 @@ export default function Header() {
       <div className={styles.title}>
         <Title />
       </div>
+      <div className={styles.middleItem}>{headerContext.headerItem}</div>
       <div className={styles.navigation}>
         <div className={styles.mobileNavigation}>
           <MobileNavigation />

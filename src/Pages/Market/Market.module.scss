@@ -8,12 +8,12 @@
 
 .header {
   @include horizontalMargins;
+  padding: 2rem;
   background-color: var(--background-color);
   position: fixed;
-  z-index: $zBaseLayer;
-  top: 7rem;
   left: 0;
   right: 0;
+  z-index: $zSecondLevel;
   transition: 0.15s;
 }
 

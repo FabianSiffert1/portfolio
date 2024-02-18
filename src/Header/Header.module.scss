@@ -2,9 +2,27 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
   align-items: start;
   justify-content: space-between;
+  position: fixed;
+  background-color: var(--background-color);
+  top: 0;
+  left: 0;
+  right: 0;
+  @media (min-width: $bigScreen) {
+    max-width: $bigScreen;
+  }
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.middleItem {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
 }
 
 .navigation {
