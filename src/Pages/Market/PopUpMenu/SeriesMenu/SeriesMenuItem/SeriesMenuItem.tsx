@@ -17,7 +17,7 @@ export function SeriesMenuItem(props: SeriesMenuProps) {
   const seriesName = props.seriesName as unknown as ReactElement
   return (
     <div
-      className={styles.seriesMenuItem}
+      className={styles.seriesMenuItemContainer}
       onClick={() => {
         props.setCurrentlySelectedPokemonSeries(props.seriesName)
         props.toggleSetMenu(true)

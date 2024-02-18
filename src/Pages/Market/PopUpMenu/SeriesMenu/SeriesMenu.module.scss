@@ -1,7 +1,7 @@
 @import '../../../../util/ui/globalDesignElements.module';
 
 
-.seriesMenuTopLevel {
+.seriesMenuWrapper {
 
 }
 
@@ -22,14 +22,17 @@
   font-size: 125%;
 }
 
-.seriesMenuWrapper {
+.seriesPopUpMenuContainer {
 }
 
+.seriesPopUpMenu {
+  @include PopUpMenu;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--background-color);
+}
 
 .overlay {
   @include invisibleOverlay;
 }
 
-.seriesMenu {
-  @include PopUpMenu;
-}

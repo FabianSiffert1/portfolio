@@ -1,15 +1,25 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
-.seriesMenuItem {
-  @include popUpMenuItem;
-}
-
-
-.seriesNameContainer {
+.seriesMenuItemContainer {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+  z-index: $zTopLevel;
+  @media (min-width: $smallScreen) {
+    @include popUpMenuItem;
+    text-align: center;
+    font-size: 120%;
+  }
 }
 
 .seriesName {
-  font-size: 120%;
-  font-weight: bold;
-  text-align: center;
+  @media (min-width: $smallScreen) {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+  }
 }

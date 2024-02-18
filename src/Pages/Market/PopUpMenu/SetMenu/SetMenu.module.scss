@@ -1,7 +1,7 @@
 @import '../../../../util/ui/globalDesignElements.module';
 @import '../SeriesMenu/SeriesMenu.module';
 
-.seriesMenuWrapper {
+.seriesPopUpMenuContainer {
 }
 
 .loadingState {
@@ -29,10 +29,10 @@
   }
 }
 
-.setMenuContainer {
+.setPopUpMenuContainer {
 }
 
-.setMenu {
+.setPopUpMenu {
   @include PopUpMenu;
   padding-top: 1rem;
   padding-bottom: 1rem;

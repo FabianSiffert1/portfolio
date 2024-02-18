@@ -68,9 +68,9 @@ export default function SetMenu(props: SetMenuProps) {
         </div>
       ) : undefined}
       {props.setMenuIsOpen ? (
-        <div className={styles.setMenuContainer}>
+        <div className={styles.setPopUpMenuContainer}>
           <div className={styles.overlay} onClick={() => props.toggleSetMenu(false)} />
-          <div className={styles.setMenu}>{setArray}</div>
+          <div className={styles.setPopUpMenu}>{setArray}</div>
         </div>
       ) : undefined}
     </div>

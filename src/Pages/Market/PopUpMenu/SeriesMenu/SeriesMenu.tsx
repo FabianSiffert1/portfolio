@@ -47,7 +47,7 @@ export default function SeriesMenu(props: SetMenuProps) {
     id++
   })
   return (
-    <div className={styles.seriesMenuTopLevel}>
+    <div className={styles.seriesMenuWrapper}>
       {!seriesLoading && (
         <div className={styles.seriesMenuContainer}>
           <div className={styles.seriesNameContainer}>
@@ -56,9 +56,9 @@ export default function SeriesMenu(props: SetMenuProps) {
             </div>
           </div>
           {seriesMenuIsOpen && (
-            <div className={styles.seriesMenuWrapper}>
+            <div className={styles.seriesPopUpMenuContainer}>
               <div className={styles.overlay} onClick={toggleOpen} />
-              <div className={styles.seriesMenu} onClick={toggleOpen}>
+              <div className={styles.seriesPopUpMenu} onClick={toggleOpen}>
                 {seriesArray}
               </div>
             </div>
