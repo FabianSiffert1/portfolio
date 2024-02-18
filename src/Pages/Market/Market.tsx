@@ -45,6 +45,7 @@ export default function Market() {
   }
 
   useEffect(() => {
+    console.log(areCardsLoading)
     headerContext.setHeaderItem(
       <div className={styles.header}>
         <SeriesMenu
@@ -75,13 +76,9 @@ export default function Market() {
     )
   }, [
     sets,
-    setCardList,
-    toggleSetMenu,
     currentlySelectedPokemonSeries,
     areCardsLoading,
-    setCardsLoading,
     currentlySelectedPokemonSet,
-    setCurrentlySelectedPokemonSet,
     currentlySelectedPokemonSetLogoUrl,
     setMenuIsOpen
   ])
