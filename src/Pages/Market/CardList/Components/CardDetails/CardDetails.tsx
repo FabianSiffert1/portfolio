@@ -82,6 +82,11 @@ export function CardMarketPrices(card: PokemonCardProp) {
         )}
       </div>
       <div className={styles.trendPrice}>Trend price: {card?.card?.cardmarket?.prices?.trendPrice?.toString().concat('€')}</div>
+      <div className={styles.trendPrice}>Avg: {card?.card?.cardmarket?.prices?.averageSellPrice?.toString().concat('€')}</div>
+      <div className={styles.trendPrice}>Avg last 30 days: {card?.card?.cardmarket?.prices?.avg30?.toString().concat('€')}</div>
+      {card?.card?.cardmarket?.prices?.suggestedPrice ? (
+        <div className={styles.trendPrice}>Suggested Price: {card?.card?.cardmarket?.prices?.suggestedPrice?.toString().concat('€')}</div>
+      ) : undefined}
     </div>
   )
 }

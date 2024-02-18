@@ -16,7 +16,6 @@ export default function Market() {
   const headerContext = useContext(HeaderContext)
 
   const [areCardsLoading, setCardsLoading] = useState(true)
-  const [setsLoading, setSetLoading] = useState(true)
   const [setMenuIsOpen, toggleSetMenuOpen] = useState(false)
 
   const [cards, setCards] = useState<PokemonCard[]>([])
@@ -112,13 +111,11 @@ export default function Market() {
     getSetData().then(() => setSetLoading(false))
   }, [])
 
-  if (!setsLoading) {
-    return (
-      <div className={styles.market}>
-        <div className={styles.cardListWrapper}>
-          <CardList cards={cards} />
-        </div>
+  return (
+    <div className={styles.market}>
+      <div className={styles.cardListWrapper}>
+        <CardList cards={cards} />
       </div>
-    )
-  }
+    </div>
+  )
 }
