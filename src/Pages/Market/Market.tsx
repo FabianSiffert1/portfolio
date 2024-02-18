@@ -46,6 +46,11 @@ export default function Market() {
   useEffect(() => {
     headerContext.setHeaderItem(
       <div className={styles.header}>
+        {areCardsLoading && (
+          <div className={styles.loadingState}>
+            <LoadingSpinner />
+          </div>
+        )}
         <SeriesMenu
           pokemonSets={sets}
           setCardList={setCardList}
@@ -65,11 +70,6 @@ export default function Market() {
           setMenuIsOpen={setMenuIsOpen}
           setCardList={setCardList}
         />
-        {areCardsLoading ? (
-          <div className={styles.loadingState}>
-            <LoadingSpinner />
-          </div>
-        ) : undefined}
       </div>
     )
   }, [
@@ -108,7 +108,7 @@ export default function Market() {
       }
     }
 
-    getSetData().then(() => setSetLoading(false))
+    getSetData().then(() => {})
   }, [])
 
   return (
