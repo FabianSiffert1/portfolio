@@ -45,7 +45,6 @@ export default function Market() {
   }
 
   useEffect(() => {
-    console.log(areCardsLoading)
     headerContext.setHeaderItem(
       <div className={styles.header}>
         <SeriesMenu
@@ -119,12 +118,6 @@ export default function Market() {
         <div className={styles.cardListWrapper}>
           <CardList cards={cards} />
         </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className={styles.loadingState}>
-        <LoadingSpinner />
       </div>
     )
   }
