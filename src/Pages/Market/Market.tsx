@@ -46,8 +46,47 @@ export default function Market() {
   }
 
   useEffect(() => {
-    headerContext.setHeaderItem(<div>Hallo</div>)
-  }, [])
+    headerContext.setHeaderItem(
+      <div className={styles.header}>
+        <SeriesMenu
+          pokemonSets={sets}
+          setCardList={setCardList}
+          toggleSetMenu={toggleSetMenu}
+          currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+          setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
+        />
+        <SetMenu
+          areCardsLoading={areCardsLoading}
+          setCardsLoading={setCardsLoading}
+          currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
+          currentlySelectedPokemonSet={currentlySelectedPokemonSet}
+          setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
+          currentlySelectedPokemonSetLogoUrl={currentlySelectedPokemonSetLogoUrl}
+          setCurrentlySelectedPokemonSetImageUrl={setCurrentlySelectedPokemonSetLogoUrl}
+          toggleSetMenu={toggleSetMenu}
+          setMenuIsOpen={setMenuIsOpen}
+          setCardList={setCardList}
+        />
+        {areCardsLoading ? (
+          <div className={styles.loadingState}>
+            <LoadingSpinner />
+          </div>
+        ) : undefined}
+      </div>
+    )
+  }, [
+    scrollY,
+    sets,
+    setCardList,
+    toggleSetMenu,
+    currentlySelectedPokemonSeries,
+    areCardsLoading,
+    setCardsLoading,
+    currentlySelectedPokemonSet,
+    setCurrentlySelectedPokemonSet,
+    currentlySelectedPokemonSetLogoUrl,
+    setMenuIsOpen
+  ])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,32 +133,6 @@ export default function Market() {
   if (!setsLoading) {
     return (
       <div className={styles.market}>
-        <div className={styles.header} style={{ top: scrollY > 12 ? 0 : '7rem', paddingTop: scrollY > 12 ? '1rem' : 0 }}>
-          <SeriesMenu
-            pokemonSets={sets}
-            setCardList={setCardList}
-            toggleSetMenu={toggleSetMenu}
-            currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
-            setCurrentlySelectedPokemonSeries={setCurrentlySelectedPokemonSeries}
-          />
-          <SetMenu
-            areCardsLoading={areCardsLoading}
-            setCardsLoading={setCardsLoading}
-            currentlySelectedPokemonSeries={currentlySelectedPokemonSeries}
-            currentlySelectedPokemonSet={currentlySelectedPokemonSet}
-            setCurrentlySelectedPokemonSet={setCurrentlySelectedPokemonSet}
-            currentlySelectedPokemonSetLogoUrl={currentlySelectedPokemonSetLogoUrl}
-            setCurrentlySelectedPokemonSetImageUrl={setCurrentlySelectedPokemonSetLogoUrl}
-            toggleSetMenu={toggleSetMenu}
-            setMenuIsOpen={setMenuIsOpen}
-            setCardList={setCardList}
-          />
-          {areCardsLoading ? (
-            <div className={styles.loadingState}>
-              <LoadingSpinner />
-            </div>
-          ) : undefined}
-        </div>
         <div className={styles.cardListWrapper}>
           <CardList cards={cards} />
         </div>
