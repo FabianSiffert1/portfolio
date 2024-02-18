@@ -1,9 +1,6 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .market {
-  @media (min-width: $smallScreen) {
-    @include horizontalMargins;
-  }
 }
 
 .header {
