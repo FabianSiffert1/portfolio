@@ -72,10 +72,17 @@ $zTopLevel: 3;
   bottom: 0;
   right: 0;
   z-index: $zSecondLevel;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @mixin PopUpMenu {
   display: grid;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 10rem;
+  z-index: $zTopLevel;
+  @include horizontalMargins;
   @media (max-width: $smallScreen) {
     grid-template-columns: repeat(2, 1fr);
   }

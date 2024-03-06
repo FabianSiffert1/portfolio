@@ -10,12 +10,16 @@
 .cardListWrapper {
   padding-top: 10rem;
   @media (min-width: $smallScreen) {
-    padding-top: 10rem;
+    padding-top: 14rem;
   }
 }
 
 .loadingState {
   display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10rem;
   justify-content: center;
   scale: 0.4;
   @media (min-width: $bigScreen) {
