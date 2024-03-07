@@ -56,10 +56,10 @@ export default function SetMenuItem(props: SetMenuItemProps) {
           props.toggleSetMenu(false)
         }}
       >
-        <img src={props.setSymbol as unknown as string} alt={props.setName.toString()} />
-      </div>
-      <div className={styles.setName}>
-        <>{props.setName}</>
+        <img src={props.setLogo as unknown as string} alt={props.setName.toString()} />
+        <div className={styles.setName}>
+          <>{props.setName}</>
+        </div>
       </div>
     </div>
   )

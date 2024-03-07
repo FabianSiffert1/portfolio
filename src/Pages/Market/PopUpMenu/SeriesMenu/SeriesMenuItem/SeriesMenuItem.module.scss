@@ -1,24 +1,22 @@
 @import '../../../../../util/ui/globalDesignElements.module';
 
 .seriesMenuItemContainer {
-  padding-left: 0.5rem;
   display: flex;
   flex-direction: row;
   font-weight: bold;
-  align-items: flex-start;
-  justify-content: flex-start;
+  text-align: center;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
   z-index: $zTopLevel;
   @media (min-width: $smallScreen) {
     @include popUpMenuItem;
-    text-align: center;
   }
 }
 
 .seriesName {
+  font-size: 120%;
   @media (min-width: $smallScreen) {
     font-size: 120%;
-    font-weight: bold;
-    text-align: center;
   }
 }

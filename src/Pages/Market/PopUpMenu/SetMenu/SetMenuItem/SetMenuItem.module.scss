@@ -18,16 +18,32 @@
 
 
 .setSymbol {
-  padding-left: 0.5rem;
+  display: flex;
+  justify-content: center;
 
   img {
-    height: 1rem;
+    height: 2.5rem;
+    object-fit: scale-down;
     @media (min-width: $smallScreen) {
-      width: 1.5rem;
+      height: 3rem;
+      max-width: 12rem;
     }
   }
 }
 
+.setSymbol:hover {
+  .setName {
+    display: flex;
+    visibility: visible;
+  }
+}
+
 .setName {
-  padding-left: 0.5rem;
+  position: absolute;
+  visibility: hidden;
+  transform: translate(0%, -110%);
+  background-color: var(--card-background-color);
+  padding: 1rem;
+  border: solid var(--color) 1px;
+  border-radius: 0.3rem;
 }
