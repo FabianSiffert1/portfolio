@@ -22,7 +22,11 @@
   top: 10rem;
   justify-content: center;
   scale: 0.4;
-  @media (min-width: $bigScreen) {
+  @media (max-width: $smallScreen) {
+    top: 1.5rem;
+    left: 15rem;
+  }
+  @media (min-width: $smallScreen) {
     scale: 1;
   }
 }

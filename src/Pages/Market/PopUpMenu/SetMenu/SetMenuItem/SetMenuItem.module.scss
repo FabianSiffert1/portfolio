@@ -4,11 +4,10 @@
 .setMenuItemContainer {
   display: flex;
   flex-direction: row;
-  font-weight: bold;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   cursor: pointer;
   z-index: $zTopLevel;
+  padding: 0.5rem;
   @media (min-width: $smallScreen) {
     @include popUpMenuItem;
     text-align: center;
@@ -23,6 +22,7 @@
 
   img {
     height: 2.5rem;
+    max-width: 6rem;
     object-fit: scale-down;
     @media (min-width: $smallScreen) {
       height: 3rem;
@@ -31,14 +31,18 @@
   }
 }
 
-.setSymbol:hover {
-  .setName {
-    display: flex;
-    visibility: visible;
+@media (min-width: $smallScreen) {
+  .setSymbol:hover {
+    .setName {
+      display: flex;
+      visibility: visible;
+    }
   }
 }
 
+
 .setName {
+  font-weight: bold;
   position: absolute;
   visibility: hidden;
   transform: translate(0%, -110%);

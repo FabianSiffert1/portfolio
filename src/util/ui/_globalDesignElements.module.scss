@@ -81,7 +81,11 @@ $zTopLevel: 3;
   left: 0;
   right: 0;
   top: 10rem;
+  @media (max-width: $smallScreen) {
+    top: 5rem;
+  }
   z-index: $zTopLevel;
+
   @include horizontalMargins;
   @media (max-width: $smallScreen) {
     grid-template-columns: repeat(2, 1fr);
