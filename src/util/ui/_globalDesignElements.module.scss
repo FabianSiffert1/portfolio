@@ -107,3 +107,19 @@ $zTopLevel: 3;
   padding: 0.5rem;
   width: 100%;
 }
+
+@mixin fullScreenMenu {
+  display: grid;
+  @media (max-width: $smallScreen) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  grid-template-columns: repeat(8, 1fr);
+  padding-top: 5rem;
+  position: fixed;
+  z-index: $zTopLevel;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--background-color);
+}

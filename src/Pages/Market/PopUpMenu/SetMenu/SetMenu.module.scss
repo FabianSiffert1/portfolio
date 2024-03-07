@@ -33,12 +33,22 @@
 }
 
 .setPopUpMenu {
-  @include PopUpMenu;
+  overflow-y: auto;
+  @media (max-width: $smallScreen) {
+    @include fullScreenMenu
+  }
+  @media (min-width: $smallScreen) {
+    @include PopUpMenu;
+  }
+
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: var(--background-color);
 }
 
+.setPopUpMenu::-webkit-scrollbar {
+  display: none;
+}
 
 .overlay {
   @include invisibleOverlay;
