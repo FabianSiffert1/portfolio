@@ -22,7 +22,7 @@ export const fetchAllSetsOfASeries = async (series: PokemonTCGSeries): Promise<P
 export const fetchAllCardsOfASet = async (setName: PokemonSetName): Promise<PokemonCard[]> => {
   try {
     return await pokemonTCGAPI.card.all({
-      q: `!set.name:"${setName}"`,
+      q: `set.name:"${setName}"`,
       orderBy: '-cardmarket.prices.trendPrice'
     })
   } catch (error) {
