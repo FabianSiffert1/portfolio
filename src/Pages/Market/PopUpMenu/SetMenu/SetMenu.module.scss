@@ -30,11 +30,28 @@
 }
 
 .setPopUpMenuContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
+
+.hideSetMenuButton {
+  padding: 0.5rem;
+  position: fixed;
+  left: 50%;
+  top: 7%;
+  transform: translate(-50%, 0);
+  z-index: $zTopLevel;
+  font-weight: bold;
+  border: solid black 1px;
+}
+
 
 .setPopUpMenu {
   @media (max-width: $smallScreen) {
-    @include fullScreenMenu
+    @include mobileFullScreenMenu
   }
   @media (min-width: $smallScreen) {
     @include PopUpMenu;

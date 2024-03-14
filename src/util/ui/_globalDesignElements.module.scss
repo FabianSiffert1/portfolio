@@ -86,7 +86,6 @@ $zTopLevel: 3;
     top: 5rem;
   }
   z-index: $zTopLevel;
-
   @include horizontalMargins;
   @media (max-width: $smallScreen) {
     grid-template-columns: repeat(2, 1fr);
@@ -109,13 +108,13 @@ $zTopLevel: 3;
   width: 100%;
 }
 
-@mixin fullScreenMenu {
+@mixin mobileFullScreenMenu {
   display: grid;
   @media (max-width: $smallScreen) {
     grid-template-columns: repeat(2, 1fr);
   }
   grid-template-columns: repeat(8, 1fr);
-  padding-top: 5rem;
+  padding-top: 10rem;
   position: fixed;
   z-index: $zTopLevel;
   left: 0;
