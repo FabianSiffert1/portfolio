@@ -33,7 +33,6 @@
 }
 
 .setPopUpMenu {
-  overflow-y: auto;
   @media (max-width: $smallScreen) {
     @include fullScreenMenu
   }
