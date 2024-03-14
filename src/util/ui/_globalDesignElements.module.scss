@@ -76,6 +76,7 @@ $zTopLevel: 3;
 }
 
 @mixin PopUpMenu {
+  padding: 0.5rem;
   display: grid;
   position: fixed;
   left: 0;
@@ -90,7 +91,7 @@ $zTopLevel: 3;
   @media (max-width: $smallScreen) {
     grid-template-columns: repeat(2, 1fr);
   }
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
   border: solid var(--color) 1px;

@@ -7,7 +7,6 @@
   justify-content: center;
   cursor: pointer;
   z-index: $zTopLevel;
-  padding: 0.5rem;
   @media (min-width: $smallScreen) {
     @include popUpMenuItem;
     text-align: center;
@@ -42,6 +41,7 @@
 
 
 .setName {
+  z-index: $zTopLevel;
   font-weight: bold;
   position: absolute;
   visibility: hidden;
