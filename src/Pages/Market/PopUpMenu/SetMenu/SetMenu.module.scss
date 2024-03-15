@@ -38,6 +38,7 @@
 }
 
 .hideSetMenuButton {
+  display: none;
   padding: 0.5rem;
   position: fixed;
   left: 50%;
@@ -46,6 +47,9 @@
   z-index: $zTopLevel;
   font-weight: bold;
   border: solid black 1px;
+  @media (max-width: $smallScreen) {
+    display: block;
+  }
 }
 
 

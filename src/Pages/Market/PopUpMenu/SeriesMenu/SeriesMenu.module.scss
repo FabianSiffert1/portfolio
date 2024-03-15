@@ -26,8 +26,31 @@
 }
 
 .seriesPopUpMenu {
-  @include PopUpMenu;
+  @media (max-width: $smallScreen) {
+    @include mobileFullScreenMenu
+  }
+  @media (min-width: $smallScreen) {
+    @include PopUpMenu;
+  }
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: var(--background-color);
+}
+
+.hideSeriesMenuButton {
+  display: none;
+  padding: 0.5rem;
+  position: fixed;
+  left: 50%;
+  top: 7%;
+  transform: translate(-50%, 0);
+  z-index: $zTopLevel;
+  font-weight: bold;
+  border: solid black 1px;
+  @media (max-width: $smallScreen) {
+    display: block;
+  }
 }
 
 .overlay {

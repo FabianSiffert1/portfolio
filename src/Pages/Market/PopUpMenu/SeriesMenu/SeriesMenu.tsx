@@ -61,6 +61,9 @@ export default function SeriesMenu(props: SetMenuProps) {
               <div className={styles.seriesPopUpMenu} onClick={toggleOpen}>
                 {seriesArray}
               </div>
+              <div className={styles.hideSeriesMenuButton} onClick={() => toggleSeriesMenu(false)}>
+                Close
+              </div>
             </div>
           )}
         </div>
