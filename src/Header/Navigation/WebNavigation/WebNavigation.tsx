@@ -8,7 +8,7 @@ export default function WebNavigation() {
       <nav>
         <ul>
           <li key={'inventory'}>
-            <Link to={`/`}>Inventory</Link>
+            <Link to={`inventory`}>Inventory</Link>
           </li>
           <li key={'market'}>
             <Link to={`market`}>Market</Link>

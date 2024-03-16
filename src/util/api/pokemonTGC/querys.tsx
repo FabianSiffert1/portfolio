@@ -12,7 +12,7 @@ export const fetchAllSets = async (): Promise<PokemonSet[]> => {
 }
 export const fetchAllSetsOfASeries = async (series: PokemonTCGSeries): Promise<PokemonSet[]> => {
   try {
-    return await pokemonTCGAPI.set.all({ q: `series:"${series}"`, orderBy: 'releaseDate' })
+    return await pokemonTCGAPI.set.all({ q: `!series:"${series}"`, orderBy: 'releaseDate' })
   } catch (error) {
     console.error('Error fetching sets:', error)
     return []

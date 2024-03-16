@@ -1,21 +1,11 @@
 @import '../../util/ui/globalDesignElements.module';
 
 .inventory {
-
-}
-
-.cardListWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 3rem;
-  row-gap: 2rem;
-  justify-content: center;
-}
-
-.loadingState {
+  margin-top: 15rem;
+  padding: 2rem;
+  border: solid black 1px;
+  border-radius: 2rem;
+  
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70vh;
 }

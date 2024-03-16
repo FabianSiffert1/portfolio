@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        element: <Inventory />,
+        element: <Market />,
         index: true
       },
       {
