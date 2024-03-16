@@ -11,7 +11,7 @@
     "format": "prettier src/**/*.tsx --write --config ./.prettierrc",
     "formatAndFix": " npm run format && npm run lintFix",
     "preview": "vite preview --port 3030",
-    "start": "vite --port 3030"
+    "start": "vite --host --port 3030"
   },
   "dependencies": {
     "axios": "^1.6.7",
