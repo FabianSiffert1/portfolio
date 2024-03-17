@@ -46,7 +46,7 @@
   transform: translate(-50%, 0);
   z-index: $zTopLevel;
   font-weight: bold;
-  border: solid black 1px;
+  border: solid var(--color) 0.1rem;
   @media (max-width: $smallScreen) {
     display: block;
   }
