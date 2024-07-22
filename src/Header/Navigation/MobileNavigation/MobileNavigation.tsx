@@ -16,7 +16,7 @@ export default function MobileNavigation() {
     } else {
       document.body.classList.remove('no-scroll')
     }
-    
+
     return () => {
       document.body.classList.remove('no-scroll')
     }
@@ -29,7 +29,7 @@ export default function MobileNavigation() {
       <div className={styles.burger} />
       <div className={styles.navigationMenu} style={{ display: hamburgerMenuOpen ? 'flex' : 'none' }}>
         <div className={styles.link}>
-          <Link to={`/`}>Inventory</Link>
+          <Link to={`inventory`}>Inventory</Link>
         </div>
         <div className={styles.link}>
           <Link to={`market`}>Market</Link>
