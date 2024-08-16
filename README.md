@@ -1,6 +1,6 @@
-# inv
+# Personal Portfolio 2.0
 
-an attempt at a mobile first website turned pokemon tcg card list
+a portfolio with a focus on mobile first development
 
 ```
 npm run dev
