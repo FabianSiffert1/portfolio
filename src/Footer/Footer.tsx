@@ -5,7 +5,7 @@ export default function Footer() {
     // remove style tag if footer is needed
     <div className={styles.footer} style={{ display: 'none' }}>
       ©️ &nbsp;
-      <a href={'https://siffert.io'}>Fabian Siffert</a>
+      <a href={'https://siffert.io'}>fabianSiffert</a>
       &nbsp;
       {new Date().getFullYear().toString()}
     </div>

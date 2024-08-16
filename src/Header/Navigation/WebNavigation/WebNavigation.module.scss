@@ -10,25 +10,13 @@
   }
 
   li {
-    float: left;
     padding: 0 1rem 0 0;
     text-decoration: none;
     color: inherit;
-    display: flex;
-    align-items: center;
   }
 
   li a:hover {
     text-decoration: underline;
   }
 
-  .themeToggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      min-width: 2.3rem;
-    }
-  }
 }

@@ -4,7 +4,7 @@ import styles from './Title.module.scss'
 export default function Title() {
   return (
     <div className={styles.title}>
-      <Link to={'/'}>Fabian Siffert</Link>
+      <Link to={'/'}>fabian siffert</Link>
     </div>
   )
 }

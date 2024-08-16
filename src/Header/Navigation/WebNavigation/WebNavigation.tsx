@@ -7,10 +7,10 @@ export default function WebNavigation() {
       <nav>
         <ul>
           <li key={'about'}>
-            <Link to={`about`}>About</Link>
+            <Link to={`about`}>about</Link>
           </li>
-          <li key={'inventory'}>
-            <Link to={`inventory`}>Inventory</Link>
+          <li key={'projects'}>
+            <Link to={`projects`}>projects</Link>
           </li>
         </ul>
       </nav>

@@ -31,7 +31,7 @@ export default function MobileNavigation() {
           <Link to={`about`}>About</Link>
         </div>
         <div className={styles.link}>
-          <Link to={`inventory`}>Inventory</Link>
+          <Link to={`projects`}>projects</Link>
         </div>
       </div>
     </div>

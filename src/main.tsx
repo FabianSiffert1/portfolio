@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.scss'
 import ErrorPage from './Pages/404/404'
 import Home from './Pages/Home/Home'
-import Inventory from './Pages/Inventory/Inventory'
+import Projects from './Pages/Projects/Projects'
 import About from './Pages/About/About'
 import ThemeProvider from './util/ui/theme/ThemeProvider'
 
@@ -20,8 +20,8 @@ const router = createBrowserRouter([
         index: true
       },
       {
-        path: 'inventory',
-        element: <Inventory />
+        path: 'projects',
+        element: <Projects />
       },
       {
         path: 'about',

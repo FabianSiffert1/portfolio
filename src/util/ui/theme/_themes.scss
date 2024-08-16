@@ -8,6 +8,7 @@ html[data-theme="light"] {
   --secondary-color: #{$grey-3};
 
   --primary-element-background-color: #{$soft-beige};
+  --secondary-element-background-color: #{$soft-peach};
 
 }
 
@@ -19,4 +20,5 @@ html[data-theme="dark"] {
   --secondary-color: #{$neutral-500};
 
   --primary-element-background-color: #{$soft-beige};
+  --secondary-element-background-color: #{$soft-peach};
 }
