@@ -1,21 +1,21 @@
 @import '../util/ui/globalDesignElements.module';
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   justify-content: space-between;
   position: fixed;
-  background-color: var(--background-color);
-  top: 0;
+  background-color: var(--primary-element-background-color);
+  top: 2rem;
   left: 0;
   right: 0;
   @media (min-width: $bigScreen) {
     max-width: $bigScreen;
   }
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4rem 2rem 1rem 2rem;
-  border-bottom: solid 0.05rem var(--color);
+  margin-left: 7rem;
+  margin-right: 7rem;
+  padding: 2rem;
 }
 
 .navigation {
@@ -23,7 +23,7 @@
 
 .webNavigation {
   display: none;
-  justify-content: end;
+  justify-content: center;
   align-items: start;
   @media (min-width: $smallScreen) {
     display: flex;

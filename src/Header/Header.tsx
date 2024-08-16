@@ -31,11 +31,13 @@ export default function Header() {
         <Title />
       </div>
       <div className={styles.navigation}>
-        <div className={styles.mobileNavigation}>
-          <MobileNavigation />
-        </div>
         <div className={styles.webNavigation}>
           <WebNavigation />
+        </div>
+      </div>
+      <div className={styles.navigation}>
+        <div className={styles.mobileNavigation}>
+          <MobileNavigation />
         </div>
       </div>
     </div>

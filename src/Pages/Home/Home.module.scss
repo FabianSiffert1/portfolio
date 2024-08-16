@@ -4,17 +4,9 @@
   @media (min-width: $bigScreen) {
     max-width: $bigScreen;
   }
-  margin: auto;
-  padding: 2rem;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
-  justify-content: center;
-  display: flex;
 }
 
 
@@ -33,9 +25,7 @@
 
 
 .pageContainer {
-  left: 0;
-  right: 0;
-  padding-top: 15rem;
+  padding-top: 20rem;
   @media (min-width: $smallScreen) {
     padding-top: 14rem;
   }

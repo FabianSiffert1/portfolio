@@ -6,11 +6,11 @@ export default function WebNavigation() {
     <div className={styles.webNavigation}>
       <nav>
         <ul>
-          <li key={'inventory'}>
-            <Link to={`inventory`}>Inventory</Link>
-          </li>
           <li key={'about'}>
             <Link to={`about`}>About</Link>
+          </li>
+          <li key={'inventory'}>
+            <Link to={`inventory`}>Inventory</Link>
           </li>
         </ul>
       </nav>
