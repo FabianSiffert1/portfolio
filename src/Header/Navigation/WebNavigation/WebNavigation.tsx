@@ -13,11 +13,6 @@ export default function WebNavigation() {
           <li key={'about'}>
             <Link to={`about`}>About</Link>
           </li>
-          <li key={'themeToggle'}>
-            <div className={styles.themeToggle}>
-              <ThemeToggle />
-            </div>
-          </li>
         </ul>
       </nav>
     </div>
