@@ -13,6 +13,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
+  justify-content: center;
+  display: flex;
 }
 
 
@@ -33,6 +35,10 @@
 .pageContainer {
   left: 0;
   right: 0;
+  padding-top: 15rem;
+  @media (min-width: $smallScreen) {
+    padding-top: 14rem;
+  }
   @media (min-width: $bigScreen) {
     max-width: $bigScreen;
   }

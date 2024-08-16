@@ -13,6 +13,7 @@ export default function Header() {
       document.body.classList.remove('no-scroll')
     }
   }
+
   useLayoutEffect(() => {
     const observer = new ResizeObserver(() => {
       handleDisplayStyleChange()
