@@ -10,8 +10,8 @@ export default function WebNavigation() {
           <li key={'inventory'}>
             <Link to={`inventory`}>Inventory</Link>
           </li>
-          <li key={'market'}>
-            <Link to={`market`}>Market</Link>
+          <li key={'about'}>
+            <Link to={`about`}>About</Link>
           </li>
           <li key={'themeToggle'}>
             <div className={styles.themeToggle}>

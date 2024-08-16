@@ -32,7 +32,7 @@ export default function MobileNavigation() {
           <Link to={`inventory`}>Inventory</Link>
         </div>
         <div className={styles.link}>
-          <Link to={`market`}>Market</Link>
+          <Link to={`about`}>About</Link>
         </div>
         <div className={styles.linkImage}>
           <ThemeToggle />

@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
-import HeaderProvider from '../../Header/HeaderProvider'
 import { ThemeContext } from '../../util/ui/theme/ThemeProvider'
 import styles from './Home.module.scss'
 
@@ -14,7 +13,6 @@ export default function Home() {
   }, [darkTheme])
   return (
     <div className={styles.home}>
-      <HeaderProvider>
         <div className={styles.header}>
           <Header />
         </div>
@@ -24,7 +22,6 @@ export default function Home() {
         <div className={styles.footer}>
           <Footer />
         </div>
-      </HeaderProvider>
     </div>
   )
 }
