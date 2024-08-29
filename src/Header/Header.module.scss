@@ -1,21 +1,26 @@
 @import '../util/ui/globalDesignElements.module';
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: start;
-  justify-content: space-between;
-  position: fixed;
-  background-color: var(--primary-element-background-color);
-  top: 2rem;
-  left: 0;
-  right: 0;
   @media (max-width: $smallScreen) {
     margin-left: 2rem;
     margin-right: 2rem;
   }
   margin-left: 7rem;
   margin-right: 7rem;
+}
+
+.title {
+}
+
+.navigationWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  position: fixed;
+  background-color: var(--primary-element-background-color);
+  top: 2.9rem;
+  left: 0;
+  right: 0;
   padding: 2rem;
 }
 
