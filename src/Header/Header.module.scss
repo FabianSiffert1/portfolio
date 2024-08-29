@@ -22,6 +22,12 @@
   left: 0;
   right: 0;
   padding: 2rem;
+  @media (max-width: $smallScreen) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
 
 .navigation {

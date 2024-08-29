@@ -3,10 +3,5 @@
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-.header {
-}
-
-.content {
+  grid-gap: 1rem;
 }
