@@ -15,6 +15,7 @@ export default function WebNavigation() {
                 : {}
             }>about</NavLink>
           </li>
+
           <li key={'projects'} >
             <NavLink to={`projects`} style={({ isActive }) =>
               isActive

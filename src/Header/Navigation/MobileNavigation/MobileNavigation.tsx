@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import styles from './MobileNavigation.module.scss'
 
 export default function MobileNavigation() {
@@ -28,10 +28,22 @@ export default function MobileNavigation() {
       <div className={styles.burger} />
       <div className={styles.navigationMenu} style={{ display: hamburgerMenuOpen ? 'flex' : 'none' }}>
         <div className={styles.link}>
-          <Link to={`about`}>About</Link>
+          <NavLink to={`about`} style={({ isActive }) =>
+            isActive
+              ? {
+                textDecoration: 'underline'
+              }
+              : {}
+          }>about</NavLink>
         </div>
         <div className={styles.link}>
-          <Link to={`projects`}>projects</Link>
+          <NavLink to={`projects`} style={({ isActive }) =>
+            isActive
+              ? {
+                textDecoration: 'underline'
+              }
+              : {}
+          }>projects</NavLink>
         </div>
       </div>
     </div>
