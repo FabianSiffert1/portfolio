@@ -1,3 +1,4 @@
 import iconMoon from '../../assets/icons/moon.svg'
 import iconSun from '../../assets/icons/sun.svg'
-export { iconMoon, iconSun }
+import profilePicture from '../../assets/images/profile_small.png'
+export { iconMoon, iconSun, profilePicture }
