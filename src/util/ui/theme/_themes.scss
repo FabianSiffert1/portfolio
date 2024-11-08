@@ -8,9 +8,10 @@ html[data-theme="light"] {
   --primary-color: #{$blue-1};
   --secondary-color: #{$grey-3};
 
-  --element-color-first: #{$soft-peach};
-  --element-color-second: #{$soft-pink};
-  --element-color-third: #{$soft-blue}
+  --element-color-1: #{$soft-peach};
+  --element-color-2: #{$soft-pink};
+  --element-color-3: #{$soft-blue};
+  --element-color-4: #{$soft-mint};
 }
 
 html[data-theme="dark"] {
@@ -20,6 +21,6 @@ html[data-theme="dark"] {
   --primary-color: #{$primary-500};
   --secondary-color: #{$neutral-500};
 
-  --element-color-first: #{$soft-peach};
-  --element-color-second: #{$soft-peach};
+  --element-color-1: #{$soft-peach};
+  --element-color-2: #{$soft-peach};
 }
