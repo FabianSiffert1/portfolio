@@ -1,19 +1,16 @@
 @import '../../../../util/ui/globalDesignElements.module';
 
 .socialsSection {
-  display: grid;
-  grid-auto-rows: 1fr;
-  height: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   border-top-right-radius: $borderRadius;
   border-bottom-right-radius: $borderRadius;
-  background-color: color-mix(in srgb, var(--secondary-element-background-color) 20%, transparent);
-}
-
-
-.socialsSection {
+  @media (max-width: $smallScreen) {
+  align-content: space-evenly;
+  }
+  @media (min-width: $smallScreen) {
+    align-content: center;
+  }
+  background-color: color-mix(in srgb, var(--secondary-element-background-color) 15%, transparent);
   font: small-caps  1.8rem sans-serif;
   text-align: center;
-  align-self: center;
 }
-

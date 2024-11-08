@@ -1,14 +1,18 @@
 @import '../../../../util/ui/globalDesignElements.module';
 .profileSection {
-  display: grid;
-  @media (max-width: $smallScreen) {
-    grid-template-rows: 1fr 1fr;
-  }
-  @media (min-width: $smallScreen) {
-    grid-template-columns: 1fr 1fr;
-  }
+  display: flex;
+  padding: 1rem;
   border-top-left-radius: $borderRadius;
   border-bottom-left-radius: $borderRadius;
+  @media (max-width: $smallScreen) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: $smallScreen) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
   background-color: color-mix(in srgb, var(--primary-element-background-color) 20%, transparent);
 }
 
@@ -29,24 +33,20 @@
 }
 
 .profileTextContainer {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  align-content: center;
   text-align: center;
-  align-self: center;
 }
 
 .name{
-  text-align: center;
   font: small-caps  2.3rem sans-serif;
+  padding-bottom: 1rem;
 }
 
 .job {
-  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
 }
 
 .location {
-  font-size: 1.3rem;
 }
 

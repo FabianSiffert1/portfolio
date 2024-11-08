@@ -2,6 +2,6 @@
 
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
 }

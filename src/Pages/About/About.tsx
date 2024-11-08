@@ -10,6 +10,7 @@ export default function About() {
     <div className={styles.about}>
       <ProfileSection />
       <SocialsSection />
+      <div/>
     </div>
   )
 }
