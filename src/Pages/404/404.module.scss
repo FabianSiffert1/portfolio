@@ -8,4 +8,7 @@
   background-color: var(--primary-element-background-color);
   font-size: 5rem;
   font-style: italic;
+  a {
+    text-decoration: underline;
+  }
 }

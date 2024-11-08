@@ -7,6 +7,7 @@
   }
   margin-left: 7rem;
   margin-right: 7rem;
+  padding-top: 2rem;
 }
 
 .title {
@@ -17,7 +18,6 @@
   grid-template-columns: 1fr;
   align-items: start;
   position: fixed;
-  background-color: var(--primary-element-background-color);
   top: 2.9rem;
   left: 0;
   right: 0;

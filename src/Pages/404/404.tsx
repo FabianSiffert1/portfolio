@@ -6,10 +6,10 @@ export default function ErrorPage() {
 
   return (
     <div className={styles.errorPage}>
-      404
+      404 - Not found
       <br />
       <br />
-      <Link to={'/'}>return to base</Link> <br />
+      <Link to={'/'}>Go back</Link> <br />
     </div>
   )
 }

@@ -1,15 +1,13 @@
-import React from 'react'
 import styles from './SocialsSection.module.scss'
-import { profilePicture } from '../../../../util/ui/_globalAssetImports'
 
 
 export default function SocialsSection() {
 
   return (
     <div className={styles.socialsSection}>
-    <p>Email</p>
-    <p>Github</p>
-    <p>LinkedIn</p>
+      <div className={styles.email}>📧 Email</div>
+      <div className={styles.github}>🧑‍💻 Github</div>
+      <div className={styles.linkedIn}>🤝 LinkedIn</div>
     </div>
   )
 }
