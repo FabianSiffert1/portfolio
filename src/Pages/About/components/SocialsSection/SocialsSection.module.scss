@@ -6,6 +6,9 @@
   border-bottom-right-radius: $borderRadius;
   @media (max-width: $smallScreen) {
   align-content: space-evenly;
+    .email, .github, .linkedIn{
+      margin: 2rem 0;
+    }
   }
   @media (min-width: $smallScreen) {
     align-content: center;
@@ -14,7 +17,3 @@
   font: small-caps  1.8rem sans-serif;
   text-align: center;
 }
-
-.email{}
-.github{}
-.linkedIn{}
