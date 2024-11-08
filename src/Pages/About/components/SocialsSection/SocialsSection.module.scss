@@ -3,7 +3,6 @@
 .socialsSection {
   padding: 1rem;
   border-top-right-radius: $borderRadius;
-  border-bottom-right-radius: $borderRadius;
   @media (max-width: $smallScreen) {
   align-content: space-evenly;
     .email, .github, .linkedIn{
