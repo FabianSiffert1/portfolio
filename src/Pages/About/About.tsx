@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './About.module.scss'
-import ProfileSection from './components/ProfileSection/ProfileSection'
-import SocialsSection from './components/SocialsSection/SocialsSection'
-import SkillsSection from './components/SkillsSection/SkillsSection'
-import CareerSection from './components/CareerSection/CareerSection'
+import ProfileSection from './sections/ProfileSection/ProfileSection'
+import SocialsSection from './sections/SocialsSection/SocialsSection'
+import SkillsSection from './sections/SkillsSection/SkillsSection'
+import CareerSection from './sections/CareerSection/CareerSection'
 
 
 export default function About() {

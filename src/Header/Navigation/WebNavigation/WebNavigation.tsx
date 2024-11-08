@@ -7,7 +7,7 @@ export default function WebNavigation() {
       <nav>
         <div className={styles.webNavigation}>
           <div className={styles.about}>
-            <NavLink to={`about`} style={({ isActive }) =>
+            <NavLink to="/" style={({ isActive }) =>
               isActive
                 ? {
                   textDecoration: 'underline'

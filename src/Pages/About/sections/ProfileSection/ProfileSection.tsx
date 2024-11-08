@@ -1,5 +1,5 @@
 import styles from './ProfileSection.module.scss'
-import { profilePicture } from '../../../../util/ui/_globalAssetImports'
+import { profilePicture } from '../../../../ui/_globalAssetImports'
 
 
 export default function ProfileSection() {

@@ -2,17 +2,17 @@ import { useContext, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
-import { ThemeContext } from '../../util/ui/theme/ThemeProvider'
-import styles from './Home.module.scss'
+import { ThemeContext } from '../../ui/theme/ThemeProvider'
+import styles from './Layout.module.scss'
 
-export default function Home() {
+export default function Layout() {
   const { darkTheme } = useContext(ThemeContext)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkTheme ? 'dark' : 'light')
   }, [darkTheme])
   return (
-    <div className={styles.home}>
+    <div className={styles.layout}>
         <div className={styles.header}>
           <Header />
         </div>
