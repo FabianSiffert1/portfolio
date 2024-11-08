@@ -13,25 +13,16 @@
 .title {
 }
 
+
 .navigationWrapper {
+}
+
+.webNavigation {
   display: grid;
-  grid-template-columns: 1fr;
-  align-items: start;
-  position: fixed;
-  top: 4.5rem;
-  left: 0;
-  right: 0;
-}
-
-.navigation {
-}
-
-.webNavigationWrapper {
-  display: none;
   justify-content: center;
   align-items: start;
-  @media (min-width: $smallScreen) {
-    display: flex;
+  @media (max-width: $smallScreen) {
+    display: none;
   }
 }
 
