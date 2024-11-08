@@ -3,10 +3,10 @@ import styles from './WebNavigation.module.scss'
 
 export default function WebNavigation() {
   return (
-    <div className={styles.webNavigation}>
+    <div className={styles.webNavigationWrapper}>
       <nav>
-        <ul>
-          <li key={'about'}>
+        <div className={styles.webNavigation}>
+          <div className={styles.about}>
             <NavLink to={`about`} style={({ isActive }) =>
               isActive
                 ? {
@@ -14,18 +14,17 @@ export default function WebNavigation() {
                 }
                 : {}
             }>about</NavLink>
-          </li>
-
-          <li key={'projects'} >
+          </div>
+          <div className={styles.projects}>
             <NavLink to={`projects`} style={({ isActive }) =>
               isActive
                 ? {
-                  textDecoration: 'underline',
+                  textDecoration: 'underline'
                 }
                 : {}
             }>projects</NavLink>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </div>
   )

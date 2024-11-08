@@ -1,22 +1,26 @@
+.webNavigationWrapper {
+}
+
 .webNavigation {
-  display: flex;
+  display: grid;
+  grid-gap:1rem;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  font-size: 2.5rem;
 
-  ul {
-    font-size: 2.5rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+}
 
-  li {
-    padding: 0 1rem 0 0;
-    text-decoration: none;
-    color: inherit;
-  }
+.about {
+  width: 100%;
+  text-align: end;
+}
+.about:hover {
+  text-decoration: underline;
+}
 
-  li a:hover {
-    text-decoration: underline;
-  }
-
+.projects {
+  width: 100%;
+}
+.projects:hover {
+  text-decoration: underline;
 }
