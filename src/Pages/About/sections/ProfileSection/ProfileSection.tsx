@@ -8,7 +8,8 @@ export default function ProfileSection() {
       <div className={styles.profilePicture}>
         <img src={profilePicture} alt="Fabian Siffert" />
       </div>
-      <div className={styles.profileTextContainer}>
+      <div className={styles.spacer}/>
+      <div className={styles.textContainer}>
         <div className={styles.name}>Fabian Siffert</div>
         <div className={styles.job}>Software Developer</div>
         <div className={styles.location}>Duesseldorf, Germany</div>

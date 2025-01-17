@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/inv",
+    "build": "vite build --base=/portfolio",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lintFix": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0  --fix",
     "format": "prettier src/**/*.tsx --write --config ./.prettierrc",
@@ -37,7 +37,7 @@
     "prettier": "^3.2.4",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",
-    "vite": "5.2.6"
+    "vite": "^5.4.11"
   },
   "husky": {
     "hooks": {

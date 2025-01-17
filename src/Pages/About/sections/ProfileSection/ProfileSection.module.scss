@@ -11,7 +11,7 @@
   }
   @media (min-width: $smallScreen) {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   background-color: color-mix(in srgb, var(--element-color-peach) 20%, transparent);
 }
@@ -31,7 +31,11 @@
   }
 }
 
-.profileTextContainer {
+.spacer{
+  width: 6rem;
+}
+
+.textContainer {
   font-size: 1.3rem;
   align-content: center;
   text-align: center;
