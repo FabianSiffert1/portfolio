@@ -15,7 +15,7 @@ export default function CareerSection() {
         Apprenticeship →
       </div>
       <div className={styles.fullTime}>
-        Full time 🧑‍💻
+        Full time
       </div>
     </div>
   )
