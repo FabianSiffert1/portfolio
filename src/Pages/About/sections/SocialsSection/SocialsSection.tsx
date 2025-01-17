@@ -15,7 +15,7 @@ export default function SocialsSection() {
         </a>
         </div>
       <div className={styles.linkedIn}>
-        <a href={"https://www.linkedin.com/in/fabian-siffert-5b2481289/"}target="_blank">
+        <a href={"https://www.linkedin.com/in/fabian-siffert-5b2481289/"} target="_blank">
           🤝 LinkedIn
         </a>
       </div>
