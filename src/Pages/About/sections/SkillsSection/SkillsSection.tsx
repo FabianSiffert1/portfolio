@@ -1,8 +1,18 @@
 import styles from './SkillsSection.module.scss'
+import Section from '../../../../ui/components/Section'
 
 
 export default function SkillsSection() {
 
+  return (
+    <Section title="Skills" content={
+      SkillsSectionContent()
+    } />
+  )
+}
+
+
+function SkillsSectionContent() {
   return (
     <div className={styles.skillsSection}>
       Skills

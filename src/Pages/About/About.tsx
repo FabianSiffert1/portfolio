@@ -10,19 +10,29 @@ export default function About() {
 
   return (
     <div className={styles.about}>
-      <div className={styles.profileAndSocials}>
+      <div className={styles.profile}>
         <ProfileSection />
+      </div>
+      <div className={styles.spacer} />
+
+      <div className={styles.socials}>
+        <></>
         <SocialsSection />
       </div>
-      <div className={styles.spacer}/>
+      <div className={styles.spacer} />
+
       <div className={styles.skills}>
-        <SkillsSection />
+        <div className={styles.secondColumnItem}>
+          <SkillsSection />
+        </div>
       </div>
-      <div className={styles.spacer}/>
+      <div className={styles.spacer} />
+
       <div className={styles.carreer}>
-      <CareerSection/>
+        <CareerSection />
       </div>
       <div />
+      <div className={styles.spacer} />
     </div>
   )
 }
