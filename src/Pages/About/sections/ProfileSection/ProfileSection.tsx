@@ -10,8 +10,8 @@ export default function ProfileSection() {
       </div>
       <div className={styles.profileTextContainer}>
         <div className={styles.name}>Fabian Siffert</div>
-        <div className={styles.job}>💻 Software Developer</div>
-        <div className={styles.location}>📍 Duesseldorf, Germany</div>
+        <div className={styles.job}>Software Developer</div>
+        <div className={styles.location}>Duesseldorf, Germany</div>
       </div>
     </div>
   )
