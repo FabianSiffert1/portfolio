@@ -1,7 +1,7 @@
 @use '../ui/globalDesignElements.module';
 
 .header {
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     margin-left: 2rem;
     margin-right: 2rem;
   }
@@ -21,7 +21,7 @@
   display: grid;
   justify-content: center;
   align-items: start;
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     display: none;
   }
 }
@@ -30,7 +30,7 @@
   display: none;
   justify-content: end;
   align-items: start;
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     display: flex;
   }
 }
