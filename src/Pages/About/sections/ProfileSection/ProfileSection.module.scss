@@ -1,15 +1,15 @@
-@import '../../../../ui/globalDesignElements.module';
+@use '../../../../ui/globalDesignElements.module';
 .profileSection {
   display: flex;
   padding: 1rem;
-  border-top-left-radius: $borderRadius;
-  border-bottom-left-radius: $borderRadius;
-  @media (max-width: $smallScreen) {
+  border-top-left-radius: globalDesignElements.$borderRadius;
+  border-bottom-left-radius: globalDesignElements.$borderRadius;
+  @media (max-width: globalDesignElements.$smallScreen) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  @media (min-width: $smallScreen) {
+  @media (min-width: globalDesignElements.$smallScreen) {
     flex-direction: row;
     justify-content: center;
   }
@@ -24,7 +24,7 @@
   min-width: 12rem;
 
   max-width: 12rem;
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     min-height: 6rem;
     min-width: 6rem;
     max-width: 6rem;

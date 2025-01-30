@@ -1,14 +1,14 @@
-@import '../../../../ui/globalDesignElements.module';
+@use '../../../../ui/globalDesignElements.module';
 
 .careerSection {
   display: grid;
   justify-items: center;
   padding: 1rem;
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     grid-template-rows: repeat(4, 1fr);
     grid-auto-rows: 1fr;
   }
-  @media (min-width: $smallScreen) {
+  @media (min-width: globalDesignElements.$smallScreen) {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
   }

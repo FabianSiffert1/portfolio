@@ -1,4 +1,4 @@
-@import '../../ui/globalDesignElements.module';
+@use '../../ui/globalDesignElements.module';
 
 .layout {
   -ms-overflow-style: none;
@@ -9,7 +9,7 @@
 
 .footer {
   position: fixed;
-  z-index: $zTopLevel;
+  z-index: globalDesignElements.$zTopLevel;
   bottom: 0;
   right: 0;
 }
@@ -20,7 +20,7 @@
 
 .pageContainer {
   margin-top: 7rem;
-  @media (max-width: $smallScreen) {
+  @media (max-width: globalDesignElements.$smallScreen) {
     margin-left: 4rem;
     margin-right: 4rem;
     margin-top: 4rem;
