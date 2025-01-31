@@ -18,7 +18,12 @@
   }
 }
 
-.android { grid-area: 1 / 1 / 2 / 2; }
+.androidDevelopment {
+  grid-area: 1 / 1 / 2 / 2;
+  padding: 0.7rem;
+
+}
+
 
 .otherSkills{
   grid-area: 1 / 2 / 2 / 3;
