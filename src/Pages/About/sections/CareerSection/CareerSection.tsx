@@ -14,36 +14,40 @@ export default function CareerSection() {
 const CareerSectionContent = (
   <div className={styles.careerSection}>
     <div className={styles.employment}>
+      <div className={styles.timespan}>2015-2021</div>
+      <div className={styles.job}> Bachelor of english and american studies, minoring in Philosophy</div>
       <div className={styles.employer}>
         <a href={'https://www.hhu.de/'} target="_blank">
           @hhu
         </a>
       </div>
-      <div className={styles.job}> Bachelor of english and american studies, minoring in Philosophy</div>
     </div>
     <div className={styles.employment}>
+      <div className={styles.timespan}>2018-2019</div>
+      <div className={styles.job}> Volunteering in South Africa</div>
       <div className={styles.employer}>
         <a href={'https://www.masifunde.de/de'} target="_blank">
           @masifunde
         </a>
       </div>
-      <div className={styles.job}> Volunteering in South Africa</div>
     </div>
     <div className={styles.employment}>
-      <div className={styles.employer}>
-        <a href={'https://sipgate.de'} target="_blank">
-          @sipgate
-        </a>
-        </div>
+      <div className={styles.timespan}>2021-2024</div>
       <div className={styles.job}>Apprenticeship: IT specialist in application development</div>
-    </div>
-    <div className={styles.employment}>
       <div className={styles.employer}>
         <a href={'https://sipgate.de'} target="_blank">
           @sipgate
         </a>
       </div>
-      <div className={styles.job}> Full time android/software developer</div>
+    </div>
+    <div className={styles.employment}>
+      <div className={styles.timespan}>2024-Now</div>
+        <div className={styles.job}> Full time android/software developer</div>
+      <div className={styles.employer}>
+        <a href={'https://sipgate.de'} target="_blank">
+          @sipgate
+        </a>
+      </div>
     </div>
   </div>
 )

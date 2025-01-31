@@ -5,8 +5,8 @@
   width: 100%;
   border-top-right-radius: cozy.$borderRadius;
   background-color: color-mix(in srgb, var(--elementGreen) 15%, transparent);
-  font: small-caps 1.8rem sans-serif;
   text-align: center;
+  @include cozy.typoBodyCaps;
   @media (max-width: cozy.$smallScreen) {
     align-content: space-evenly;
   }
@@ -24,4 +24,5 @@
 
 .otherSkills{
   padding: 0.7rem;
+  font-size:  1.3rem;
 }
