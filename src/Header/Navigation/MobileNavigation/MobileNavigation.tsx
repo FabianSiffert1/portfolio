@@ -28,7 +28,7 @@ export default function MobileNavigation() {
       <div className={styles.burger} />
       <div className={styles.navigationMenu} style={{ display: hamburgerMenuOpen ? 'flex' : 'none' }}>
         <div className={styles.link}>
-          <NavLink to={`about`} style={({ isActive }) =>
+          <NavLink to={`/`} style={({ isActive }) =>
             isActive
               ? {
                 textDecoration: 'underline'
