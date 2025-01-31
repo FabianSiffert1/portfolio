@@ -2,8 +2,6 @@
 .profileSection {
   display: flex;
   padding: 1rem;
-  border-top-left-radius: cozy.$borderRadius;
-  border-bottom-left-radius: cozy.$borderRadius;
   background-color: color-mix(in srgb, var(--elementPeach) 20%, transparent);
   @media (max-width: cozy.$smallScreen) {
     flex-direction: column;
@@ -17,16 +15,16 @@
 }
 
 .profilePicture{
-}
-.profilePicture img{
-  border-radius: 8rem;
-  min-height: 12rem;
-  min-width: 12rem;
-  max-width: 12rem;
-  @media (max-width: cozy.$smallScreen) {
-    min-height: 6rem;
-    min-width: 6rem;
-    max-width: 6rem;
+  img {
+    border-radius: 8rem;
+    min-height: 12rem;
+    min-width: 12rem;
+    max-width: 12rem;
+    @media (max-width: cozy.$smallScreen) {
+      min-height: 6rem;
+      min-width: 6rem;
+      max-width: 6rem;
+    }
   }
 }
 
