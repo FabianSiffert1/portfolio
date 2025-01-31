@@ -1,19 +1,19 @@
-@use '../../../../ui/globalDesignElements.module';
+@use '../../../../ui/cozy.module';
 
 .socialsSection {
   padding: 1rem;
   width: 100%;
-  border-top-right-radius: globalDesignElements.$borderRadius;
+  border-top-right-radius: cozy.$borderRadius;
   background-color: color-mix(in srgb, var(--element-color-pink) 15%, transparent);
   font: small-caps 1.8rem sans-serif;
   text-align: center;
-  @media (max-width: globalDesignElements.$smallScreen) {
+  @media (max-width: cozy.$smallScreen) {
     align-content: space-evenly;
     .email, .github, .linkedIn {
       margin: 2rem 0;
     }
   }
-  @media (min-width: globalDesignElements.$smallScreen) {
+  @media (min-width: cozy.$smallScreen) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;

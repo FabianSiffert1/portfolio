@@ -1,13 +1,13 @@
-@use '../ui/globalDesignElements.module';
+@use '../ui/cozy.module';
 
 .header {
-  @media (max-width: globalDesignElements.$smallScreen) {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
   margin-left: 7rem;
   margin-right: 7rem;
   padding-top: 2rem;
+  @media (max-width: cozy.$smallScreen) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .title {
@@ -21,7 +21,7 @@
   display: grid;
   justify-content: center;
   align-items: start;
-  @media (max-width: globalDesignElements.$smallScreen) {
+  @media (max-width: cozy.$smallScreen) {
     display: none;
   }
 }
@@ -30,7 +30,7 @@
   display: none;
   justify-content: end;
   align-items: start;
-  @media (max-width: globalDesignElements.$smallScreen) {
+  @media (max-width: cozy.$smallScreen) {
     display: flex;
   }
 }

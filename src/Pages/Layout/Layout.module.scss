@@ -1,4 +1,4 @@
-@use '../../ui/globalDesignElements.module';
+@use '../../ui/cozy.module';
 
 .layout {
   -ms-overflow-style: none;
@@ -9,7 +9,7 @@
 
 .footer {
   position: fixed;
-  z-index: globalDesignElements.$zTopLevel;
+  z-index: cozy.$zTopLevel;
   bottom: 0;
   right: 0;
 }
@@ -20,11 +20,11 @@
 
 .pageContainer {
   margin-top: 7rem;
-  @media (max-width: globalDesignElements.$smallScreen) {
+  margin-left: 7rem;
+  margin-right: 7rem;
+  @media (max-width: cozy.$smallScreen) {
     margin-left: 4rem;
     margin-right: 4rem;
     margin-top: 4rem;
   }
-  margin-left: 7rem;
-  margin-right: 7rem;
 }

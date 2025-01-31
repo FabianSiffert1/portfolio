@@ -1,11 +1,11 @@
-@use '../../ui/globalDesignElements.module';
+@use '../cozy.module';
 
 .section{
 
 }
 
 .sectionTitle{
-@include globalDesignElements.typoHeadlineCaps
+@include cozy.typoHeadlineCaps
 }
 
 .sectionContent{}

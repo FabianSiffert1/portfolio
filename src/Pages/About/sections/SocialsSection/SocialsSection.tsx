@@ -1,7 +1,7 @@
 import styles from './SocialsSection.module.scss'
 import Section from '../../../../ui/components/Section'
 
-export function SocialsSection() {
+export default function SocialsSection() {
   return (
     <Section title="Get in Touch">
       {SocialSectionContent}
