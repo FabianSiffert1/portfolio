@@ -4,9 +4,12 @@
   display: grid;
   justify-items: center;
   padding: 1rem;
+  width: 100%;
+  @include globalDesignElements.typoBody;
   @media (max-width: globalDesignElements.$smallScreen) {
-    grid-template-rows: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
   }
   @media (min-width: globalDesignElements.$smallScreen) {
     grid-template-columns: repeat(4, 1fr);

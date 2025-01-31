@@ -42,13 +42,13 @@
 }
 
 .name{
- @include globalDesignElements.typoHeadline;
+ @include globalDesignElements.typoHeadlineCaps;
   font-size: 2.7rem;
   padding-bottom: 0.8rem;
 }
 
 .job {
-  @include globalDesignElements.typoHeadline;
+  @include globalDesignElements.typoHeadlineCaps;
   font-size: 1.5rem;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .location {
-  @include globalDesignElements.typoHeadline;
+  @include globalDesignElements.typoHeadlineCaps;
   font-size: 1.25rem;
   padding-top: 1rem;
 }
