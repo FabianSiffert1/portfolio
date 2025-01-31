@@ -19,14 +19,32 @@
 }
 
 .employment {
-  background-color: color-mix(in srgb, var(--elementBlue) 50%, transparent);
   padding: 0.5rem;
   display: flex;
   text-align: center;
   flex-direction: column;
+
+  @media (min-width: cozy.$smallScreen) {
+    &:nth-child(1) {
+      background-color: color-mix(in srgb, var(--elementBlue) 50%, transparent);
+      margin-bottom: 4rem;
+    }
+    &:nth-child(2) {
+      background-color: color-mix(in srgb, var(--elementBlueVariant) 50%, transparent);
+      margin-bottom: 3rem;
+    }
+    &:nth-child(3) {
+      background-color: color-mix(in srgb, var(--elementBlueVariant2) 50%, transparent);
+      margin-bottom: 2rem;
+    }
+    &:nth-child(4) {
+      background-color: color-mix(in srgb, var(--elementBlueGreenGradient) 50%, transparent);
+      margin-bottom: 1rem;
+    }
+  }
 }
 
-.timespan{
+.timespan {
   height: 17%;
 }
 
@@ -41,7 +59,8 @@
   width: 100%;
   height: 17%;
   justify-content: center;
-  a{
+
+  a {
     display: block;
     width: 100%;
     height: 100%;
