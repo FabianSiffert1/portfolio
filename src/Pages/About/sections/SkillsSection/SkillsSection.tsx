@@ -5,30 +5,30 @@ import Section from '../../../../ui/components/Section'
 export default function SkillsSection() {
 
   return (
-    <Section title="Skills" content={
-      SkillsSectionContent()
-    } />
+    <Section title="Skills" >
+      {SkillsSectionContent}
+    </Section>
   )
 }
 
-
-function SkillsSectionContent() {
-  return (
+const SkillsSectionContent = (
     <div className={styles.skillsSection}>
-      <div className={styles.mainSkills}>
+      <div className={styles.androidDevelopment}>
         <div className={styles.android}>
           Android
         </div>
         <div className={styles.kotlin}>
-          kotlin
+          Kotlin
         </div>
         <div className={styles.jetpackCompose}>
-          jetpackCompose
+          Jetpack Compose
         </div>
       </div>
       <div className={styles.otherSkills}>
-        other Skills
+        Other Skills
       </div>
     </div>
-  )
-}
+
+)
+
+

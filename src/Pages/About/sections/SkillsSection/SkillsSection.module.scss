@@ -1,11 +1,25 @@
 @use '../../../../ui/globalDesignElements.module';
 
 .skillsSection {
-  display: flex;
-  flex-direction: row;
+  padding: 1rem;
   width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 5rem;
-  background-color: color-mix(in srgb, var(--element-color-green) 50%, transparent);
+  border-top-right-radius: globalDesignElements.$borderRadius;
+  background-color: color-mix(in srgb, var(--element-color-green) 15%, transparent);
+  font: small-caps 1.8rem sans-serif;
+  text-align: center;
+  @media (max-width: globalDesignElements.$smallScreen) {
+    align-content: space-evenly;
+  }
+  @media (min-width: globalDesignElements.$smallScreen) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-area: 1 / 1 / 2 / 4;
+  }
+}
+
+.android { grid-area: 1 / 1 / 2 / 2; }
+
+.otherSkills{
+  grid-area: 1 / 2 / 2 / 3;
 }

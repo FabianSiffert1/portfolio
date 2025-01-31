@@ -14,10 +14,8 @@ export default function About() {
         <ProfileSection />
       </div>
       <div className={styles.spacer} />
-      <div className={styles.skillsAndCarreer}>
-        <div className={styles.secondColumnItem}>
+      <div className={styles.skills}>
           <SkillsSection />
-        </div>
       </div>
       <div className={styles.spacer} />
 
@@ -27,9 +25,11 @@ export default function About() {
 
       <div className={styles.spacer} />
       <div className={styles.spacer} />
+
       <div className={styles.socials}>
         <SocialsSection />
       </div>
+
       <div className={styles.spacer} />
     </div>
   )

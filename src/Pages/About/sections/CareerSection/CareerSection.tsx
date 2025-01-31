@@ -5,14 +5,13 @@ import Section from '../../../../ui/components/Section'
 export default function CareerSection() {
 
   return (
-    <Section title="My career, in short" content={
-      CareerSectionContent()
-    }/>
+    <Section title="My career, in short" >
+      {CareerSectionContent}
+    </Section>
   )
 }
 
-function CareerSectionContent(){
-  return (
+const CareerSectionContent = (
     <div className={styles.careerSection}>
       <div className={styles.bachelor}>
         Bachelors of Arts →
@@ -28,4 +27,4 @@ function CareerSectionContent(){
       </div>
     </div>
   )
-}
+

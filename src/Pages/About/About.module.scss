@@ -11,9 +11,6 @@
 }
 
 .skills {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
 }
 
 .career {
@@ -24,6 +21,3 @@
   height: 4rem;
 }
 
-.secondColumnItem{
-  grid-column: 2;
-}
