@@ -24,7 +24,6 @@ export default function About() {
       </div>
 
       <div className={styles.spacer} />
-      <div className={styles.spacer} />
 
       <div className={styles.socials}>
         <SocialsSection />
