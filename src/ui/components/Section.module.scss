@@ -5,7 +5,7 @@
 }
 
 .sectionTitle{
-  font: small-caps  2rem sans-serif;
+@include globalDesignElements.typoHeadline
 }
 
 .sectionContent{}

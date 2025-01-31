@@ -42,14 +42,23 @@
 }
 
 .name{
-  font: small-caps  2.3rem sans-serif;
-  padding-bottom: 1rem;
+ @include globalDesignElements.typoHeadline;
+  font-size: 2.7rem;
+  padding-bottom: 0.8rem;
 }
 
 .job {
-  padding-bottom: 0.5rem;
+  @include globalDesignElements.typoHeadline;
+  font-size: 1.5rem;
+}
+
+.jobSubtitle {
+  font-size: 1rem;
 }
 
 .location {
+  @include globalDesignElements.typoHeadline;
+  font-size: 1.25rem;
+  padding-top: 1rem;
 }
 

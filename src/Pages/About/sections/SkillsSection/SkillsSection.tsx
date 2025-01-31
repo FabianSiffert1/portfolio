@@ -15,7 +15,6 @@ export default function SkillsSection() {
 function SkillsSectionContent() {
   return (
     <div className={styles.skillsSection}>
-      Skills
       <div className={styles.mainSkills}>
         <div className={styles.android}>
           Android

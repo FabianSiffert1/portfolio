@@ -14,13 +14,7 @@ export default function About() {
         <ProfileSection />
       </div>
       <div className={styles.spacer} />
-
-      <div className={styles.socials}>
-        <SocialsSection />
-      </div>
-      <div className={styles.spacer} />
-
-      <div className={styles.skills}>
+      <div className={styles.skillsAndCarreer}>
         <div className={styles.secondColumnItem}>
           <SkillsSection />
         </div>
@@ -30,7 +24,12 @@ export default function About() {
       <div className={styles.carreer}>
         <CareerSection />
       </div>
-      <div />
+
+      <div className={styles.spacer} />
+      <div className={styles.spacer} />
+      <div className={styles.socials}>
+        <SocialsSection />
+      </div>
       <div className={styles.spacer} />
     </div>
   )

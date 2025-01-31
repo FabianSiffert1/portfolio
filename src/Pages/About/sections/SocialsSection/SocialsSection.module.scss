@@ -2,6 +2,7 @@
 
 .socialsSection {
   padding: 1rem;
+  width: 100%;
   border-top-right-radius: globalDesignElements.$borderRadius;
   background-color: color-mix(in srgb, var(--element-color-pink) 15%, transparent);
   font: small-caps 1.8rem sans-serif;
@@ -15,18 +16,7 @@
   @media (min-width: globalDesignElements.$smallScreen) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-area: 1 / 1 / 2 / 4;
   }
-}
-
-.email {
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.github {
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-.linkedIn {
-  grid-area: 3 / 3 / 4 / 4;
 }
