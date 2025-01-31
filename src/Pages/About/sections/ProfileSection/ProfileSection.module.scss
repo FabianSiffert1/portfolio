@@ -4,7 +4,7 @@
   padding: 1rem;
   border-top-left-radius: cozy.$borderRadius;
   border-bottom-left-radius: cozy.$borderRadius;
-  background-color: color-mix(in srgb, var(--element-color-peach) 20%, transparent);
+  background-color: color-mix(in srgb, var(--elementPeach) 20%, transparent);
   @media (max-width: cozy.$smallScreen) {
     flex-direction: column;
     align-items: center;

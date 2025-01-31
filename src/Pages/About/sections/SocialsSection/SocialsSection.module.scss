@@ -4,7 +4,7 @@
   padding: 1rem;
   width: 100%;
   border-top-right-radius: cozy.$borderRadius;
-  background-color: color-mix(in srgb, var(--element-color-pink) 15%, transparent);
+  background-color: color-mix(in srgb, var(--elementPink) 15%, transparent);
   font: small-caps 1.8rem sans-serif;
   text-align: center;
   @media (max-width: cozy.$smallScreen) {

@@ -5,24 +5,24 @@ html[data-theme="light"] {
   --background-color: #{$white-2};
   --color: #{$black-1};
 
-  --primary-color: #{$blue-1};
-  --secondary-color: #{$grey-3};
+  --primary: #{$blue-1};
+  --secondary: #{$grey-3};
 
-  --element-color-peach: #{$soft-peach};
-  --element-color-pink: #{$soft-pink};
-  --element-color-blue: #{$soft-blue};
-  --element-color-green: #{$soft-mint};
+  --elementPeach: #{$soft-peach};
+  --elementPink: #{$soft-pink};
+  --elementBlue: #{$soft-blue};
+  --elementGreen: #{$soft-mint};
 }
 
 html[data-theme="dark"] {
   --background-color: #{$neutral-900};
   --color: #{$neutral-0};
 
-  --primary-color: #{$primary-500};
-  --secondary-color: #{$neutral-500};
+  --primary: #{$primary-500};
+  --secondary: #{$neutral-500};
 
-  --element-color-peach: #{$soft-peach};
-  --element-color-pink: #{$soft-pink};
-  --element-color-blue: #{$soft-blue};
-  --element-color-green: #{$soft-mint};
+  --elementPeach: #{$soft-peach};
+  --elementPink: #{$soft-pink};
+  --elementBlue: #{$soft-blue};
+  --elementGreen: #{$soft-mint};
 }

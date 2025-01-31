@@ -16,14 +16,14 @@ const SocialSectionContent = (
         Email
       </a>
     </div>
-    <div className={styles.github}>
-      <a href={'https://github.com/FabianSiffert1'} target="_blank">
-        Github
-      </a>
-    </div>
     <div className={styles.linkedIn}>
       <a href={'https://www.linkedin.com/in/fabian-siffert-5b2481289/'} target="_blank">
         LinkedIn
+      </a>
+    </div>
+    <div className={styles.github}>
+      <a href={'https://github.com/FabianSiffert1'} target="_blank">
+        Github
       </a>
     </div>
   </div>
