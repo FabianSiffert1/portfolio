@@ -4,7 +4,7 @@
   padding: 1rem;
   width: 100%;
   border-top-right-radius: cozy.$borderRadius;
-  background-color: color-mix(in srgb, var(--elementGreen) 15%, transparent);
+
   text-align: center;
   @include cozy.typoBodyCaps;
   @media (max-width: cozy.$smallScreen) {
@@ -13,16 +13,19 @@
   @media (min-width: cozy.$smallScreen) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
     grid-template-rows: 1fr;
   }
 }
 
 .androidDevelopment {
+  background-color: color-mix(in srgb, var(--elementGreen) 40%, transparent);
   padding: 0.7rem;
 }
 
 
 .otherSkills{
+  background-color: color-mix(in srgb, var(--elementGreen) 50%, transparent);
   padding: 0.7rem;
   font-size:  1.3rem;
 }
