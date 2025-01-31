@@ -12,6 +12,8 @@ html[data-theme="light"] {
   --elementPink: #{$soft-pink};
   --elementBlue: #{$soft-blue};
   --elementGreen: #{$soft-mint};
+  --elementGreenVariant: #{$soft-mint-2};
+  --elementGreenVariant2: #{$soft-mint-3};
 }
 
 html[data-theme="dark"] {

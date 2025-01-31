@@ -18,13 +18,22 @@
 }
 
 .androidDevelopment {
-  background-color: color-mix(in srgb, var(--elementGreen) 40%, transparent);
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 40%, transparent);
+  padding: 0.7rem;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+.softSkills {
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 40%, transparent);
   padding: 0.7rem;
 }
 
 
 .otherSkills{
-  background-color: color-mix(in srgb, var(--elementGreen) 50%, transparent);
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 50%, transparent);
   padding: 0.7rem;
   font-size:  1.3rem;
 }
