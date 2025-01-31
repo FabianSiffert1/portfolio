@@ -9,7 +9,8 @@ export default function ErrorPage() {
       404 - Not found
       <br />
       <br />
-      <Link to={'/'}>Go back</Link> <br />
+      <Link to={'/'}>go back</Link>
+      <br />
     </div>
   )
 }
