@@ -14,16 +14,16 @@ export default function CareerSection() {
 const CareerSectionContent = (
     <div className={styles.careerSection}>
       <div className={styles.bachelor}>
-        Bachelors of Arts →
+        Bachelor of english and american studies, with a minor in Philosophy
       </div>
       <div className={styles.volunteering}>
-        Volunteering in SA →
+        Volunteering in South Africa
       </div>
       <div className={styles.sipgate}>
-        Apprenticeship →
+        Apprenticeship: IT specialist in application development @sipgate in düsseldorf
       </div>
       <div className={styles.fullTime}>
-        Full time
+        Full time software developer @sipgate in an android developer team
       </div>
     </div>
   )
