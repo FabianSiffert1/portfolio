@@ -1,5 +1,6 @@
 import styles from './SocialsSection.module.scss'
 import Section from '../../../../ui/components/Section'
+import { Link } from 'react-router-dom'
 
 export default function SocialsSection() {
   return (
@@ -13,23 +14,17 @@ const SocialSectionContent = (
   <div className={styles.socialsSection}>
     <div className={styles.socialLink}>
       <div className={styles.email}>
-        <a href={'mailto:siffert.dev+io@gmail.com'}>
-          Email
-        </a>
+        <Link to={'mailto:siffert.dev+io@gmail.com/'}>Email</Link>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.linkedIn}>
-        <a href={'https://www.linkedin.com/in/fabian-siffert-5b2481289/'} target="_blank">
-          LinkedIn
-        </a>
+        <Link to={'https://www.linkedin.com/in/fabian-siffert-5b2481289/'} target={'_blank'}>LinkedIn</Link>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.github}>
-        <a href={'https://github.com/FabianSiffert1'} target="_blank">
-          Github
-        </a>
+        <Link to={'https://github.com/FabianSiffert1/'} target={'_blank'}>Github</Link>
       </div>
     </div>
   </div>
