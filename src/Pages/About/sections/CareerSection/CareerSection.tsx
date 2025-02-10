@@ -1,5 +1,6 @@
 import styles from './CareerSection.module.scss'
 import Section from '../../../../ui/components/Section'
+import { Link } from 'react-router-dom'
 
 
 export default function CareerSection() {
@@ -15,29 +16,24 @@ const CareerSectionContent = (
   <div className={styles.careerSection}>
     <div className={styles.employment}>
       <div className={styles.timespan}>2015-2021</div>
-      <div className={styles.job}> Bachelor of english and american studies, minoring in Philosophy</div>
+      <div className={styles.job}> Bachelor of english and american studies</div>
+      <div className={styles.jobSubtitle}>With a minor in Philosophy</div>
       <div className={styles.employer}>
-        <a href={'https://www.hhu.de/'} target="_blank">
-          @hhu
-        </a>
+        <Link to={'https://www.hhu.de/'} target="_blank">@HHU</Link>
       </div>
     </div>
     <div className={styles.employment}>
       <div className={styles.timespan}>2018-2019</div>
       <div className={styles.job}> Volunteering in South Africa</div>
       <div className={styles.employer}>
-        <a href={'https://www.masifunde.de/de'} target="_blank">
-          @masifunde
-        </a>
+        <Link to={'https://www.masifunde.de/'} target="_blank">@masifunde</Link>
       </div>
     </div>
     <div className={styles.employment}>
       <div className={styles.timespan}>2021-2024</div>
       <div className={styles.job}>Apprenticeship: IT specialist in application development</div>
       <div className={styles.employer}>
-        <a href={'https://sipgate.de'} target="_blank">
-          @sipgate
-        </a>
+        <Link to={'https://www.sipgate.de/'} target="_blank">@sipgate</Link>
       </div>
     </div>
     <div className={styles.employment}>

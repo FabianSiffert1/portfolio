@@ -28,15 +28,22 @@
 }
 
 .timespan {
+  padding-bottom: 0.3rem;
+  font-size: 1rem;
 }
 
 
 .job {
 }
 
+.jobSubtitle {
+  font-size: 1rem;
+}
+
 .employer {
   display: flex;
   width: 100%;
+  padding-top: 0.5rem;
 
   a {
     display: block;
