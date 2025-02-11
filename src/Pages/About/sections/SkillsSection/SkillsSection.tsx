@@ -28,7 +28,9 @@ const SkillsSectionContent = (
           </div>
         </div>
       </Section>
+
       <div className={styles.spacer}/>
+
       <Section title={'and:'}>
         <div className={styles.softSkills}>
         <div className={styles.scrum}>
@@ -45,10 +47,9 @@ const SkillsSectionContent = (
       <Section title="Also:">
         <div className={styles.otherSkills}>
           <div className={styles.react}>React</div>
-          <div className={styles.typeScript}>TypeScript</div>
-          <div className={styles.sass}>Sass</div>
+          <div className={styles.typeScript}>Type- & JavaScript</div>
+          <div className={styles.sass}>Css & Sass</div>
           <div className={styles.java}>Java</div>
-          <div className={styles.javaScript}>JavaScript</div>
         </div>
       </Section>
     </div>
