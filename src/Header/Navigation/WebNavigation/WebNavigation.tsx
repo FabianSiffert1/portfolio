@@ -7,22 +7,32 @@ export default function WebNavigation() {
       <nav>
         <div className={styles.webNavigation}>
           <div className={styles.about}>
-            <NavLink to="/" style={({ isActive }) =>
-              isActive
-                ? {
-                  textDecoration: 'underline'
-                }
-                : {}
-            }>about</NavLink>
+            <NavLink
+              to='/'
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: 'underline'
+                    }
+                  : {}
+              }
+            >
+              about
+            </NavLink>
           </div>
           <div className={styles.projects}>
-            <NavLink to={`projects`} style={({ isActive }) =>
-              isActive
-                ? {
-                  textDecoration: 'underline'
-                }
-                : {}
-            }>projects</NavLink>
+            <NavLink
+              to={`projects`}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: 'underline'
+                    }
+                  : {}
+              }
+            >
+              projects
+            </NavLink>
           </div>
         </div>
       </nav>

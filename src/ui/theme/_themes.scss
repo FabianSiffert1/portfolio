@@ -1,7 +1,6 @@
 @use 'colors' as *;
 
-html[data-theme="light"] {
-
+html[data-theme='light'] {
   --background-color: #{$white-2};
   --color: #{$black-1};
 
@@ -19,7 +18,7 @@ html[data-theme="light"] {
   --elementGreenVariant2: #{$soft-mint-3};
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --background-color: #{$neutral-900};
   --color: #{$neutral-0};
 

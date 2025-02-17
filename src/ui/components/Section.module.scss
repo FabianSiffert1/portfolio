@@ -1,11 +1,11 @@
 @use '../cozy.module';
 
-.section{
-
+.section {
 }
 
-.sectionTitle{
-@include cozy.typoHeadlineCaps
+.sectionTitle {
+  @include cozy.typoHeadlineCaps;
 }
 
-.sectionContent{}
+.sectionContent {
+}

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <About />,
+        element: <About />
       },
       {
         path: 'projects',
@@ -39,7 +39,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       <ThemeProvider>
-          <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </ThemeProvider>
     </React.StrictMode>
   </QueryClientProvider>

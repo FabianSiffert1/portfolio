@@ -13,15 +13,15 @@ export default function Layout() {
   }, [darkTheme])
   return (
     <div className={styles.layout}>
-        <div className={styles.header}>
-          <Header />
-        </div>
-        <div className={styles.pageContainer}>
-          <Outlet />
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
+      <div className={styles.header}>
+        <Header />
+      </div>
+      <div className={styles.pageContainer}>
+        <Outlet />
+      </div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   )
 }

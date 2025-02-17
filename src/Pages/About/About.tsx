@@ -5,9 +5,7 @@ import SkillsSection from './sections/SkillsSection/SkillsSection'
 import CareerSection from './sections/CareerSection/CareerSection'
 import SocialsSection from './sections/SocialsSection/SocialsSection'
 
-
 export default function About() {
-
   return (
     <div className={styles.about}>
       <div className={styles.profile}>
@@ -15,7 +13,7 @@ export default function About() {
       </div>
       <div className={styles.spacer} />
       <div className={styles.skills}>
-          <SkillsSection />
+        <SkillsSection />
       </div>
       <div className={styles.spacer} />
 
