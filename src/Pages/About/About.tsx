@@ -9,11 +9,8 @@ export default function About() {
     return (
         <div className={styles.about}>
             <ProfileSection/>
-            <div className={styles.spacer}/>
             <SkillsSection/>
-            <div className={styles.spacer}/>
             <CareerSection/>
-            <div className={styles.spacer}/>
             <SocialsSection/>
             <div className={styles.spacer}/>
         </div>
