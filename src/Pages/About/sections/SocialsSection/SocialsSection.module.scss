@@ -7,12 +7,9 @@
   font: small-caps 1.8rem sans-serif;
   text-align: center;
   @media (max-width: cozy.$smallScreen) {
-    align-content: space-evenly;
-    .email,
-    .github,
-    .linkedIn {
-      margin: 2rem 0;
-    }
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
   }
   @media (min-width: cozy.$smallScreen) {
     display: grid;
@@ -24,7 +21,7 @@
 }
 
 .socialLink {
-  background-color: color-mix(in srgb, var(--elementPink) 35%, transparent);
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 35%, transparent);
   padding: 0.5rem;
   border-radius: 0.3rem;
   a {
