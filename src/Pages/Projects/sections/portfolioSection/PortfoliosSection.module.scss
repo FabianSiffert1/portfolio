@@ -1,0 +1,33 @@
+@use '../../../../ui/cozy.module';
+
+.portfoliosSection {
+  @media (max-width: cozy.$smallScreen) {
+    display: flex;
+    row-gap: 1rem;
+  }
+  @media (min-width: cozy.$smallScreen) {
+  }
+}
+
+.project{
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 35%, transparent);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.description {
+
+}
+
+.links{
+  display: flex;
+  padding: 1rem;
+  @media (max-width: cozy.$smallScreen) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: cozy.$smallScreen) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
