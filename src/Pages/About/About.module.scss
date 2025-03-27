@@ -1,20 +1,8 @@
 @use '../../ui/cozy.module';
 
 .about {
+ display: grid;
+  row-gap: 2rem;
 }
 
-.profile {
-}
 
-.socials {
-}
-
-.skills {
-}
-
-.career {
-}
-
-.spacer {
-  height: 4rem;
-}
