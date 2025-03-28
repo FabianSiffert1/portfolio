@@ -1,7 +1,7 @@
 {
   "name": "inv",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,8 @@
     "lintFix": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0  --fix",
     "format": "prettier src/**/*.tsx --write --config ./.prettierrc",
     "formatAndFix": " npm run format && npm run lintFix",
-    "preview": "vite preview --port 3030",
-    "start": "vite --host --port 3030"
+    "preview": "vite preview --port 3000",
+    "start": "vite --host --port 3000"
   },
   "dependencies": {
     "react": "^18.3.1",
