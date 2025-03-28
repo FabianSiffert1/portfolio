@@ -15,12 +15,12 @@
 
 .links{
   display: flex;
+  font: small-caps 1.3rem sans-serif;
+  font-weight: bold;
   * {
     border-radius: 0.3rem;
     padding: 1rem;
   }
-  font: small-caps 1.3rem sans-serif;
-  font-weight: bold;
   @media (max-width: cozy.$smallScreen) {
     flex-direction: row;
     align-items: center;
