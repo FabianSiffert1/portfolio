@@ -1,6 +1,19 @@
 @use '../../ui/cozy.module';
 
 .projects {
-  display: flex;
-  justify-content: center;
+  @media (max-width: cozy.$smallScreen) {
+    display: grid;
+    justify-content: center;
+    gap: 3rem;
+  }
+  @media (min-width: cozy.$smallScreen) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.spacer{
+  height: 3rem;
 }
