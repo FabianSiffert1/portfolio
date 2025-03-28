@@ -27,6 +27,8 @@ const SkillsSectionContent = (
             <Section title={'and:'}>
                 <div className={styles.scrum}>Scrum</div>
                 <div className={styles.po}>Product Owner Certificate</div>
+                <div className={styles.pottery}>Pottery</div>
+                <div className={styles.bouldering}>Bouldering</div>
             </Section>
         </div>
     </div>
