@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from './Projects.module.scss'
-import PortfoliosSection from "./sections/portfolioSection/PortfoliosSection";
+import Project from "./project/Project";
 
 export default function Projects() {
   return <div className={styles.projects}>
-    <PortfoliosSection/>
+    <Project projectTitle={"siffert.io 1.0"}
+             projectDescription={"This is one of two personal portfolios I’ve created.\n Built during my apprenticeship, it reflects my early exploration of web development with a focus on simplicity.\n Since then, I’ve created a second portfolio—more minimalistic in design and built with responsiveness in mind — which you’re currently viewing."}
+             links={[
+               {title: "Deployment", url: "https://old.siffert.io"},
+               {title: "Github", url: "https://github.com/FabianSiffert1/siffertio"}
+             ]}/>
   </div>
 }

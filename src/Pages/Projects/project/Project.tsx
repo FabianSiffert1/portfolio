@@ -1,7 +1,7 @@
 import React, {JSX} from "react";
 import styles from "./Project.module.scss";
 import {Link} from "react-router-dom";
-import Section from "../../../../../ui/components/Section";
+import Section from "../../../ui/components/Section";
 
 interface ProjectLink {
     title: string;
