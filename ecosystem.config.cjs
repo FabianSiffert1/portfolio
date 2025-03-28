@@ -3,7 +3,7 @@ module.exports = {
         {
             name: "portfolio",
             script: "serve",
-            args: "-s dist",
+            args: "-s dist -p 3000",
             cwd: "./",
             env: {
                 NODE_ENV: "production",
