@@ -27,9 +27,6 @@ export default function Header() {
 
   return (
     <div className={styles.header} ref={componentRef}>
-      <div className={styles.title}>
-        <Title />
-      </div>
       <div className={styles.navigationWrapper}>
         <div className={styles.navigation}>
           <div className={styles.webNavigation}>
