@@ -1,0 +1,36 @@
+@use '../../../../../ui/cozy.module';
+
+.project{
+  background-color: color-mix(in srgb, var(--elementGreenVariant) 35%, transparent);
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.description {
+
+}
+
+.spacer{
+  height: 1rem;
+}
+
+.links{
+  display: flex;
+  padding: 1rem;
+  * {
+    border-radius: 0.3rem;
+    padding: 1rem;
+    background-color: color-mix(in srgb, var(--elementGreenVariant) 35%, transparent);
+  }
+  font: small-caps 1.3rem sans-serif;
+  font-weight: bold;
+  @media (max-width: cozy.$smallScreen) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  @media (min-width: cozy.$smallScreen) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
