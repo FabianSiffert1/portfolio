@@ -10,6 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {  text-decoration: inherit;  color: inherit;}
+
+
 :root::-webkit-scrollbar {
   display: none;
 }

@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react'
 import styles from './Header.module.scss'
 import MobileNavigation from './Navigation/MobileNavigation/MobileNavigation'
 import WebNavigation from './Navigation/WebNavigation/WebNavigation'
-import Title from './Title/Title'
 
 export default function Header() {
   const componentRef = useRef<HTMLDivElement>(null)
