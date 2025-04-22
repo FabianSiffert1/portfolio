@@ -28,7 +28,7 @@ const CareerSectionContent = (
       </div>
     </div>
     <div className={styles.employment}>
-      <div className={styles.timespan}>2021-Jan.2024</div>
+      <div className={styles.timespan}>Oct.2021-Jan.2024</div>
       <div className={styles.job}>Apprenticeship: IT specialist in application development</div>
       <div className={styles.employer}>
         <Link to={'https://www.sipgate.de/'} target='_blank'>
