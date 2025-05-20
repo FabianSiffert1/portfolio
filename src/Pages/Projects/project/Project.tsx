@@ -15,9 +15,10 @@ interface ProjectSectionProps {
 }
 
 export enum ColorVariant {
-    elementBlue = "elementBlue",
     elementPink = "elementPink",
-    elementGreenVariant2 = "elementGreenVariant2"
+    elementPeach = "elementPeach",
+    elementGreenVariant =  "elementGreenVariant",
+    elementBlue = "elementBlue"
 }
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ projectTitle, projectDescription, links, backgroundColor = ColorVariant.elementBlue}) => {
