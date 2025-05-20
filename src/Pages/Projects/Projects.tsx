@@ -11,7 +11,7 @@ export default function Projects() {
                      {title: "Github", url: "https://github.com/FabianSiffert1/inventory"}
                  ]}/>
         <Project projectTitle={"inv"}
-                 projectDescription={"A work-in-progress™, mobile-first website that originally started as a portfolio redesign.\n Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices."}
+                 projectDescription={"A work-in-progress™ (read: very rough, and likely never to be finished), mobile-first website that originally began as a portfolio redesign. Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices."}
                  links={[
                      {title: "Link", url: "https://inv.siffert.io"},
                      {title: "Github", url: "https://github.com/FabianSiffert1/inv"}
