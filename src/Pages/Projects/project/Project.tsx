@@ -43,7 +43,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projectTitle, projectDe
                 <div className={styles.links}>
                     {links.map((link, index) => (
                         <Link key={index} to={link.url} target="_blank" style={backgroundStyle}>
-                            {link.title}
+                            &#123;{link.title}&#125;
                         </Link>
                     ))}
                 </div>

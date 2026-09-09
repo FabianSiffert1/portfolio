@@ -10,20 +10,22 @@ const SocialSectionContent = (
   <div className={styles.socialsSection}>
     <div className={styles.socialLink}>
       <div className={styles.email}>
-        <Link to={'mailto:siffert.dev+io@gmail.com/'}>Email</Link>
+        <Link to={'mailto:siffert.dev+io@gmail.com/'}>
+            &#123;Email&#125;
+        </Link>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.linkedIn}>
         <Link to={'https://www.linkedin.com/in/fabian-siffert-5b2481289/'} target={'_blank'}>
-          LinkedIn
+            &#123;LinkedIn&#125;
         </Link>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.github}>
         <Link to={'https://github.com/FabianSiffert1/'} target={'_blank'}>
-          Github
+            &#123;Github&#125;
         </Link>
       </div>
     </div>

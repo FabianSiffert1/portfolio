@@ -12,7 +12,7 @@ export default function Projects() {
                     A simple, Android-only investment tracker.<br/><br/>
                     This is the project I'm currently working on, built using best practices recommended by Google's{" "}
                     <Link to="https://github.com/android/nowinandroid" target="_blank" style={{fontWeight: 550}}>
-                    NowInAndroid
+                        &#123;NowInAndroid&#125;
                     </Link> and informed by my professional experience. <br/><br/>
                     As of May 2025, it runs on a local database, which I plan to replace in the future.
                     The project hasn't been deployed yet, as it's still a work in progress.
@@ -20,6 +20,21 @@ export default function Projects() {
             }
             links={[
                 { title: "Github", url: "https://github.com/FabianSiffert1/inventory" }
+            ]}
+        />
+        <Project
+            projectTitle="docker-hud"
+            projectDescription={
+                <>
+                    A hud for the docker containers running on my local server<br/><br/>
+                    Build with a <Link to="https://shop.pimoroni.com/products/badger-2040?srsltid=AfmBOoqCMb0tOkZMvyGG12VLJ3naDkMUR3sO43zKV-8ED-8Im-PhuvR2" target="_blank" style={{fontWeight: 550}}>&#123;Badger 2040&#125;</Link> in mind.
+                    It displays a randomly selected logo each day when everything is fine and a warning screen when a docker container is down. Also contains an overview screen of the health of my server and one for the containers.
+                    The Buttons are mapped to refresh, view switching and restarting docker containers. <br/><br/>
+                    Vibecoded in Python.
+                </>
+            }
+            links={[
+                { title: "Github", url: "https://github.com/FabianSiffert1/docker-hud" }
             ]}
         />
         <Project projectTitle={"inv"}
