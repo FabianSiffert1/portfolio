@@ -36,6 +36,22 @@ export default function Projects() {
             links={[
                 { title: "Github", url: "https://github.com/FabianSiffert1/docker-hud" }
             ]}
+            backgroundColor={ColorVariant.elementGreenVariant}
+        />
+        <Project
+            projectTitle="DIY Electronics & Home Assistant"
+            projectDescription={
+                <>
+                    Learning electronics hands-on — multimeter, soldering iron, cheap ESP32-S3 boards — by building things that plug into my Home Assistant setup. Everything runs on ESPHome, which turns a microcontroller into a native Home Assistant device from a few lines of YAML.<br/><br/>
+                    <b>Sunrise Alarm</b> — an alarm clock that wakes me with light instead of noise. Currently pulls time, temperature and the alarm state from Home Assistant. Next: driving the lamp and leaving the breadboard behind.<br/><br/>
+                    <b>Grundig Micro-Boy 300</b> — a shortwave pocket radio from the analogue era, brought back to life. The original electronics work again, the corroded battery holder is gone, and it now runs off my own power module. <br/> But no German station broadcasts on shortwave anymore, so the receiver has nothing left to receive. It gets a second job instead: a Home Assistant voice satellite for switching the lights, with a NeoPixel behind the dial to signal <i>I'm listening</i>.
+
+                </>
+            }
+            links={[
+                {title: "ESPHome", url: "https://esphome.io"}
+            ]}
+            backgroundColor={ColorVariant.elementPeach}
         />
         <Project projectTitle={"inv"}
                  projectDescription={"A work-in-progress™ (read: very rough, and likely never to be finished), mobile-first website that originally began as a portfolio redesign. Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices."}
@@ -43,7 +59,7 @@ export default function Projects() {
                      {title: "Link", url: "https://inv.siffert.io"},
                      {title: "Github", url: "https://github.com/FabianSiffert1/inv"}
                  ]}
-                 backgroundColor={ColorVariant.elementPeach}
+                 backgroundColor={ColorVariant.elementPink}
         />
         <Project projectTitle={"siffert.io 2.0"}
                  projectDescription={"This is my current portfolio—more minimalistic in design and built with responsiveness in mind."}
@@ -57,7 +73,7 @@ export default function Projects() {
                      {title: "Link", url: "https://old.siffert.io"},
                      {title: "Github", url: "https://github.com/FabianSiffert1/siffertio"}
                  ]}
-            backgroundColor={ColorVariant.elementPink}
+            backgroundColor={ColorVariant.elementBlue}
         />
 
         <div className={styles.spacer}/>
