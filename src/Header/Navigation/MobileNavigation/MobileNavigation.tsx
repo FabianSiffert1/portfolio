@@ -2,60 +2,65 @@ import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './MobileNavigation.module.scss'
 
+const activeStyle = ({ isActive }: { isActive: boolean }) => (isActive ? { textDecoration: 'underline' } : {})
+
 export default function MobileNavigation() {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false)
 
   const toggleHamburgerMenu = () => {
-    setHamburgerMenuOpen(!hamburgerMenuOpen)
+    setHamburgerMenuOpen((prevState) => !prevState)
+  }
+
+  const closeHamburgerMenu = () => {
+    setHamburgerMenuOpen(false)
   }
 
   useEffect(() => {
-    if (hamburgerMenuOpen) {
-      document.body.classList.add('no-scroll')
-    } else {
-      document.body.classList.remove('no-scroll')
+    if (!hamburgerMenuOpen) {
+      return
     }
+
+    document.body.classList.add('no-scroll')
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setHamburgerMenuOpen(false)
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
 
     return () => {
       document.body.classList.remove('no-scroll')
+      document.removeEventListener('keydown', handleKeyDown)
     }
   }, [hamburgerMenuOpen])
 
   return (
-    <div className={styles.mobileNavigation} onClick={toggleHamburgerMenu}>
-      <div className={styles.burger} />
-      <div className={styles.burger} />
-      <div className={styles.burger} />
-      <div className={styles.navigationMenu} style={{ display: hamburgerMenuOpen ? 'flex' : 'none' }}>
+    <div className={styles.mobileNavigation}>
+      <button
+        type='button'
+        className={styles.burgerButton}
+        aria-expanded={hamburgerMenuOpen}
+        aria-controls='mobile-navigation-menu'
+        aria-label={hamburgerMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        onClick={toggleHamburgerMenu}
+      >
+        <span className={styles.burger} />
+        <span className={styles.burger} />
+        <span className={styles.burger} />
+      </button>
+      <nav id='mobile-navigation-menu' className={styles.navigationMenu} hidden={!hamburgerMenuOpen} aria-label='Main navigation'>
         <div className={styles.link}>
-          <NavLink
-            to={`/`}
-            style={({ isActive }) =>
-              isActive
-                ? {
-                    textDecoration: 'underline'
-                  }
-                : {}
-            }
-          >
+          <NavLink to='/' style={activeStyle} onClick={closeHamburgerMenu}>
             about
           </NavLink>
         </div>
         <div className={styles.link}>
-          <NavLink
-            to={`projects`}
-            style={({ isActive }) =>
-              isActive
-                ? {
-                    textDecoration: 'underline'
-                  }
-                : {}
-            }
-          >
+          <NavLink to='projects' style={activeStyle} onClick={closeHamburgerMenu}>
             projects
           </NavLink>
         </div>
-      </div>
+      </nav>
     </div>
   )
 }

@@ -1,36 +1,25 @@
-import React, { createContext, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { ThemeContext } from './themeContext'
 
-interface ContextProps {
-  darkTheme: boolean
-  toggleTheme: () => void
-}
-
-export const ThemeContext = createContext<ContextProps>({
-  darkTheme: true,
-  toggleTheme: () => {}
-})
+const DARK_SCHEME_QUERY = '(prefers-color-scheme: dark)'
 
 interface Props {
   children?: React.ReactNode
 }
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(false)
+  const [darkTheme, setDarkTheme] = useState(() => window.matchMedia(DARK_SCHEME_QUERY).matches)
 
-  const toggleThemeHandler = () => {
-    setDarkTheme((prevState) => !prevState)
-  }
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(DARK_SCHEME_QUERY)
+    const handleChange = (event: MediaQueryListEvent) => {
+      setDarkTheme(event.matches)
+    }
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
 
-  return (
-    <ThemeContext.Provider
-      value={{
-        darkTheme: darkTheme,
-        toggleTheme: toggleThemeHandler
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ darkTheme: darkTheme }}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeProvider

@@ -1,12 +1,22 @@
 @use '../../../ui/cozy.module';
 
 .mobileNavigation {
+  display: flex;
+}
+
+.burgerButton {
   width: 2rem;
   height: 2rem;
   display: flex;
   align-items: start;
   justify-content: space-around;
   flex-flow: column nowrap;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  z-index: cozy.$zTopLevel;
 }
 
 .burger {
@@ -16,6 +26,7 @@
 }
 
 .navigationMenu {
+  display: flex;
   flex-direction: column;
   gap: 3rem;
   align-items: center;
@@ -28,6 +39,11 @@
   top: 0;
   bottom: 0;
   background-color: var(--background-color);
+  z-index: cozy.$zSecondLevel;
+
+  &[hidden] {
+    display: none;
+  }
 
   .link {
     display: flex;

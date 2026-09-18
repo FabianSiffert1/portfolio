@@ -1,6 +1,6 @@
 @use '../../../ui/cozy.module';
 
-.project{
+.project {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -10,10 +10,9 @@
 }
 
 .description {
-
 }
 
-.links{
+.links {
   display: flex;
   font: small-caps 1.3rem sans-serif;
   font-weight: bold;

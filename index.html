@@ -4,10 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/siffertIo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fabianSiffert</title>
+    <meta name="theme-color" content="#f8f8f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1c" media="(prefers-color-scheme: dark)" />
+
+    <title>Fabian Siffert — Android & Software Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Fabian Siffert, a software developer from Duesseldorf, Germany, focused on Android, Kotlin and Jetpack Compose."
+    />
+    <link rel="canonical" href="https://siffert.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://siffert.io/" />
+    <meta property="og:site_name" content="siffert.io" />
+    <meta property="og:title" content="Fabian Siffert — Android & Software Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Fabian Siffert, a software developer from Duesseldorf, Germany, focused on Android, Kotlin and Jetpack Compose."
+    />
+    <meta property="og:image" content="https://siffert.io/siffertIo.svg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Fabian Siffert — Android & Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Fabian Siffert, a software developer from Duesseldorf, Germany, focused on Android, Kotlin and Jetpack Compose."
+    />
+    <meta name="twitter:image" content="https://siffert.io/siffertIo.svg" />
   </head>
   <body>
+    <script>
+      // Runs before first paint: React sets data-theme only after mount, which would flash the wrong theme.
+      document.documentElement.setAttribute(
+        'data-theme',
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      )
+    </script>
     <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

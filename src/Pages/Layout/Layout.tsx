@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../../Header/Header'
-import { ThemeContext } from '../../ui/theme/ThemeProvider'
+import { ThemeContext } from '../../ui/theme/themeContext'
 import styles from './Layout.module.scss'
 
 export default function Layout() {
@@ -12,12 +12,12 @@ export default function Layout() {
   }, [darkTheme])
   return (
     <div className={styles.layout}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Header />
-      </div>
-      <div className={styles.pageContainer}>
+      </header>
+      <main className={styles.pageContainer}>
         <Outlet />
-      </div>
+      </main>
     </div>
   )
 }

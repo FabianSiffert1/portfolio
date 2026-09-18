@@ -4,13 +4,15 @@ import React from 'react'
 interface SectionProps {
   title: string
   children: React.ReactNode
+  headingLevel?: 2 | 3
 }
 
-export default function Section({ title, children }: SectionProps) {
+export default function Section({ title, children, headingLevel = 2 }: SectionProps) {
+  const Heading = `h${headingLevel}` as const
   return (
-    <div className={styles.section}>
-      <div className={styles.sectionTitle}>{title}</div>
+    <section className={styles.section}>
+      <Heading className={styles.sectionTitle}>{title}</Heading>
       <div className={styles.sectionContent}>{children}</div>
-    </div>
+    </section>
   )
 }

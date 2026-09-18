@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './index.scss'
 import ErrorPage from './Pages/404/404'
 import Layout from './Pages/Layout/Layout'
@@ -25,22 +24,26 @@ const router = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <About />
+        element: <Navigate to='/' replace />
+      },
+      {
+        path: '*',
+        element: <ErrorPage />
       }
     ]
   }
 ])
 
-const queryClient = new QueryClient()
+const rootElement = document.getElementById('root')
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+if (!rootElement) {
+  throw new Error('Root element #root not found')
+}
 
-root.render(
-  <QueryClientProvider client={queryClient}>
-    <React.StrictMode>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </React.StrictMode>
-  </QueryClientProvider>
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </React.StrictMode>
 )

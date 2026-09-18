@@ -5,6 +5,7 @@
 
 .sectionTitle {
   @include cozy.typoHeadlineCaps;
+  margin: 0;
 }
 
 .sectionContent {
