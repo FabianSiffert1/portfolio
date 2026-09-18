@@ -18,3 +18,29 @@ $borderRadius: 0.5rem;
 @mixin typoBody {
   font: 1.2rem sans-serif;
 }
+
+$surfaceRadius: 1.5rem 0.4rem 1.5rem 0.4rem;
+$surfaceRadiusSmall: 1rem 0.3rem 1rem 0.3rem;
+$surfaceTransition: 160ms ease;
+
+@mixin surface($radius: $surfaceRadius) {
+  border-radius: $radius;
+  transition:
+    transform $surfaceTransition,
+    box-shadow $surfaceTransition;
+}
+
+@mixin surfaceInteractive($radius: $surfaceRadius) {
+  @include surface($radius);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 1.2rem color-mix(in srgb, var(--color) 14%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color);
+    outline-offset: 3px;
+  }
+}

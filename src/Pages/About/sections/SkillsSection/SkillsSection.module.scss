@@ -2,7 +2,6 @@
 
 .skillsSection {
   width: 100%;
-  border-top-right-radius: cozy.$borderRadius;
   text-align: center;
   @include cozy.typoBodyCaps;
 
@@ -24,7 +23,7 @@
 %skillBlock {
   width: 100%;
   padding: 0.7rem;
-  border-radius: 0.3rem;
+  @include cozy.surface;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -57,7 +56,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 0;
-  padding: 0.5rem;
+  padding: 0.8rem 0.6rem;
+  @include cozy.surface(cozy.$surfaceRadiusSmall);
 }
 
 .mainProgrammingSkillsList,

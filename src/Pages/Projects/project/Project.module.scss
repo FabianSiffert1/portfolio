@@ -4,9 +4,9 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1.3rem;
+  padding: 1.5rem 1.6rem;
   gap: 2rem;
-  border-radius: 0.3rem;
+  @include cozy.surface;
 }
 
 .description {
@@ -16,9 +16,14 @@
   display: flex;
   font: small-caps 1.3rem sans-serif;
   font-weight: bold;
-  * {
-    border-radius: 0.3rem;
-    padding: 1rem;
+  a {
+    @include cozy.surfaceInteractive(cozy.$surfaceRadiusSmall);
+    padding: 0.8rem 1.4rem;
+    text-underline-offset: 0.25rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @media (max-width: cozy.$smallScreen) {
     flex-direction: row;

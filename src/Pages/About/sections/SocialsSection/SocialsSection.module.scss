@@ -2,8 +2,6 @@
 
 .socialsSection {
   width: 100%;
-  border-top-right-radius: cozy.$borderRadius;
-
   font: small-caps 1.8rem sans-serif;
   text-align: center;
   @media (max-width: cozy.$smallScreen) {
@@ -22,11 +20,20 @@
 
 .socialLink {
   background-color: color-mix(in srgb, var(--elementBlue) 35%, transparent);
-  padding: 0.5rem;
-  border-radius: 0.3rem;
+  padding: 0.8rem 0.5rem;
+  @include cozy.surfaceInteractive;
+
   a {
     display: block;
     width: 100%;
     height: 100%;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.25rem;
+    transition: text-decoration-color cozy.$surfaceTransition;
+  }
+
+  &:hover a {
+    text-decoration-color: currentColor;
   }
 }
