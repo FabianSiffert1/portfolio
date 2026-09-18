@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './MobileNavigation.module.scss'
 
-const activeStyle = ({ isActive }: { isActive: boolean }) => (isActive ? { textDecoration: 'underline' } : {})
+const navLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? `${styles.navLink} ${styles.active}` : styles.navLink)
 
 export default function MobileNavigation() {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false)
@@ -51,12 +51,12 @@ export default function MobileNavigation() {
       </button>
       <nav id='mobile-navigation-menu' className={styles.navigationMenu} hidden={!hamburgerMenuOpen} aria-label='Main navigation'>
         <div className={styles.link}>
-          <NavLink to='/' style={activeStyle} onClick={closeHamburgerMenu}>
+          <NavLink to='/' className={navLinkClass} onClick={closeHamburgerMenu}>
             about
           </NavLink>
         </div>
         <div className={styles.link}>
-          <NavLink to='projects' style={activeStyle} onClick={closeHamburgerMenu}>
+          <NavLink to='projects' className={navLinkClass} onClick={closeHamburgerMenu}>
             projects
           </NavLink>
         </div>

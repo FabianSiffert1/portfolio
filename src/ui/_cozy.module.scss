@@ -44,3 +44,13 @@ $surfaceTransition: 160ms ease;
     outline-offset: 3px;
   }
 }
+
+@mixin spectrum {
+  background: linear-gradient(
+    90deg,
+    var(--elementPeach) 0%,
+    var(--elementPink) 33%,
+    var(--elementGreenVariant) 66%,
+    var(--elementBlue) 100%
+  );
+}

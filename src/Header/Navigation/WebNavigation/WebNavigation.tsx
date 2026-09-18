@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './WebNavigation.module.scss'
 
-const activeStyle = ({ isActive }: { isActive: boolean }) => (isActive ? { textDecoration: 'underline' } : {})
+const navLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? `${styles.navLink} ${styles.active}` : styles.navLink)
 
 export default function WebNavigation() {
   return (
@@ -9,12 +9,12 @@ export default function WebNavigation() {
       <nav aria-label='Main navigation'>
         <div className={styles.webNavigation}>
           <div className={styles.about}>
-            <NavLink to='/' style={activeStyle}>
+            <NavLink to='/' className={navLinkClass}>
               about
             </NavLink>
           </div>
           <div className={styles.projects}>
-            <NavLink to='projects' style={activeStyle}>
+            <NavLink to='projects' className={navLinkClass}>
               projects
             </NavLink>
           </div>

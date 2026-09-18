@@ -53,6 +53,29 @@
     font-size: 2.5rem;
   }
 
+  .navLink {
+    position: relative;
+    padding-bottom: 0.25rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0.18rem;
+      border-radius: 0.1rem;
+      background-color: var(--marker);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform cozy.$surfaceTransition;
+    }
+
+    &.active::after {
+      transform: scaleX(1);
+    }
+  }
+
   .linkImage {
     display: flex;
     align-items: center;

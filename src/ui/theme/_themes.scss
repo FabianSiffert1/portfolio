@@ -8,6 +8,8 @@ html[data-theme='light'] {
   --primary: #{$blue-1};
   --secondary: #{$grey-3};
 
+  --marker: #{$ink-1};
+
   --elementPeach: #{$soft-peach};
   --elementPink: #{$soft-pink};
   --elementBlue: #{$soft-blue};
@@ -26,6 +28,8 @@ html[data-theme='dark'] {
 
   --primary: #{$primary-500};
   --secondary: #{$neutral-500};
+
+  --marker: #{$neutral-0};
 
   --elementPeach: #{$soft-peach};
   --elementPink: #{$soft-pink};

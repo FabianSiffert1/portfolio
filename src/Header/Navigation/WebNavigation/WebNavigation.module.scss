@@ -1,3 +1,5 @@
+@use '../../../ui/cozy.module';
+
 .webNavigationWrapper {
 }
 
@@ -13,13 +15,38 @@
   width: 100%;
   text-align: end;
 }
-.about:hover {
-  text-decoration: underline;
-}
 
 .projects {
   width: 100%;
 }
-.projects:hover {
-  text-decoration: underline;
+
+.navLink {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.18rem;
+    border-radius: 0.1rem;
+    background-color: var(--marker);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform cozy.$surfaceTransition;
+  }
+
+  &:hover::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--marker);
+    outline-offset: 4px;
+    border-radius: 0.2rem;
+  }
 }

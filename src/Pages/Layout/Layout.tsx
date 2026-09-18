@@ -12,12 +12,14 @@ export default function Layout() {
   }, [darkTheme])
   return (
     <div className={styles.layout}>
+      <div className={styles.spectrumBarTop} aria-hidden='true' />
       <header className={styles.header}>
         <Header />
       </header>
       <main className={styles.pageContainer}>
         <Outlet />
       </main>
+      <div className={styles.spectrumBar} aria-hidden='true' />
     </div>
   )
 }

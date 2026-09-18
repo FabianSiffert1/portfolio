@@ -4,6 +4,7 @@
   padding: 1.5rem;
   @include cozy.surface;
   background-color: color-mix(in srgb, var(--elementPeach) 50%, transparent);
+
   @media (max-width: cozy.$smallScreen) {
     flex-direction: column;
     align-items: center;
@@ -64,6 +65,11 @@
 
 .androidLogo {
   width: 2.5rem;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .location {

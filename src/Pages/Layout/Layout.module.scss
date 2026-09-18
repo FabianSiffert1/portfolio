@@ -13,9 +13,32 @@
   margin-top: 7rem;
   margin-left: 7rem;
   margin-right: 7rem;
+  padding-bottom: 4rem;
   @media (max-width: cozy.$smallScreen) {
     margin-left: 4rem;
     margin-right: 4rem;
     margin-top: 4rem;
   }
+}
+
+%spectrumBarBase {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 0.25rem;
+  z-index: cozy.$zBaseLayer;
+  pointer-events: none;
+  @include cozy.spectrum;
+}
+
+.spectrumBarTop {
+  @extend %spectrumBarBase;
+  top: 0;
+  opacity: 0.55;
+}
+
+.spectrumBar {
+  @extend %spectrumBarBase;
+  bottom: env(safe-area-inset-bottom, 0);
+  opacity: 0.85;
 }
