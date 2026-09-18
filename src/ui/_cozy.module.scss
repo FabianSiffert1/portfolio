@@ -19,6 +19,32 @@ $borderRadius: 0.5rem;
   font: 1.2rem sans-serif;
 }
 
+$displayFont: 'Michroma', system-ui, sans-serif;
+$monoFont: 'IBM Plex Mono', ui-monospace, monospace;
+
+@mixin typoDisplay {
+  font-family: $displayFont;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.18;
+}
+
+@mixin typoFieldLabel {
+  font-family: $monoFont;
+  font-weight: 400;
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@mixin typoFieldValue {
+  font-family: $monoFont;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 $surfaceRadius: 1.5rem 0.4rem 1.5rem 0.4rem;
 $surfaceRadiusSmall: 1rem 0.3rem 1rem 0.3rem;
 $surfaceTransition: 160ms ease;

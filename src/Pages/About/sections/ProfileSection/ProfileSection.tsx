@@ -1,5 +1,5 @@
 import styles from './ProfileSection.module.scss'
-import { android, profilePicture } from '../../../../ui/_cozyAssets'
+import { profilePicture } from '../../../../ui/_cozyAssets'
 
 export default function ProfileSection() {
   return (
@@ -7,18 +7,23 @@ export default function ProfileSection() {
       <div className={styles.profilePicture}>
         <img src={profilePicture} alt='Fabian Siffert' width='1134' height='1742' />
       </div>
-      <div className={styles.spacer} />
       <div className={styles.textContainer}>
         <h1 className={styles.name}>Fabian Siffert</h1>
-        <div className={styles.job}>Software Developer</div>
-        <div className={styles.jobSubtitle}>
-          (with a focus on
-          <div className={styles.androidLogo}>
-            <img src={android} alt='' aria-hidden='true' />
+        <div className={styles.rule} />
+        <dl className={styles.fields}>
+          <div className={styles.field}>
+            <dt>Job</dt>
+            <dd>Software Developer</dd>
           </div>
-          apps)
-        </div>
-        <div className={styles.location}>Duesseldorf, Germany</div>
+          <div className={styles.field}>
+            <dt>Focus</dt>
+            <dd>Android</dd>
+          </div>
+          <div className={styles.field}>
+            <dt>Base</dt>
+            <dd>Düsseldorf DE</dd>
+          </div>
+        </dl>
       </div>
     </div>
   )
