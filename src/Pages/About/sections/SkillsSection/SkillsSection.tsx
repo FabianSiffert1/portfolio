@@ -30,6 +30,7 @@ export default function SkillsSection() {
             <div className={styles.po}>Product Owner Certificate*</div>
             <div className={styles.pottery}>Pottery</div>
             <div className={styles.bouldering}>Bouldering</div>
+            <div className={styles.electronics}>Electronics</div>
             <div className={styles.deprecated}>* Expired Dec. 2024</div>
           </div>
         </Section>
