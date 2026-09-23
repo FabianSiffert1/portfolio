@@ -19,6 +19,7 @@ export default function ExternalLink({ href, children, className, style }: Exter
       rel={isInPageProtocol ? undefined : 'noopener noreferrer'}
     >
       {children}
+      {!isInPageProtocol && <span aria-hidden='true'> ↗</span>}
     </a>
   )
 }

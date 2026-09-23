@@ -8,12 +8,17 @@
   gap: 2rem;
   width: 100%;
   min-height: 50vh;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+  @include cozy.surface;
+  background-color: color-mix(in srgb, var(--elementPink) 40%, transparent);
   @include cozy.typoBodyCaps;
   text-align: center;
 }
 
 .title {
   @include cozy.typoBodyCaps;
+  font-family: cozy.$displayFont;
   font-size: 5rem;
   margin: 0;
 }

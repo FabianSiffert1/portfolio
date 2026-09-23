@@ -15,10 +15,11 @@
 .links {
   display: flex;
   font: small-caps 1.3rem sans-serif;
-  font-weight: bold;
   a {
     @include cozy.surfaceInteractive(cozy.$surfaceRadiusSmall);
     padding: 0.8rem 1.4rem;
+    text-decoration: none;
+    box-shadow: 0 0.15rem 0.5rem color-mix(in srgb, var(--color) 10%, transparent);
     text-underline-offset: 0.25rem;
 
     &:hover {

@@ -9,6 +9,7 @@
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   font-size: 2.5rem;
+  font-family: cozy.$displayFont;
 }
 
 .about {
@@ -22,6 +23,8 @@
 
 .navLink {
   position: relative;
+  text-decoration: none;
+  font-size: inherit;
   display: inline-block;
   padding-bottom: 0.2rem;
 

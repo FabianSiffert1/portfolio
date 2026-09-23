@@ -14,10 +14,8 @@ export default function Projects() {
             <br />
             <br />
             This is the project I'm currently working on, built using best practices recommended by Google's{' '}
-            <ExternalLink href='https://github.com/android/nowinandroid' style={{ fontWeight: 550 }}>
-              &#123;NowInAndroid&#125;
-            </ExternalLink>{' '}
-            and informed by my professional experience. <br />
+            <ExternalLink href='https://github.com/android/nowinandroid'>NowInAndroid</ExternalLink> and informed by my professional
+            experience. <br />
             <br />
             As of May 2025, it runs on a local database, which I plan to replace in the future. The project hasn't been deployed yet, as
             it's still a work in progress.
@@ -33,11 +31,8 @@ export default function Projects() {
             <br />
             <br />
             Build with a{' '}
-            <ExternalLink
-              href='https://shop.pimoroni.com/products/badger-2040?srsltid=AfmBOoqCMb0tOkZMvyGG12VLJ3naDkMUR3sO43zKV-8ED-8Im-PhuvR2'
-              style={{ fontWeight: 550 }}
-            >
-              &#123;Badger 2040&#125;
+            <ExternalLink href='https://shop.pimoroni.com/products/badger-2040?srsltid=AfmBOoqCMb0tOkZMvyGG12VLJ3naDkMUR3sO43zKV-8ED-8Im-PhuvR2'>
+              Badger 2040
             </ExternalLink>{' '}
             in mind. It displays a randomly selected logo each day when everything is fine and a warning screen when a docker container is
             down. Also contains an overview screen of the health of my server and one for the containers. The Buttons are mapped to refresh,

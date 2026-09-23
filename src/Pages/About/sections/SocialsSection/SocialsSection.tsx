@@ -10,17 +10,17 @@ const SocialSectionContent = (
   <div className={styles.socialsSection}>
     <div className={styles.socialLink}>
       <div className={styles.email}>
-        <ExternalLink href='mailto:siffert.dev+io@gmail.com'>&#123;Email&#125;</ExternalLink>
+        <ExternalLink href='mailto:siffert.dev+io@gmail.com'>Email</ExternalLink>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.linkedIn}>
-        <ExternalLink href='https://www.linkedin.com/in/fabian-siffert-5b2481289/'>&#123;LinkedIn&#125;</ExternalLink>
+        <ExternalLink href='https://www.linkedin.com/in/fabian-siffert-5b2481289/'>LinkedIn</ExternalLink>
       </div>
     </div>
     <div className={styles.socialLink}>
       <div className={styles.github}>
-        <ExternalLink href='https://github.com/FabianSiffert1/'>&#123;Github&#125;</ExternalLink>
+        <ExternalLink href='https://github.com/FabianSiffert1/'>Github</ExternalLink>
       </div>
     </div>
   </div>

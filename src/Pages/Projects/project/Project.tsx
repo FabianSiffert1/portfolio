@@ -41,7 +41,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         <div className={styles.links}>
           {links.map((link) => (
             <ExternalLink key={link.url} href={link.url} style={backgroundStyle}>
-              &#123;{link.title}&#125;
+              {link.title}
             </ExternalLink>
           ))}
         </div>

@@ -8,7 +8,7 @@ $zTopLevel: 3;
 $borderRadius: 0.5rem;
 
 @mixin typoHeadlineCaps {
-  font: small-caps 2rem sans-serif;
+  font: small-caps 2rem $displayFont;
 }
 
 @mixin typoBodyCaps {
