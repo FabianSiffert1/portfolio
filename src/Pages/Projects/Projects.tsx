@@ -67,6 +67,25 @@ export default function Projects() {
         backgroundColor={ColorVariant.elementPeach}
       />
       <Project
+        projectTitle='plant-care-ha'
+        projectDescription={
+          <>
+            I'm busy setting up my Home Assistant nicely right now, and my plants are the first to benefit.
+            <br />
+            <br />
+            A tiny Home Assistant plant calendar that keeps me from killing (or forgetting) them. One tap logs watering, fertilizing or pest
+            spraying, and a single status icon tells me what's next: green when they're happy, orange when something's due, red when I'm
+            late. Watering and fertilizing intervals are adjustable right from the UI.
+            <br />
+            <br />
+            Built with YAML and Jinja templates, plus{' '}
+            <ExternalLink href='https://github.com/piitaya/lovelace-mushroom'>Mushroom</ExternalLink> cards for the dashboard.
+          </>
+        }
+        links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/plant-care-ha' }]}
+        backgroundColor={ColorVariant.elementGreenVariant}
+      />
+      <Project
         projectTitle={'inv'}
         projectDescription={
           'A work-in-progress™ (read: very rough, and likely never to be finished), mobile-first website that originally began as a portfolio redesign. Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices.'
