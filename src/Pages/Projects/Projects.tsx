@@ -63,7 +63,10 @@ export default function Projects() {
             voice satellite for switching the lights, with a NeoPixel behind the dial to signal <i>I'm listening</i>.
           </>
         }
-        links={[{ title: 'ESPHome', url: 'https://esphome.io' }]}
+        links={[
+          { title: 'ESPHome', url: 'https://esphome.io' },
+          { title: 'Github', url: 'https://github.com/FabianSiffert1/esphome-devices' }
+        ]}
         backgroundColor={ColorVariant.elementPeach}
       />
       <Project
