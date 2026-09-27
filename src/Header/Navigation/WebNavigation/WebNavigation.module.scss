@@ -15,6 +15,10 @@
 .about {
   width: 100%;
   text-align: end;
+
+  .navLink::after {
+    transform-origin: right center;
+  }
 }
 
 .projects {

@@ -7,21 +7,15 @@ export default function Projects() {
   return (
     <div className={styles.projects}>
       <Project
-        projectTitle='Inventory'
+        projectTitle={'inv'}
         projectDescription={
-          <>
-            A simple, Android-only investment tracker.
-            <br />
-            <br />
-            This is the project I'm currently working on, built using best practices recommended by Google's{' '}
-            <ExternalLink href='https://github.com/android/nowinandroid'>NowInAndroid</ExternalLink> and informed by my professional
-            experience. <br />
-            <br />
-            As of May 2025, it runs on a local database, which I plan to replace in the future. The project hasn't been deployed yet, as
-            it's still a work in progress.
-          </>
+          'A work-in-progress™ (read: very rough, and likely never to be finished), mobile-first website that originally began as a portfolio redesign. Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices.'
         }
-        links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/inventory' }]}
+        links={[
+          { title: 'Link', url: 'https://inv.siffert.io' },
+          { title: 'Github', url: 'https://github.com/FabianSiffert1/inv' }
+        ]}
+        backgroundColor={ColorVariant.elementBlue}
       />
       <Project
         projectTitle='docker-hud'
@@ -42,7 +36,7 @@ export default function Projects() {
           </>
         }
         links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/docker-hud' }]}
-        backgroundColor={ColorVariant.elementGreenVariant}
+        backgroundColor={ColorVariant.elementPink}
       />
       <Project
         projectTitle='DIY Electronics & Home Assistant'
@@ -89,24 +83,22 @@ export default function Projects() {
         backgroundColor={ColorVariant.elementGreenVariant}
       />
       <Project
-        projectTitle={'inv'}
+        projectTitle='Inventory'
         projectDescription={
-          'A work-in-progress™ (read: very rough, and likely never to be finished), mobile-first website that originally began as a portfolio redesign. Over time, it evolved into a Pokémon Trading Card Game platform to help me sell my childhood collection at fair prices.'
+          <>
+            A simple, Android-only investment tracker.
+            <br />
+            <br />
+            This is the project I'm currently working on, built using best practices recommended by Google's{' '}
+            <ExternalLink href='https://github.com/android/nowinandroid'>NowInAndroid</ExternalLink> and informed by my professional
+            experience. <br />
+            <br />
+            As of May 2025, it runs on a local database, which I plan to replace in the future. The project hasn't been deployed yet, as
+            it's still a work in progress.
+          </>
         }
-        links={[
-          { title: 'Link', url: 'https://inv.siffert.io' },
-          { title: 'Github', url: 'https://github.com/FabianSiffert1/inv' }
-        ]}
-        backgroundColor={ColorVariant.elementPink}
-      />
-      <Project
-        projectTitle={'siffert.io 2.0'}
-        projectDescription={'This is my current portfolio—more minimalistic in design and built with responsiveness in mind.'}
-        links={[
-          { title: 'Link', url: 'https://siffert.io' },
-          { title: 'Github', url: 'https://github.com/FabianSiffert1/portfolio' }
-        ]}
-        backgroundColor={ColorVariant.elementGreenVariant}
+        links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/inventory' }]}
+        backgroundColor={ColorVariant.elementBlue}
       />
       <Project
         projectTitle={'siffert.io 1.0'}
@@ -117,7 +109,16 @@ export default function Projects() {
           { title: 'Link', url: 'https://old.siffert.io' },
           { title: 'Github', url: 'https://github.com/FabianSiffert1/siffertio' }
         ]}
-        backgroundColor={ColorVariant.elementBlue}
+        backgroundColor={ColorVariant.elementPink}
+      />
+      <Project
+        projectTitle={'siffert.io 2.0'}
+        projectDescription={'This is my current portfolio—more minimalistic in design and built with responsiveness in mind.'}
+        links={[
+          { title: 'Link', url: 'https://siffert.io' },
+          { title: 'Github', url: 'https://github.com/FabianSiffert1/portfolio' }
+        ]}
+        backgroundColor={ColorVariant.elementPeach}
       />
       <div className={styles.spacer} />
     </div>
