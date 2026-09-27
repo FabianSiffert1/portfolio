@@ -7,13 +7,17 @@
     gap: 3rem;
   }
   @media (min-width: cozy.$smallScreen) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 3rem;
+    columns: 2;
+    column-gap: 3rem;
+
+    > section {
+      break-inside: avoid;
+      margin-bottom: 3rem;
+    }
   }
 }
 
 .spacer {
   height: 3rem;
+  column-span: all;
 }
