@@ -61,7 +61,7 @@ export default function Projects() {
           { title: 'ESPHome', url: 'https://esphome.io' },
           { title: 'Github', url: 'https://github.com/FabianSiffert1/esphome-devices' }
         ]}
-        backgroundColor={ColorVariant.elementPeach}
+        backgroundColor={ColorVariant.elementLavender}
       />
       <Project
         projectTitle='plant-care-ha'
@@ -80,7 +80,7 @@ export default function Projects() {
           </>
         }
         links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/plant-care-ha' }]}
-        backgroundColor={ColorVariant.elementGreenVariant}
+        backgroundColor={ColorVariant.elementGreen}
       />
       <Project
         projectTitle='Inventory'
@@ -98,7 +98,7 @@ export default function Projects() {
           </>
         }
         links={[{ title: 'Github', url: 'https://github.com/FabianSiffert1/inventory' }]}
-        backgroundColor={ColorVariant.elementBlue}
+        backgroundColor={ColorVariant.elementRose}
       />
       <Project
         projectTitle={'siffert.io 1.0'}
@@ -109,7 +109,7 @@ export default function Projects() {
           { title: 'Link', url: 'https://old.siffert.io' },
           { title: 'Github', url: 'https://github.com/FabianSiffert1/siffertio' }
         ]}
-        backgroundColor={ColorVariant.elementPink}
+        backgroundColor={ColorVariant.elementPistachio}
       />
       <Project
         projectTitle={'siffert.io 2.0'}

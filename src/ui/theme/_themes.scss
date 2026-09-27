@@ -12,6 +12,8 @@ html[data-theme='light'] {
 
   --elementPeach: #{$soft-peach};
   --elementPink: #{$soft-pink};
+  --elementRose: #{$soft-rose};
+  --elementLavender: #{$soft-lavender};
   --elementBlue: #{$soft-blue};
   --elementBlueVariant: #{$soft-blue-2};
   --elementBlueVariant2: #{$soft-blue-3};
@@ -19,6 +21,7 @@ html[data-theme='light'] {
   --elementGreen: #{$soft-mint};
   --elementGreenVariant: #{$soft-mint-2};
   --elementGreenVariant2: #{$soft-mint-3};
+  --elementPistachio: #{$soft-pistachio};
 }
 
 html[data-theme='dark'] {
@@ -33,6 +36,8 @@ html[data-theme='dark'] {
 
   --elementPeach: #{$soft-peach};
   --elementPink: #{$soft-pink};
+  --elementRose: #{$soft-rose};
+  --elementLavender: #{$soft-lavender};
   --elementBlue: #{$soft-blue};
   --elementBlueVariant: #{$soft-blue-2};
   --elementBlueVariant2: #{$soft-blue-3};
@@ -40,4 +45,5 @@ html[data-theme='dark'] {
   --elementGreen: #{$soft-mint};
   --elementGreenVariant: #{$soft-mint-2};
   --elementGreenVariant2: #{$soft-mint-3};
+  --elementPistachio: #{$soft-pistachio};
 }
