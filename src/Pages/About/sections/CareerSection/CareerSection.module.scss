@@ -23,7 +23,7 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  background-color: color-mix(in srgb, var(--elementGreenVariant) 50%, transparent);
+  background-color: color-mix(in srgb, var(--elementLavender) 50%, transparent);
   justify-content: space-between;
 }
 
@@ -52,7 +52,7 @@
     padding: 0.8rem 1.4rem;
     text-decoration: none;
     box-shadow: 0 0.15rem 0.5rem color-mix(in srgb, var(--color) 10%, transparent);
-    background-color: color-mix(in srgb, var(--elementGreenVariant) 50%, transparent);
+    background-color: color-mix(in srgb, var(--elementLavender) 50%, transparent);
     text-underline-offset: 0.25rem;
 
     &:hover {
